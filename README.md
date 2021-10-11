@@ -2,8 +2,8 @@
 
 ## Trabalho feito por:
 
-### - Pedro Brügger
-### - Huryel Souto
-### - Tainá Silva
-### - Tiago Sousa
-### - Bruno Oliveira 
+#### - Pedro Brügger
+#### - Huryel Souto
+#### - Tainá Silva
+#### - Tiago Sousa
+#### - Bruno Oliveira 
