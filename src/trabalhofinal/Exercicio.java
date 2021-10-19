@@ -5,10 +5,28 @@
  */
 package trabalhofinal;
 
+import java.sql.Time;
+
 /**
  *
  * @author tainass
  */
-public class Exercicio {
-    
+public abstract class Exercicio {
+    private String nome;
+    private Time tempoGasto;
+
+    public abstract float caloriasGastasExercicio();
+    public abstract void mostraExercicio();
+
+    public void setTempoGasto(int h, int min, int seg) {
+        this.tempoGasto = new Time(h,min,seg);
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getTempoGasto() {
+        return tempoGasto.toString();
+    }
 }
