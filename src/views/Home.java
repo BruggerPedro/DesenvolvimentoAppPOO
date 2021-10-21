@@ -49,15 +49,15 @@ public class Home extends javax.swing.JFrame {
         pesojTextField = new javax.swing.JTextField();
         alturajTextField = new javax.swing.JTextField();
         menuPanel = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        sairIconjLabel = new javax.swing.JLabel();
+        logoIconjLabel = new javax.swing.JLabel();
+        editarDadosjButton = new javax.swing.JButton();
+        cadastroDietajButton = new javax.swing.JButton();
+        cadastroRefeicaojButton = new javax.swing.JButton();
+        cadastroTreinojButton = new javax.swing.JButton();
+        cadastroExerciciosjButton = new javax.swing.JButton();
+        registrarDiajButton = new javax.swing.JButton();
+        sairTextjLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -163,65 +163,65 @@ public class Home extends javax.swing.JFrame {
 
         menuPanel.setBackground(new java.awt.Color(35, 31, 32));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sairIcon.png"))); // NOI18N
-        jLabel3.setLabelFor(menuPanel);
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        sairIconjLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sairIcon.png"))); // NOI18N
+        sairIconjLabel.setLabelFor(menuPanel);
+        sairIconjLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+                sairIconjLabelMouseClicked(evt);
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icone.png"))); // NOI18N
-        jLabel2.setLabelFor(menuPanel);
+        logoIconjLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icone.png"))); // NOI18N
+        logoIconjLabel.setLabelFor(menuPanel);
 
-        jButton2.setText("Editar dados");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        editarDadosjButton.setText("Editar dados");
+        editarDadosjButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                editarDadosjButtonActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Cadastro de dieta");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        cadastroDietajButton.setText("Cadastro de dieta");
+        cadastroDietajButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                cadastroDietajButtonActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Cadastro de refeição");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        cadastroRefeicaojButton.setText("Cadastro de refeição");
+        cadastroRefeicaojButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                cadastroRefeicaojButtonActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Cadastro de treino");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        cadastroTreinojButton.setText("Cadastro de treino");
+        cadastroTreinojButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                cadastroTreinojButtonActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Cadastro de exercícios");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        cadastroExerciciosjButton.setText("Cadastro de exercícios");
+        cadastroExerciciosjButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                cadastroExerciciosjButtonActionPerformed(evt);
             }
         });
 
-        jButton7.setText("Registrar dia");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        registrarDiajButton.setText("Registrar dia");
+        registrarDiajButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                registrarDiajButtonActionPerformed(evt);
             }
         });
 
-        jLabel1.setBackground(new java.awt.Color(241, 90, 35));
-        jLabel1.setForeground(new java.awt.Color(241, 90, 35));
-        jLabel1.setText("Sair");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        sairTextjLabel.setBackground(new java.awt.Color(241, 90, 35));
+        sairTextjLabel.setForeground(new java.awt.Color(241, 90, 35));
+        sairTextjLabel.setText("Sair");
+        sairTextjLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                sairTextjLabelMouseClicked(evt);
             }
         });
 
@@ -231,48 +231,48 @@ public class Home extends javax.swing.JFrame {
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+                .addComponent(logoIconjLabel)
                 .addGap(45, 45, 45))
             .addGroup(menuPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(editarDadosjButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cadastroDietajButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cadastroRefeicaojButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cadastroTreinojButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cadastroExerciciosjButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(registrarDiajButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(menuPanelLayout.createSequentialGroup()
                 .addGap(85, 85, 85)
-                .addComponent(jLabel3)
+                .addComponent(sairIconjLabel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(sairTextjLabel)
                 .addGap(82, 82, 82))
         );
         menuPanelLayout.setVerticalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanelLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jLabel2)
+                .addComponent(logoIconjLabel)
                 .addGap(30, 30, 30)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(editarDadosjButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cadastroDietajButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cadastroRefeicaojButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cadastroTreinojButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cadastroExerciciosjButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(registrarDiajButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(90, 90, 90)
-                .addComponent(jLabel3)
+                .addComponent(sairIconjLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
+                .addComponent(sairTextjLabel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -282,39 +282,39 @@ public class Home extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void editarDadosjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarDadosjButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_editarDadosjButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void cadastroDietajButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroDietajButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_cadastroDietajButtonActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void cadastroRefeicaojButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroRefeicaojButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_cadastroRefeicaojButtonActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void cadastroTreinojButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroTreinojButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_cadastroTreinojButtonActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void cadastroExerciciosjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroExerciciosjButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_cadastroExerciciosjButtonActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void registrarDiajButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarDiajButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_registrarDiajButtonActionPerformed
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+    private void sairIconjLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sairIconjLabelMouseClicked
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(null, "Saiu!.");
-    }//GEN-LAST:event_jLabel3MouseClicked
+    }//GEN-LAST:event_sairIconjLabelMouseClicked
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    private void sairTextjLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sairTextjLabelMouseClicked
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(null, "Saiu!.");
-    }//GEN-LAST:event_jLabel1MouseClicked
+    }//GEN-LAST:event_sairTextjLabelMouseClicked
 
     /**
      * @param args the command line arguments
@@ -355,19 +355,16 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel alturajLabel;
     private javax.swing.JTextField alturajTextField;
     private javax.swing.JTextField anojTextField;
+    private javax.swing.JButton cadastroDietajButton;
+    private javax.swing.JButton cadastroExerciciosjButton;
+    private javax.swing.JButton cadastroRefeicaojButton;
+    private javax.swing.JButton cadastroTreinojButton;
     private javax.swing.JLabel dataNascimentojLabel;
     private javax.swing.JTextField diajTextField;
     private javax.swing.JPanel editarDadosPanel;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton editarDadosjButton;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel logoIconjLabel;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JTextField mesjTextField;
     private javax.swing.JLabel nomejLabel;
@@ -376,6 +373,9 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPasswordField passwordjPasswordField;
     private javax.swing.JLabel pesojLabel;
     private javax.swing.JTextField pesojTextField;
+    private javax.swing.JButton registrarDiajButton;
+    private javax.swing.JLabel sairIconjLabel;
+    private javax.swing.JLabel sairTextjLabel;
     private javax.swing.JLabel sexojLabel;
     private javax.swing.JTextField sexojTextField;
     private javax.swing.JLabel usuariojLabel;
