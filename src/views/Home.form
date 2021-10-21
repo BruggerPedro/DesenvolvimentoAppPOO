@@ -80,6 +80,7 @@
                           <Component id="pesojTextField" alignment="0" min="-2" pref="444" max="-2" attributes="0"/>
                           <Component id="alturajTextField" alignment="0" min="-2" pref="444" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="jButton1" alignment="1" min="-2" pref="77" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
               </Group>
@@ -114,7 +115,7 @@
                       <Component id="anojTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="mesjTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="pesojLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="pesojTextField" min="-2" max="-2" attributes="0"/>
@@ -122,6 +123,8 @@
                   <Component id="alturajLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="alturajTextField" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -191,6 +194,11 @@
         <Component class="javax.swing.JTextField" name="pesojTextField">
         </Component>
         <Component class="javax.swing.JTextField" name="alturajTextField">
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Editar"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

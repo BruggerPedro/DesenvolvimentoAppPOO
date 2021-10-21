@@ -46,6 +46,7 @@ public class Registrar extends javax.swing.JFrame {
         alturajTextField = new javax.swing.JTextField();
         cadastrarjLabel = new javax.swing.JLabel();
         cadastrarTitlejLabel = new javax.swing.JLabel();
+        registrarjButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(35, 31, 32));
@@ -91,6 +92,13 @@ public class Registrar extends javax.swing.JFrame {
         cadastrarTitlejLabel.setForeground(new java.awt.Color(241, 90, 35));
         cadastrarTitlejLabel.setText("CADASTRAR");
 
+        registrarjButton.setText("REGISTRAR");
+        registrarjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registrarjButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout editarDadosPanelLayout = new javax.swing.GroupLayout(editarDadosPanel);
         editarDadosPanel.setLayout(editarDadosPanelLayout);
         editarDadosPanelLayout.setHorizontalGroup(
@@ -133,6 +141,10 @@ public class Registrar extends javax.swing.JFrame {
                                 .addComponent(cadastrarjLabel))
                             .addComponent(cadastrarTitlejLabel))))
                 .addContainerGap(43, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editarDadosPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(registrarjButton, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(192, 192, 192))
         );
         editarDadosPanelLayout.setVerticalGroup(
             editarDadosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,14 +184,20 @@ public class Registrar extends javax.swing.JFrame {
                 .addComponent(alturajLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(alturajTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(registrarjButton)
                 .addContainerGap())
         );
 
-        getContentPane().add(editarDadosPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 650));
+        getContentPane().add(editarDadosPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 710));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void registrarjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarjButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_registrarjButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,6 +251,7 @@ public class Registrar extends javax.swing.JFrame {
     private javax.swing.JPasswordField passwordjPasswordField;
     private javax.swing.JLabel pesojLabel;
     private javax.swing.JTextField pesojTextField;
+    private javax.swing.JButton registrarjButton;
     private javax.swing.JLabel sexojLabel;
     private javax.swing.JTextField sexojTextField;
     private javax.swing.JLabel usuariojLabel;

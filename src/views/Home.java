@@ -48,6 +48,7 @@ public class Home extends javax.swing.JFrame {
         alturajLabel = new javax.swing.JLabel();
         pesojTextField = new javax.swing.JTextField();
         alturajTextField = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         menuPanel = new javax.swing.JPanel();
         sairIconjLabel = new javax.swing.JLabel();
         logoIconjLabel = new javax.swing.JLabel();
@@ -83,6 +84,8 @@ public class Home extends javax.swing.JFrame {
 
         alturajLabel.setText("Altura");
 
+        jButton1.setText("Editar");
+
         javax.swing.GroupLayout editarDadosPanelLayout = new javax.swing.GroupLayout(editarDadosPanel);
         editarDadosPanel.setLayout(editarDadosPanelLayout);
         editarDadosPanelLayout.setHorizontalGroup(
@@ -117,7 +120,8 @@ public class Home extends javax.swing.JFrame {
                         .addComponent(pesojLabel)
                         .addComponent(alturajLabel)
                         .addComponent(pesojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(alturajTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(alturajTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45))
         );
         editarDadosPanelLayout.setVerticalGroup(
@@ -148,7 +152,7 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(diajTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(anojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(mesjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pesojLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pesojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -156,6 +160,8 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(alturajLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(alturajTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(jButton1)
                 .addContainerGap())
         );
 
@@ -363,6 +369,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField diajTextField;
     private javax.swing.JPanel editarDadosPanel;
     private javax.swing.JButton editarDadosjButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel logoIconjLabel;
     private javax.swing.JPanel menuPanel;
