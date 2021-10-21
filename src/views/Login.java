@@ -35,6 +35,7 @@ public class Login extends javax.swing.JFrame {
         passwordLabel = new javax.swing.JLabel();
         usuarioLabel = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        loginTitlejLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(35, 31, 32));
@@ -64,6 +65,10 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        loginTitlejLabel1.setFont(new java.awt.Font("Ubuntu", 2, 15)); // NOI18N
+        loginTitlejLabel1.setForeground(new java.awt.Color(241, 90, 35));
+        loginTitlejLabel1.setText("cadastre-se ");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -85,7 +90,10 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(passwordjPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(184, 184, 184)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(210, 210, 210)
+                        .addComponent(loginTitlejLabel1)))
                 .addGap(28, 28, 28))
         );
         jPanel1Layout.setVerticalGroup(
@@ -105,7 +113,9 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(passwordjPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(loginTitlejLabel1)
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 400));
@@ -157,6 +167,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel loginTitlejLabel;
+    private javax.swing.JLabel loginTitlejLabel1;
     private javax.swing.JLabel logoIconjLabel;
     private javax.swing.JLabel passwordLabel;
     private javax.swing.JPasswordField passwordjPasswordField;
