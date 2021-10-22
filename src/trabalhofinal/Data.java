@@ -45,4 +45,8 @@ public class Data {
     public void mostrarData() {
         System.out.println(getDia() + '/' + getMes() + '/' + getAno());
     }
+    
+    public String retornaData() {
+        return getDia() + "/" + getMes() + "/" + getAno();
+    }
 }

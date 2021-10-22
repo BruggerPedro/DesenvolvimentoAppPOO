@@ -6,19 +6,33 @@
 package views;
 
 import javax.swing.JOptionPane;
+import trabalhofinal.Data;
+import trabalhofinal.Repositorio;
+import trabalhofinal.Usuario;
 
 /**
  *
  * @author huryel
  */
 public class Home extends javax.swing.JFrame {
-
+    private Usuario logado;
     /**
      * Creates new form Home
+     * @param logado
      */
-    public Home() {
+    public Home(Usuario logado) {
         initComponents();
+        this.logado = logado;
         
+        nomeCompleto.setText(logado.getNomeCompleto());
+        usuario.setText(logado.getNomeUsuario());
+        sexo.setText(logado.getSexo());
+        senha.setText(logado.getSenha());
+        diaNascimento.setText(""+logado.getDataNascimento().getDia());
+        mesNascimento.setText(""+logado.getDataNascimento().getMes());
+        anoNascimento.setText(""+logado.getDataNascimento().getAno());
+        peso.setText(""+logado.getPeso());
+        altura.setText(""+logado.getAltura());
     }
 
     /**
@@ -33,21 +47,21 @@ public class Home extends javax.swing.JFrame {
         editarDadosPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         nomejLabel = new javax.swing.JLabel();
-        nomejTextField = new javax.swing.JTextField();
+        nomeCompleto = new javax.swing.JTextField();
         usuariojLabel = new javax.swing.JLabel();
-        usuariojTextField = new javax.swing.JTextField();
-        sexojTextField = new javax.swing.JTextField();
+        usuario = new javax.swing.JTextField();
+        sexo = new javax.swing.JTextField();
         sexojLabel = new javax.swing.JLabel();
         passwordjLabel = new javax.swing.JLabel();
-        diajTextField = new javax.swing.JTextField();
+        diaNascimento = new javax.swing.JTextField();
         dataNascimentojLabel = new javax.swing.JLabel();
-        passwordjPasswordField = new javax.swing.JPasswordField();
-        anojTextField = new javax.swing.JTextField();
-        mesjTextField = new javax.swing.JTextField();
+        senha = new javax.swing.JPasswordField();
+        anoNascimento = new javax.swing.JTextField();
+        mesNascimento = new javax.swing.JTextField();
         pesojLabel = new javax.swing.JLabel();
         alturajLabel = new javax.swing.JLabel();
-        pesojTextField = new javax.swing.JTextField();
-        alturajTextField = new javax.swing.JTextField();
+        peso = new javax.swing.JTextField();
+        altura = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         menuPanel = new javax.swing.JPanel();
         sairIconjLabel = new javax.swing.JLabel();
@@ -85,6 +99,11 @@ public class Home extends javax.swing.JFrame {
         alturajLabel.setText("Altura");
 
         jButton1.setText("Editar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout editarDadosPanelLayout = new javax.swing.GroupLayout(editarDadosPanel);
         editarDadosPanel.setLayout(editarDadosPanelLayout);
@@ -92,35 +111,35 @@ public class Home extends javax.swing.JFrame {
             editarDadosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(editarDadosPanelLayout.createSequentialGroup()
                 .addGroup(editarDadosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(sexojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sexo, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(editarDadosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, editarDadosPanelLayout.createSequentialGroup()
                             .addGap(41, 41, 41)
                             .addGroup(editarDadosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(usuariojLabel)
-                                .addGroup(editarDadosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(nomejLabel)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(nomejTextField, javax.swing.GroupLayout.Alignment.TRAILING))))
+                                .addComponent(nomejLabel)
+                                .addComponent(jLabel4))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE))
                         .addGroup(editarDadosPanelLayout.createSequentialGroup()
                             .addContainerGap()
-                            .addGroup(editarDadosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(editarDadosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(sexojLabel)
-                                .addComponent(usuariojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(usuario, javax.swing.GroupLayout.DEFAULT_SIZE, 444, Short.MAX_VALUE)
+                                .addComponent(usuariojLabel)
+                                .addComponent(nomeCompleto))))
                     .addGroup(editarDadosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(editarDadosPanelLayout.createSequentialGroup()
-                            .addComponent(diajTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(diaNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(12, 12, 12)
-                            .addComponent(mesjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mesNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(anojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(anoNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(dataNascimentojLabel)
-                        .addComponent(passwordjPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(senha, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(passwordjLabel)
                         .addComponent(pesojLabel)
                         .addComponent(alturajLabel)
-                        .addComponent(pesojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(alturajTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(peso, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(altura, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45))
         );
@@ -132,34 +151,34 @@ public class Home extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nomejLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nomejTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nomeCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(usuariojLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(usuariojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(sexojLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(sexojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(passwordjLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(passwordjPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dataNascimentojLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(editarDadosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(diajTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(anojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mesjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(diaNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(anoNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mesNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pesojLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pesojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(peso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(alturajLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(alturajTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(altura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(jButton1)
                 .addContainerGap())
@@ -322,6 +341,41 @@ public class Home extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Saiu!.");
     }//GEN-LAST:event_sairTextjLabelMouseClicked
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String name = nomeCompleto.getText();
+        String user = usuario.getText();
+        String sex = sexo.getText();
+        String password = String.valueOf(senha.getPassword());
+        
+        if (name.isEmpty() || user.isEmpty() || sex.isEmpty() || password.isEmpty() || diaNascimento.getText().isEmpty() || mesNascimento.getText().isEmpty() || anoNascimento.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            Repositorio rep = new Repositorio();
+            rep.leUsuarios();
+            
+            int dayN = Integer.parseInt(diaNascimento.getText());
+            int monthN = Integer.parseInt(mesNascimento.getText());
+            int yearN = Integer.parseInt(anoNascimento.getText());
+            float weight = Float.parseFloat(peso.getText());
+            float height = Float.parseFloat(altura.getText());
+            
+            rep.usuarios.remove(logado.getNomeUsuario());
+            
+            if (!rep.usuarios.containsKey(user)){
+                Usuario u = new Usuario (name, sex, user, password, new Data(dayN, monthN, yearN), weight, height);
+                rep.usuarios.put(user, u);
+                rep.attUsuarios();
+                JOptionPane.showMessageDialog(null, "Usuario editado com sucesso!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+                this.logado = u;
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "Nome de usuario já existe", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+            }
+            
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -352,40 +406,40 @@ public class Home extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Home().setVisible(true);
+                new Home(null).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField altura;
     private javax.swing.JLabel alturajLabel;
-    private javax.swing.JTextField alturajTextField;
-    private javax.swing.JTextField anojTextField;
+    private javax.swing.JTextField anoNascimento;
     private javax.swing.JButton cadastroDietajButton;
     private javax.swing.JButton cadastroExerciciosjButton;
     private javax.swing.JButton cadastroRefeicaojButton;
     private javax.swing.JButton cadastroTreinojButton;
     private javax.swing.JLabel dataNascimentojLabel;
-    private javax.swing.JTextField diajTextField;
+    private javax.swing.JTextField diaNascimento;
     private javax.swing.JPanel editarDadosPanel;
     private javax.swing.JButton editarDadosjButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel logoIconjLabel;
     private javax.swing.JPanel menuPanel;
-    private javax.swing.JTextField mesjTextField;
+    private javax.swing.JTextField mesNascimento;
+    private javax.swing.JTextField nomeCompleto;
     private javax.swing.JLabel nomejLabel;
-    private javax.swing.JTextField nomejTextField;
     private javax.swing.JLabel passwordjLabel;
-    private javax.swing.JPasswordField passwordjPasswordField;
+    private javax.swing.JTextField peso;
     private javax.swing.JLabel pesojLabel;
-    private javax.swing.JTextField pesojTextField;
     private javax.swing.JButton registrarDiajButton;
     private javax.swing.JLabel sairIconjLabel;
     private javax.swing.JLabel sairTextjLabel;
+    private javax.swing.JPasswordField senha;
+    private javax.swing.JTextField sexo;
     private javax.swing.JLabel sexojLabel;
-    private javax.swing.JTextField sexojTextField;
+    private javax.swing.JTextField usuario;
     private javax.swing.JLabel usuariojLabel;
-    private javax.swing.JTextField usuariojTextField;
     // End of variables declaration//GEN-END:variables
 }

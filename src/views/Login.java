@@ -5,12 +5,16 @@
  */
 package views;
 
+import javax.swing.JOptionPane;
+import trabalhofinal.Repositorio;
+import trabalhofinal.Usuario;
+
 /**
  *
  * @author huryel
  */
 public class Login extends javax.swing.JFrame {
-
+    Usuario logado;
     /**
      * Creates new form Login
      */
@@ -30,14 +34,15 @@ public class Login extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         logoIconjLabel = new javax.swing.JLabel();
         loginTitlejLabel = new javax.swing.JLabel();
-        usuariojTextField = new javax.swing.JTextField();
-        passwordjPasswordField = new javax.swing.JPasswordField();
+        usuario = new javax.swing.JTextField();
+        senha = new javax.swing.JPasswordField();
         passwordLabel = new javax.swing.JLabel();
         usuarioLabel = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         loginTitlejLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Login");
         setBackground(new java.awt.Color(35, 31, 32));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -68,6 +73,11 @@ public class Login extends javax.swing.JFrame {
         loginTitlejLabel1.setFont(new java.awt.Font("Ubuntu", 2, 15)); // NOI18N
         loginTitlejLabel1.setForeground(new java.awt.Color(241, 90, 35));
         loginTitlejLabel1.setText("cadastre-se ");
+        loginTitlejLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                loginTitlejLabel1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -85,9 +95,9 @@ public class Login extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(usuarioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(usuariojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(passwordLabel)
-                            .addComponent(passwordjPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(senha, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(184, 184, 184)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -106,11 +116,11 @@ public class Login extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(usuarioLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(usuariojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(passwordLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(passwordjPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -125,8 +135,45 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        if (usuario.getText().isEmpty() || String.valueOf(senha.getPassword()).isEmpty() ){
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            Repositorio rep = new Repositorio();
+            rep.leUsuarios();
+            
+            String user = usuario.getText();
+            String password = String.valueOf(senha.getPassword());
+            boolean flag = false;
+            
+            for (String key : rep.usuarios.keySet()) {
+                Usuario u = rep.usuarios.get(key);
+                
+                if (u.getNomeUsuario().equals(user) && u.getSenha().equals(password)){
+                    this.logado = u;
+                    flag = true;
+                    break;
+                }
+            }
+            
+            if (flag) {
+                Home h = new Home(logado);
+                h.setVisible(true);
+                this.setVisible(false);
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos", "Alerta", JOptionPane.ERROR_MESSAGE);
+                usuario.setText("");
+                senha.setText("");
+            }
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void loginTitlejLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginTitlejLabel1MouseClicked
+        Registrar r = new Registrar();
+        r.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_loginTitlejLabel1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -170,8 +217,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel loginTitlejLabel1;
     private javax.swing.JLabel logoIconjLabel;
     private javax.swing.JLabel passwordLabel;
-    private javax.swing.JPasswordField passwordjPasswordField;
+    private javax.swing.JPasswordField senha;
+    private javax.swing.JTextField usuario;
     private javax.swing.JLabel usuarioLabel;
-    private javax.swing.JTextField usuariojTextField;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,6 +5,11 @@
  */
 package views;
 
+import javax.swing.JOptionPane;
+import trabalhofinal.Data;
+import trabalhofinal.Repositorio;
+import trabalhofinal.Usuario;
+
 /**
  *
  * @author huryel
@@ -29,28 +34,28 @@ public class Registrar extends javax.swing.JFrame {
 
         editarDadosPanel = new javax.swing.JPanel();
         nomejLabel = new javax.swing.JLabel();
-        nomejTextField = new javax.swing.JTextField();
+        nomeCompleto = new javax.swing.JTextField();
         usuariojLabel = new javax.swing.JLabel();
-        usuariojTextField = new javax.swing.JTextField();
-        sexojTextField = new javax.swing.JTextField();
+        usuario = new javax.swing.JTextField();
+        sexo = new javax.swing.JTextField();
         sexojLabel = new javax.swing.JLabel();
         passwordjLabel = new javax.swing.JLabel();
-        diajTextField = new javax.swing.JTextField();
+        diaNascimento = new javax.swing.JTextField();
         dataNascimentojLabel = new javax.swing.JLabel();
-        passwordjPasswordField = new javax.swing.JPasswordField();
-        anojTextField = new javax.swing.JTextField();
-        mesjTextField = new javax.swing.JTextField();
+        senha = new javax.swing.JPasswordField();
+        anoNascimento = new javax.swing.JTextField();
+        mesNascimento = new javax.swing.JTextField();
         pesojLabel = new javax.swing.JLabel();
         alturajLabel = new javax.swing.JLabel();
-        pesojTextField = new javax.swing.JTextField();
-        alturajTextField = new javax.swing.JTextField();
+        peso = new javax.swing.JTextField();
+        altura = new javax.swing.JTextField();
         cadastrarjLabel = new javax.swing.JLabel();
         cadastrarTitlejLabel = new javax.swing.JLabel();
         registrarjButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(35, 31, 32));
-        setPreferredSize(new java.awt.Dimension(530, 600));
+        setPreferredSize(new java.awt.Dimension(530, 700));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -108,31 +113,31 @@ public class Registrar extends javax.swing.JFrame {
                     .addGroup(editarDadosPanelLayout.createSequentialGroup()
                         .addGap(43, 43, 43)
                         .addGroup(editarDadosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(sexojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sexo, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(editarDadosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(usuariojLabel, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, editarDadosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(editarDadosPanelLayout.createSequentialGroup()
                                         .addComponent(nomejLabel)
                                         .addGap(398, 398, 398))
-                                    .addComponent(nomejTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(nomeCompleto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(editarDadosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(sexojLabel)
-                                    .addComponent(usuariojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(editarDadosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(editarDadosPanelLayout.createSequentialGroup()
-                                    .addComponent(diajTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(diaNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(12, 12, 12)
-                                    .addComponent(mesjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(mesNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(anojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(anoNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(dataNascimentojLabel)
-                                .addComponent(passwordjPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(senha, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(passwordjLabel)
                                 .addComponent(pesojLabel)
                                 .addComponent(alturajLabel)
-                                .addComponent(pesojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(alturajTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(peso, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(altura, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(editarDadosPanelLayout.createSequentialGroup()
                         .addGap(189, 189, 189)
                         .addGroup(editarDadosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,34 +161,34 @@ public class Registrar extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(nomejLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nomejTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nomeCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(usuariojLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(usuariojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(sexojLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(sexojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(passwordjLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(passwordjPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dataNascimentojLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(editarDadosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(diajTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(anojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mesjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(diaNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(anoNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mesNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addComponent(pesojLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pesojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(peso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(alturajLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(alturajTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(altura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(registrarjButton)
                 .addContainerGap())
@@ -196,7 +201,39 @@ public class Registrar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void registrarjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarjButtonActionPerformed
-        // TODO add your handling code here:
+        String name = nomeCompleto.getText();
+        String user = usuario.getText();
+        String sex = sexo.getText();
+        String password = String.valueOf(senha.getPassword());
+        
+        if (name.isEmpty() || user.isEmpty() || sex.isEmpty() || password.isEmpty() || diaNascimento.getText().isEmpty() || mesNascimento.getText().isEmpty() || anoNascimento.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            Repositorio rep = new Repositorio();
+            rep.leUsuarios();
+            
+            int dayN = Integer.parseInt(diaNascimento.getText());
+            int monthN = Integer.parseInt(mesNascimento.getText());
+            int yearN = Integer.parseInt(anoNascimento.getText());
+            float weight = Float.parseFloat(peso.getText());
+            float height = Float.parseFloat(altura.getText());
+            
+            if (!rep.usuarios.containsKey(user)){
+                Usuario u = new Usuario (name, sex, user, password, new Data(dayN, monthN, yearN), weight, height);
+                rep.addUsuario(u);
+                JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+                Home h = new Home(u);
+                h.setVisible(true);
+                this.setVisible(false);
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "Nome de usuario já existe", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+            }
+            
+            
+        }
+        
     }//GEN-LAST:event_registrarjButtonActionPerformed
 
     /**
@@ -236,25 +273,25 @@ public class Registrar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField altura;
     private javax.swing.JLabel alturajLabel;
-    private javax.swing.JTextField alturajTextField;
-    private javax.swing.JTextField anojTextField;
+    private javax.swing.JTextField anoNascimento;
     private javax.swing.JLabel cadastrarTitlejLabel;
     private javax.swing.JLabel cadastrarjLabel;
     private javax.swing.JLabel dataNascimentojLabel;
-    private javax.swing.JTextField diajTextField;
+    private javax.swing.JTextField diaNascimento;
     private javax.swing.JPanel editarDadosPanel;
-    private javax.swing.JTextField mesjTextField;
+    private javax.swing.JTextField mesNascimento;
+    private javax.swing.JTextField nomeCompleto;
     private javax.swing.JLabel nomejLabel;
-    private javax.swing.JTextField nomejTextField;
     private javax.swing.JLabel passwordjLabel;
-    private javax.swing.JPasswordField passwordjPasswordField;
+    private javax.swing.JTextField peso;
     private javax.swing.JLabel pesojLabel;
-    private javax.swing.JTextField pesojTextField;
     private javax.swing.JButton registrarjButton;
+    private javax.swing.JPasswordField senha;
+    private javax.swing.JTextField sexo;
     private javax.swing.JLabel sexojLabel;
-    private javax.swing.JTextField sexojTextField;
+    private javax.swing.JTextField usuario;
     private javax.swing.JLabel usuariojLabel;
-    private javax.swing.JTextField usuariojTextField;
     // End of variables declaration//GEN-END:variables
 }

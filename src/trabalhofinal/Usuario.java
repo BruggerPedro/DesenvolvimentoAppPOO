@@ -14,14 +14,14 @@ public class Usuario {
     protected float peso, altura, IMC;
     protected Data dataNascimento;
 
-    public Usuario(String nomeCompleto, String sexo, String nomeUsuario, String senha, Data dataNascimento) {
+    public Usuario(String nomeCompleto, String sexo, String nomeUsuario, String senha, Data dataNascimento, float peso, float altura) {
         this.nomeCompleto = nomeCompleto;
         this.sexo = sexo;
         this.nomeUsuario = nomeUsuario;
         this.senha = senha;
         this.dataNascimento = dataNascimento;
-        this.altura = 0;
-        this.peso = 0;
+        this.altura = peso;
+        this.peso = altura;
     }
     
     public String getNomeCompleto() {
