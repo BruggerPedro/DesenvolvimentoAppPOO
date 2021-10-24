@@ -26,6 +26,281 @@
     <Property name="useNullLayout" type="boolean" value="false"/>
   </Layout>
   <SubComponents>
+    <Container class="javax.swing.JPanel" name="exercicioPanel">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="e7" green="e7" red="e7" type="rgb"/>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="190" y="0" width="530" height="550"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="41" pref="41" max="-2" attributes="0"/>
+                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                          <Component id="nomejLabel2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                          <Component id="tituloEx" min="-2" pref="444" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                          <Component id="horasGastas" min="-2" pref="50" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="minutosGastos" min="-2" pref="50" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                          <Component id="jLabel12" min="-2" pref="10" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="segundosGastos" min="-2" pref="50" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                          <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="metragemPanel" min="-2" pref="440" max="-2" attributes="0"/>
+                              <Component id="repeticaoPanel" min="-2" pref="440" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="400" pref="400" max="-2" attributes="0"/>
+                          <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
+                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                  <Component id="nomejLabel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                  <Component id="tituloEx" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="horasGastas" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="segundosGastos" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel12" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="jLabel11" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="minutosGastos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                  <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="metragemPanel" min="-2" pref="130" max="-2" attributes="0"/>
+                      <Component id="repeticaoPanel" min="-2" pref="220" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                  <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel6">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Ubuntu" size="24" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="23" green="5a" red="f1" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="----------- CADASTRO EXERCICIO -----------"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="nomejLabel2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="T&#xed;tulo :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="tituloEx">
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Salvar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tipo :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox1">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="2">
+                <StringItem index="0" value="Repeti&#xe7;&#xe3;o"/>
+                <StringItem index="1" value="Metragem"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Container class="javax.swing.JPanel" name="repeticaoPanel">
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+            <Property name="useNullLayout" type="boolean" value="false"/>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel7">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="N&#xfa;mero de S&#xe9;ries :"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="10" y="11" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField3">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="10" y="31" width="180" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel8">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="N&#xfa;mero de Repeti&#xe7;&#xf5;es :"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="10" y="69" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField4">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="10" y="89" width="180" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField5">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="10" y="150" width="180" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel9">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Calorias per S&#xe9;ries :"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="10" y="130" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="metragemPanel">
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+            <Property name="useNullLayout" type="boolean" value="false"/>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Dist&#xe2;ncia :"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="10" y="11" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JTextField" name="dist">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="10" y="31" width="180" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Calorias por metro :"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="10" y="69" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JTextField" name="calMetro">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="10" y="89" width="180" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="jLabel10">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tempo gasto :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="horasGastas">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel11">
+          <Properties>
+            <Property name="text" type="java.lang.String" value=":"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel12">
+          <Properties>
+            <Property name="text" type="java.lang.String" value=":"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="segundosGastos">
+        </Component>
+        <Component class="javax.swing.JTextField" name="minutosGastos">
+        </Component>
+      </SubComponents>
+    </Container>
     <Container class="javax.swing.JPanel" name="treinoPanel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -41,89 +316,61 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="sexo1" alignment="1" min="-2" pref="444" max="-2" attributes="0"/>
-                      <Group type="103" alignment="1" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="nomejLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                      <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                      <Component id="jScrollPane2" alignment="1" min="-2" pref="444" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="41" pref="41" max="-2" attributes="0"/>
+                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="sexojLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="usuario1" alignment="0" pref="444" max="32767" attributes="0"/>
-                                  <Component id="usuariojLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="nomeCompleto1" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                              <Component id="nomejLabel1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                              <Component id="nomeCompleto1" min="-2" pref="444" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                              <Component id="usuariojLabel1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                              <Component id="usuario1" min="-2" pref="444" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                              <Component id="sexojLabel1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="diaNascimento1" min="-2" pref="90" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                              <Component id="mesNascimento1" min="-2" pref="90" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="anoNascimento1" min="-2" pref="139" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="dataNascimentojLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="senha1" alignment="0" min="-2" pref="444" max="-2" attributes="0"/>
-                          <Component id="passwordjLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="pesojLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="alturajLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="peso1" alignment="0" min="-2" pref="444" max="-2" attributes="0"/>
-                          <Component id="altura1" alignment="0" min="-2" pref="444" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="jButton2" alignment="1" min="-2" pref="77" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                   <Component id="nomejLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                   <Component id="nomeCompleto1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                   <Component id="usuariojLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                   <Component id="usuario1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                   <Component id="sexojLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="sexo1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="passwordjLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="senha1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="dataNascimentojLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="diaNascimento1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="anoNascimento1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="mesNascimento1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="pesojLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="peso1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="alturajLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="altura1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                  <Component id="jScrollPane2" pref="280" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -142,64 +389,49 @@
         </Component>
         <Component class="javax.swing.JLabel" name="nomejLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Nome:"/>
+            <Property name="text" type="java.lang.String" value="ID :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="nomeCompleto1">
         </Component>
         <Component class="javax.swing.JLabel" name="usuariojLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Usu&#xe1;rio:"/>
+            <Property name="text" type="java.lang.String" value="T&#xed;tulo :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="usuario1">
         </Component>
-        <Component class="javax.swing.JTextField" name="sexo1">
-        </Component>
         <Component class="javax.swing.JLabel" name="sexojLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Sexo:"/>
+            <Property name="text" type="java.lang.String" value="Exerc&#xed;cios :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="passwordjLabel1">
+        <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="jTable1">
+              <Properties>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                  <Table columnCount="4" rowCount="4">
+                    <Column editable="true" title="T&#xed;tulo" type="java.lang.String"/>
+                    <Column editable="true" title="Tipo" type="java.lang.String"/>
+                    <Column editable="true" title="Tempo Gasto" type="java.lang.Object"/>
+                    <Column editable="true" title="Calorias Gastas" type="java.lang.Object"/>
+                  </Table>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JButton" name="jButton4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Password"/>
+            <Property name="text" type="java.lang.String" value="Adiconar"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="diaNascimento1">
-        </Component>
-        <Component class="javax.swing.JLabel" name="dataNascimentojLabel1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Data de Nascimento:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JPasswordField" name="senha1">
-        </Component>
-        <Component class="javax.swing.JTextField" name="anoNascimento1">
-        </Component>
-        <Component class="javax.swing.JTextField" name="mesNascimento1">
-        </Component>
-        <Component class="javax.swing.JLabel" name="pesojLabel1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Peso"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="alturajLabel1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Altura"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="peso1">
-        </Component>
-        <Component class="javax.swing.JTextField" name="altura1">
-        </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Editar"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -228,7 +460,6 @@
                                   <Component id="nomejLabel" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>

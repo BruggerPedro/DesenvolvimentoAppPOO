@@ -10,32 +10,32 @@ package trabalhofinal;
  * @author tainass
  */
 public class ExercicioMetragem extends Exercicio {
-    private int numSeries, numRepet;
-    private float calPorSerie;
+    private float distancia, calPorMetro;
+
+    public ExercicioMetragem(float distancia, float calPorMetro, int hg, int mg, int sg) {
+        super.setTempoGasto(hg, mg, sg);
+        this.distancia = distancia;
+        this.calPorMetro = calPorMetro;
+    }
+    
+    public float getDistancia() {
+        return distancia;
+    }
+
+    public float getCalPorMetro() {
+        return calPorMetro;
+    }
 
     @Override
     public float caloriasGastasExercicio() {
-        return numSeries * calPorSerie;
+        return distancia * calPorMetro;
     }
 
     @Override
     public void mostraExercicio() {
         System.out.println("Tempo gasto: "+getTempoGasto());
-        System.out.println("Número de Séries: "+getNumSeries());
-        System.out.println("Número de Repetições: "+getTempoGasto());
-        System.out.println("Calorias gastas por série: "+getCalPorSerie());
+        System.out.println("Distância percorrida: "+getDistancia());
+        System.out.println("Calorias gastas por metro: "+getCalPorMetro());
         System.out.println("Calorias gastas no exercicio: "+caloriasGastasExercicio());
-    }
-
-    public int getNumSeries() {
-        return numSeries;
-    }
-
-    public int getNumRepet() {
-        return numRepet;
-    }
-
-    public float getCalPorSerie() {
-        return calPorSerie;
     }
 }

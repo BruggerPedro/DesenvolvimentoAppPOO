@@ -7,6 +7,8 @@ package views;
 
 import javax.swing.JOptionPane;
 import trabalhofinal.Data;
+import trabalhofinal.Exercicio;
+import trabalhofinal.ExercicioMetragem;
 import trabalhofinal.Repositorio;
 import trabalhofinal.Usuario;
 
@@ -25,6 +27,8 @@ public class Home extends javax.swing.JFrame {
         
         editarDadosPanel.setVisible(true);
         treinoPanel.setVisible(false);
+        exercicioPanel.setVisible(false);
+        
         this.logado = logado;
         
         nomeCompleto.setText(logado.getNomeCompleto());
@@ -47,25 +51,41 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        exercicioPanel = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        nomejLabel2 = new javax.swing.JLabel();
+        tituloEx = new javax.swing.JTextField();
+        jButton5 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        repeticaoPanel = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        metragemPanel = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        dist = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        calMetro = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        horasGastas = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        segundosGastos = new javax.swing.JTextField();
+        minutosGastos = new javax.swing.JTextField();
         treinoPanel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         nomejLabel1 = new javax.swing.JLabel();
         nomeCompleto1 = new javax.swing.JTextField();
         usuariojLabel1 = new javax.swing.JLabel();
         usuario1 = new javax.swing.JTextField();
-        sexo1 = new javax.swing.JTextField();
         sexojLabel1 = new javax.swing.JLabel();
-        passwordjLabel1 = new javax.swing.JLabel();
-        diaNascimento1 = new javax.swing.JTextField();
-        dataNascimentojLabel1 = new javax.swing.JLabel();
-        senha1 = new javax.swing.JPasswordField();
-        anoNascimento1 = new javax.swing.JTextField();
-        mesNascimento1 = new javax.swing.JTextField();
-        pesojLabel1 = new javax.swing.JLabel();
-        alturajLabel1 = new javax.swing.JLabel();
-        peso1 = new javax.swing.JTextField();
-        altura1 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButton4 = new javax.swing.JButton();
         editarDadosPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         nomejLabel = new javax.swing.JLabel();
@@ -100,32 +120,172 @@ public class Home extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        exercicioPanel.setBackground(new java.awt.Color(231, 231, 231));
+
+        jLabel6.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(241, 90, 35));
+        jLabel6.setText("----------- CADASTRO EXERCICIO -----------");
+
+        nomejLabel2.setText("Título :");
+
+        jButton5.setText("Salvar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Tipo :");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Repetição", "Metragem" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+
+        repeticaoPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setText("Número de Séries :");
+        repeticaoPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
+        repeticaoPanel.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 31, 180, -1));
+
+        jLabel8.setText("Número de Repetições :");
+        repeticaoPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 69, -1, -1));
+        repeticaoPanel.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 89, 180, -1));
+        repeticaoPanel.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 180, -1));
+
+        jLabel9.setText("Calorias per Séries :");
+        repeticaoPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
+
+        metragemPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setText("Distância :");
+        metragemPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
+        metragemPanel.add(dist, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 31, 180, -1));
+
+        jLabel3.setText("Calorias por metro :");
+        metragemPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 69, -1, -1));
+        metragemPanel.add(calMetro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 89, 180, -1));
+
+        jLabel10.setText("Tempo gasto :");
+
+        jLabel11.setText(":");
+
+        jLabel12.setText(":");
+
+        javax.swing.GroupLayout exercicioPanelLayout = new javax.swing.GroupLayout(exercicioPanel);
+        exercicioPanel.setLayout(exercicioPanelLayout);
+        exercicioPanelLayout.setHorizontalGroup(
+            exercicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exercicioPanelLayout.createSequentialGroup()
+                .addGroup(exercicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(exercicioPanelLayout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jLabel6))
+                    .addGroup(exercicioPanelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(nomejLabel2))
+                    .addGroup(exercicioPanelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(tituloEx, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(exercicioPanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel10))
+                    .addGroup(exercicioPanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(horasGastas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(minutosGastos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(segundosGastos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(exercicioPanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel1))
+                    .addGroup(exercicioPanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(exercicioPanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(exercicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(metragemPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(repeticaoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(exercicioPanelLayout.createSequentialGroup()
+                        .addGap(400, 400, 400)
+                        .addComponent(jButton5)))
+                .addGap(27, 27, 27))
+        );
+        exercicioPanelLayout.setVerticalGroup(
+            exercicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exercicioPanelLayout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(jLabel6)
+                .addGap(6, 6, 6)
+                .addComponent(nomejLabel2)
+                .addGap(6, 6, 6)
+                .addComponent(tituloEx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel10)
+                .addGap(9, 9, 9)
+                .addGroup(exercicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(horasGastas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(segundosGastos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(minutosGastos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(jLabel1)
+                .addGap(6, 6, 6)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addGroup(exercicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(metragemPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(repeticaoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addComponent(jButton5))
+        );
+
+        getContentPane().add(exercicioPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 530, 550));
+
         treinoPanel.setBackground(new java.awt.Color(231, 231, 231));
 
         jLabel5.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(241, 90, 35));
         jLabel5.setText("----------- CADASTRO TREINO -----------");
 
-        nomejLabel1.setText("Nome:");
+        nomejLabel1.setText("ID :");
 
-        usuariojLabel1.setText("Usuário:");
+        usuariojLabel1.setText("Título :");
 
-        sexojLabel1.setText("Sexo:");
+        sexojLabel1.setText("Exercícios :");
 
-        passwordjLabel1.setText("Password");
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Título", "Tipo", "Tempo Gasto", "Calorias Gastas"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
+            };
 
-        dataNascimentojLabel1.setText("Data de Nascimento:");
-
-        pesojLabel1.setText("Peso");
-
-        alturajLabel1.setText("Altura");
-
-        jButton2.setText("Editar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
             }
         });
+        jTable1.setToolTipText("");
+        jScrollPane2.setViewportView(jTable1);
+
+        jButton4.setText("Adiconar");
 
         javax.swing.GroupLayout treinoPanelLayout = new javax.swing.GroupLayout(treinoPanel);
         treinoPanel.setLayout(treinoPanelLayout);
@@ -133,76 +293,49 @@ public class Home extends javax.swing.JFrame {
             treinoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(treinoPanelLayout.createSequentialGroup()
                 .addGroup(treinoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(sexo1, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(treinoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, treinoPanelLayout.createSequentialGroup()
-                            .addGap(41, 41, 41)
-                            .addGroup(treinoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(nomejLabel1)
-                                .addComponent(jLabel5)))
-                        .addGroup(treinoPanelLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addGroup(treinoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(sexojLabel1)
-                                .addComponent(usuario1, javax.swing.GroupLayout.DEFAULT_SIZE, 444, Short.MAX_VALUE)
-                                .addComponent(usuariojLabel1)
-                                .addComponent(nomeCompleto1))))
+                    .addComponent(jButton4)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(treinoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(treinoPanelLayout.createSequentialGroup()
-                            .addComponent(diaNascimento1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(12, 12, 12)
-                            .addComponent(mesNascimento1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(anoNascimento1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(dataNascimentojLabel1)
-                        .addComponent(senha1, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(passwordjLabel1)
-                        .addComponent(pesojLabel1)
-                        .addComponent(alturajLabel1)
-                        .addComponent(peso1, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(altura1, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33))
+                            .addGap(41, 41, 41)
+                            .addComponent(jLabel5))
+                        .addGroup(treinoPanelLayout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addComponent(nomejLabel1))
+                        .addGroup(treinoPanelLayout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addComponent(nomeCompleto1, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(treinoPanelLayout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addComponent(usuariojLabel1))
+                        .addGroup(treinoPanelLayout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addComponent(usuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(treinoPanelLayout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addComponent(sexojLabel1))))
+                .addGap(68, 68, 68))
         );
         treinoPanelLayout.setVerticalGroup(
             treinoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(treinoPanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(11, 11, 11)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addComponent(nomejLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addComponent(nomeCompleto1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addComponent(usuariojLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addComponent(usuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addComponent(sexojLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(sexo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(passwordjLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(senha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dataNascimentojLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(treinoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(diaNascimento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(anoNascimento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mesNascimento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(pesojLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(peso1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(alturajLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(altura1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jButton2)
-                .addContainerGap())
+                .addGap(3, 3, 3)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton4)
+                .addGap(71, 71, 71))
         );
 
         getContentPane().add(treinoPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 530, 550));
@@ -246,8 +379,7 @@ public class Home extends javax.swing.JFrame {
                             .addGap(41, 41, 41)
                             .addGroup(editarDadosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(nomejLabel)
-                                .addComponent(jLabel4))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jLabel4)))
                         .addGroup(editarDadosPanelLayout.createSequentialGroup()
                             .addContainerGap()
                             .addGroup(editarDadosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -440,6 +572,7 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         editarDadosPanel.setVisible(true);
         treinoPanel.setVisible(false);
+        exercicioPanel.setVisible(false);
     }//GEN-LAST:event_editarDadosjButtonActionPerformed
 
     private void cadastroDietajButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroDietajButtonActionPerformed
@@ -454,10 +587,14 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         editarDadosPanel.setVisible(false);
         treinoPanel.setVisible(true);
+        exercicioPanel.setVisible(false);
     }//GEN-LAST:event_cadastroTreinojButtonActionPerformed
 
     private void cadastroExerciciosjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroExerciciosjButtonActionPerformed
         // TODO add your handling code here:
+        editarDadosPanel.setVisible(false);
+        treinoPanel.setVisible(false);
+        exercicioPanel.setVisible(true);
     }//GEN-LAST:event_cadastroExerciciosjButtonActionPerformed
 
     private void registrarDiajButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarDiajButtonActionPerformed
@@ -509,9 +646,50 @@ public class Home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        String tipo = jComboBox1.getSelectedItem().toString();
+        
+        if (tipo.equals("Metragem")){
+            metragemPanel.setVisible(true);
+            repeticaoPanel.setVisible(false);
+        }
+        else {
+            metragemPanel.setVisible(false);
+            repeticaoPanel.setVisible(true);
+        }
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        if (tituloEx.getText().isEmpty() || horasGastas.getText().isEmpty() || minutosGastos.getText().isEmpty() || segundosGastos.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            String titleEx = tituloEx.getText();
+            int hG = Integer.parseInt(horasGastas.getText());
+            int mG = Integer.parseInt(minutosGastos.getText());
+            int sG = Integer.parseInt(segundosGastos.getText());
+            
+            String tipo = jComboBox1.getSelectedItem().toString();
+            
+            Exercicio ex;
+            
+            if (tipo.equals("Metragem")){
+                if (dist.getText().isEmpty() || calMetro.getText().isEmpty()){
+                    JOptionPane.showMessageDialog(null, "Preencha todos os campos", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+                }
+                else {
+                    float distancia = Float.parseFloat(dist.getText());
+                    float caloriasMetro = Float.parseFloat(calMetro.getText());
+                    ex = new ExercicioMetragem(distancia, caloriasMetro, hG, mG, sG);
+                }
+            }
+            else {
+                metragemPanel.setVisible(false);
+                repeticaoPanel.setVisible(true);
+            }
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -550,48 +728,64 @@ public class Home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField altura;
-    private javax.swing.JTextField altura1;
     private javax.swing.JLabel alturajLabel;
-    private javax.swing.JLabel alturajLabel1;
     private javax.swing.JTextField anoNascimento;
-    private javax.swing.JTextField anoNascimento1;
     private javax.swing.JButton cadastroDietajButton;
     private javax.swing.JButton cadastroExerciciosjButton;
     private javax.swing.JButton cadastroRefeicaojButton;
     private javax.swing.JButton cadastroTreinojButton;
+    private javax.swing.JTextField calMetro;
     private javax.swing.JLabel dataNascimentojLabel;
-    private javax.swing.JLabel dataNascimentojLabel1;
     private javax.swing.JTextField diaNascimento;
-    private javax.swing.JTextField diaNascimento1;
+    private javax.swing.JTextField dist;
     private javax.swing.JPanel editarDadosPanel;
     private javax.swing.JButton editarDadosjButton;
+    private javax.swing.JPanel exercicioPanel;
+    private javax.swing.JTextField horasGastas;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     private javax.swing.JLabel logoIconjLabel;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JTextField mesNascimento;
-    private javax.swing.JTextField mesNascimento1;
+    private javax.swing.JPanel metragemPanel;
+    private javax.swing.JTextField minutosGastos;
     private javax.swing.JTextField nomeCompleto;
     private javax.swing.JTextField nomeCompleto1;
     private javax.swing.JLabel nomejLabel;
     private javax.swing.JLabel nomejLabel1;
+    private javax.swing.JLabel nomejLabel2;
     private javax.swing.JLabel passwordjLabel;
-    private javax.swing.JLabel passwordjLabel1;
     private javax.swing.JTextField peso;
-    private javax.swing.JTextField peso1;
     private javax.swing.JLabel pesojLabel;
-    private javax.swing.JLabel pesojLabel1;
     private javax.swing.JButton registrarDiajButton;
+    private javax.swing.JPanel repeticaoPanel;
     private javax.swing.JLabel sairIconjLabel;
     private javax.swing.JLabel sairTextjLabel;
+    private javax.swing.JTextField segundosGastos;
     private javax.swing.JPasswordField senha;
-    private javax.swing.JPasswordField senha1;
     private javax.swing.JTextField sexo;
-    private javax.swing.JTextField sexo1;
     private javax.swing.JLabel sexojLabel;
     private javax.swing.JLabel sexojLabel1;
+    private javax.swing.JTextField tituloEx;
     private javax.swing.JPanel treinoPanel;
     private javax.swing.JTextField usuario;
     private javax.swing.JTextField usuario1;
