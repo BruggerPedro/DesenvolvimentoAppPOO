@@ -19,9 +19,11 @@ import java.util.HashMap;
  */
 public class Repositorio {
 
-    private HashMap<String, Usuario> usuarios = new HashMap<>();
-    private HashMap<String, Exercicio> exercicios = new HashMap<>();
-    private HashMap<String, Treino> treinos = new HashMap<>();
+    public HashMap<String, Usuario> usuarios = new HashMap<>();
+    public HashMap<String, Exercicio> exercicios = new HashMap<>();
+    public HashMap<String, Treino> treinos = new HashMap<>();
+    public HashMap<String, Refeicao> refeicoes = new HashMap<>();
+    public HashMap<String, Alimento> alimentos = new HashMap<>();
 
     public void leUsuarios() {
         String linha;
@@ -246,6 +248,110 @@ public class Repositorio {
         }
     }
 
+    public void leAlimentos() {
+        String linha;
+        BufferedReader arquivo; //Objeto leitor 
+        try {
+            arquivo = new BufferedReader(new FileReader(new File("alimentos.txt")));
+            //Instanciação do objeto leitor
+            linha = arquivo.readLine();
+            while (linha != null) {
+                String[] valores = linha.split(";");
+                if (valores.length == 4) {
+                    String tipoAlimento = valores[0];
+                    String nomeAlimento = valores[1];
+                    String quantidadeAlimento = valores[2];
+                    String calQuantidade = valores[3];
+
+                    Alimento alimento = new Alimento(tipoAlimento, nomeAlimento, quantidadeAlimento, Float.parseFloat(calQuantidade));
+
+                    this.getAlimentos().put(valores[1], alimento); // a chave é o nome
+                }
+                linha = arquivo.readLine();
+            }
+            arquivo.close(); //fechamento do arquivo
+        } catch (java.io.IOException e) {
+            System.out.println("File error: " + e.toString());
+        }
+    }
+
+    public void attAlimento() {
+        BufferedWriter escritor = null; //objeto escritor
+        try {
+            escritor = new BufferedWriter(new FileWriter(new File("alimentos.txt")));
+            //Instanciação do objeto escritor
+            for (String key : this.getAlimentos().keySet()) {
+                Alimento a = this.getAlimentos().get(key);
+
+                escritor.write(a.getTipo() + ";" + a.getNome() + ";" + a.getQuantidade() + ";" + a.getCalQuantidade() + "\n"); //Gravação do texto
+            }
+            escritor.flush(); //descarga do buffer de escrita
+            escritor.close(); //fechamento do arquivo
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void leRefeicoes() {
+        String linha;
+        BufferedReader arquivo; //Objeto leitor 
+        try {
+            arquivo = new BufferedReader(new FileReader(new File("refeições.txt")));
+            //Instanciação do objeto leitor
+            linha = arquivo.readLine();
+            while (linha != null) {
+                String[] valores = linha.split(";");
+
+                String id = valores[0];
+                String tipo = valores[1];
+
+                Refeicao refeicao = new Refeicao(id, tipo);
+
+                // antes de fazer a leitura dos treinos tem que ler os exercícios
+                for (int i = 2; i < valores.length; i += 4) {
+
+                    String tipoAlimento = valores[i];
+                    String nomeAlimento = valores[i+1];
+                    String quantidadeAlimento = valores[i+2];
+                    float calQuantidade = Float.parseFloat(valores[i+3]);
+
+                    Alimento aux = new Alimento(tipoAlimento, nomeAlimento, quantidadeAlimento, calQuantidade);
+                    refeicao.getAlimentos().put(aux.getNome(), aux);
+
+                }
+
+                this.getRefeicoes().put(id, refeicao);
+                linha = arquivo.readLine();
+            }
+            arquivo.close(); //fechamento do arquivo
+        } catch (java.io.IOException e) {
+            System.out.println("File error: " + e.toString());
+        }
+    }
+
+    public void attRefeicoes() {
+        BufferedWriter escritor = null; //objeto escritor
+        try {
+            escritor = new BufferedWriter(new FileWriter(new File("refeições.txt")));
+            //Instanciação do objeto escritor
+            for (String key : this.getRefeicoes().keySet()) {
+                Refeicao r = this.getRefeicoes().get(key);
+
+                String alimentos = "";
+                for (Alimento a : r.getAlimentos().values()) {
+
+                    alimentos = alimentos + ";" + a.getTipo() + ";" + a.getNome() + ";" + a.getQuantidade() + ";" + a.getCalQuantidade();
+
+                }
+                escritor.write(r.getId() + ";" + r.getTipo() + alimentos + "\n"); //Gravação do texto
+            }
+            escritor.flush(); //descarga do buffer de escrita
+            escritor.close(); //fechamento do arquivo
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public HashMap<String, Usuario> getUsuarios() {
         return usuarios;
     }
@@ -268,6 +374,22 @@ public class Repositorio {
 
     public void setTreinos(HashMap<String, Treino> treinos) {
         this.treinos = treinos;
+    }
+
+    public HashMap<String, Refeicao> getRefeicoes() {
+        return refeicoes;
+    }
+
+    public void setRefeicoes(HashMap<String, Refeicao> refeicoes) {
+        this.refeicoes = refeicoes;
+    }
+
+    public HashMap<String, Alimento> getAlimentos() {
+        return alimentos;
+    }
+
+    public void setAlimentos(HashMap<String, Alimento> alimentos) {
+        this.alimentos = alimentos;
     }
 
 }

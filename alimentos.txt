@@ -1,0 +1,206 @@
+bebida;água de coco verde;200 ml;41
+bebida;café com açúcar;50ml;33
+bebida;café sem açúcar;40ml;3
+bebida;caldo de cana;240ml;3
+bebida;suco de abacaxi natural;240ml;100
+bebida;suco de acerola natural;240ml;36
+bebida;suco de maçã natural;240ml;154
+bebida;suco de manga natural;240ml;109
+bebida;suco de melão natural;240ml;60
+bebida;aguardente;120ml;277
+bebida;cerveja;350ml;147
+bebida;champanhe;125ml;85
+bebida;chope;300ml;180
+bebida;uísque;100ml;240
+bebida;vinho branco doce;125ml;178
+bebida;vinho branco seco;125ml;107
+bebida;vinho tinto seco;125ml;107
+bebida;vodka;20ml;48
+bebida;refrigerante de cola;350ml;137
+bebida;refrigerante de laranja;350ml;189
+bebida;refrigerante de guaraná;240ml;75
+bebida;refrigerante de guaraná light;350ml;4
+carne;almôndega de carne;30g;61
+carne;almôndega de frango;25g;54
+carne;bacon frito;30g;198
+carne;bisteca de porco;100g;337
+carne;costeleta de porco;100g;483
+carne;coxa de frango;100g;144
+carne;coxa de frango assada c/pele;100g;110
+carne;coxa de frango assada s/pele;100g;98
+carne;coxa de frango cozida;100g;120
+carne;cupim;150g;375
+carne;filé de frango;100g;101
+carne;filé-mignon;100g;140
+carne;hambúrguer bovino;56g;116
+carne;hambúrguer calabresa;56g;149
+carne;hambúrguer de chester	56g;105
+carne;hambúrguer de frango;96g;179
+carne;peito de frango s/pele;100g;100
+carne;pernil de porco assado;100g;196
+carne;peru;100g;155
+carne;picanha;100g;287
+carne;rosbife;50g;83
+carne;tender;100g;210
+carne;inguiça de frango;100g;166
+carne;linguiça tradicional;60g;190
+carne;mortadela;15g;41
+carne;salsicha;50g;115
+biscoito;água e sal;1 unidade;32
+biscoito;champanhe;1 unidade;40
+biscoito;cream cracker;1 unidade;31
+biscoito;leite;1 unidade;24
+biscoito;maisena;1 unidade;20
+biscoito;recheado chocolate;1 unidade;72
+biscoito;recheado morango;1 unidade;73
+biscoito;wafer;chocolate;1 unidade;41
+bala;caramelo ao leite;1 unidade;21
+bala;goma;1 unidade;18
+bala;bala tradicional (estilo Halls);1 unidade;19
+bala;jujuba;1 unidade;5
+bolo;bolo de cenoura;50g;135
+bolo;bolo de cenoura com cobertura de chocolate;50g;371
+bolo;bolo de chocolate;50g;171
+bolo;bolo de fubá;50g;310
+bolo;bolo de laranja;50g;173
+bolo;bolo de coco;50g;186
+chocolate/doce;alfajor chocolate;50g;190
+chocolate/doce;chocolate meio amargo;200g;1074
+chocolate/doce;chocolate ao leite;200g;1044
+chocolate/doce;chocolate em pó;6g;22
+chocolate/doce;chocolate branco;30g;170
+chocolate/doce;trufa;20g;89
+chocolate/doce;arroz doce;100g;164
+chocolate/doce;banana caramelada;1 unidade;140
+chocolate/doce;bananada;100g;254
+chocolate/doce;bomba de chocolate;1 unidade;296
+chocolate/doce;brigadeiro;30g;96
+chocolate/doce;canjica;200g;226
+chocolate/doce;cocada branca;1 unidade;55
+chocolate/doce;creme de amendoim;15g;88
+chocolate/doce;doce de leite;50g;158
+chocolate/doce;gelatina;100g;68
+chocolate/doce;mousse de chocolate;150g;333
+chocolate/doce;paçoca;30g;114
+chocolate/doce;pamonha	1 unidade;135
+chocolate/doce;pavê;100g;200
+chocolate/doce;pé-de-moleque;20g;46
+chocolate/doce;suspiro pequeno;10g;37
+chocolate/doce;mel de abelhas;20g;62
+fruta;abacate;100g;177
+fruta;abacaxi;80g;50
+fruta;acerola;12g;4
+fruta;banana-da-terra;100g;117
+fruta;banana-maçã;65g;72
+fruta;banana-nanica;90g;87
+fruta;banana-prata;65g;55
+fruta;caju;100g;37
+fruta;caqui;100g;74
+fruta;cereja;100g;97
+fruta;coco;ralado;20g;50
+fruta;figo;50g;68
+fruta;framboesa;20g;12
+fruta;goiaba vermelha;100g;43
+fruta;guaraná;100g;69
+fruta;kiwi;1 unidade;46
+fruta;laranja;1 unidade;46
+fruta;limão;1 unidade;12
+fruta;maçã verde;130g;79
+fruta;maçã vermelha;130g;85
+fruta;mamão;100g;36
+fruta;manga;350g;230
+fruta;maracujá;50g;28
+fruta;melancia;100g;24
+fruta;melão;70g;19
+fruta;morango;100g;43
+fruta;pera;110g;68
+fruta;pêssego;150g;63
+fruta;tangerina;100g;50
+fruta;uva;150g;118
+leite;leite condensado;20g;65
+leite;leite de búfala;250ml;253
+leite;leite de cabra;250ml;220
+leite;leite de soja;250ml;120
+leite;leite integral;250ml;150
+leite;leite desnatado;250ml;90
+queijo;catupiry;20g;49
+queijo;cheddar;30g;107
+queijo;cottage;30g;55
+queijo;cream cheese;20g;70
+queijo;gorgonzola;30g;119
+queijo;mussarela;15g;47
+queijo;parmesão;30g;121
+queijo;petit-suisse;25g;45
+queijo;prato;15g;53
+queijo;provolone;15g;51
+queijo;queijo minas;25g;61
+queijo;ricota;30g;54
+queijo;requeijão;20g;54
+queijo;roquefort;25g;100
+queijo;suíço;30g;121
+queijo;tofu;50g;68
+ovo;ovo de codorna;1 unidade;33
+ovo;ovo de galinha cozido;1 unidade;78
+ovo;ovo de galinha frito;1 unidade;108
+legume/grão/verduras;abóbora;100g;40
+legume/grão/verduras;agrião;100g;28
+legume/grão/verduras;aipim frito;100g;353
+legume/grão/verduras;alface;20g;4
+legume/grão/verdura;amendoim;100g;549
+legume/grão/verdura;arroz branco cozido;25g;41
+legume/grão/verdura;arroz integral cozido;20g;22
+legume/grão/verdura;aspargo cozido;20g;4
+legume/grão/verdura;azeitona preta;3g;4
+legume/grão/verdura;azeitona verde;4g;5
+legume/grão/verdura;batata-doce assada;100g;143
+legume/grão/verdura;batata-doce frita;100g;383
+legume/grão/verdura;batata palha;70g;220
+legume/grão/verdura;berinjela;250g;50
+legume/grão/verdura;beterraba;125g;55
+legume/grão/verdura;brócolis;80g;23
+legume/grão/verdura;cebola cozida;100g;54
+legume/grão/verdura;cenoura;100g;45
+legume/grão/verdura;couve-flor;100g;41
+legume/grão/verdura;ervilha;20g;19
+legume/grão/verdura;escarola;20g;7
+legume/grão/verdura;espinafre;100g;38
+legume/grão/verdura;feijão branco cozido;20g;24
+legume/grão/verdura;feijão cozido e desidratado;20g;78
+legume/grão/verdura;feijão preto cozido;20g;14
+legume/grão/verdura;palmito cru	100g;26
+legume/grão/verdura;palmito em conserva;100g;22
+legume/grão/verdura;pepino cru com casca;150g;21
+legume/grão/verdura;pepino cru sem casca;150g;5
+legume/grão/verdura;repolho;100g;33
+legume/grão/verdura;tomate;100g;20
+legume/grão/verduras;vagem cozida;100g;52
+pão;baguete;1 fatia;70
+pão;baguete com gergelim;1 fatia;82
+pão;bisnaguinha;1 unidade;45
+pão;rioche;1 unidade;210
+pão;broa de milho;1 unidade;150
+pão;croissant;60g;247
+pão;pão de centeio integral;1 fatia;58
+pão;pão francês;50g;135
+pão;pão de forma;1 fatia;74
+pão;pão de hambúrguer;100g;278
+pão;pão de hot dog;100g;286
+pão;pão de mel c/ cobertura de chocolate;20g;91
+pão;pão de queijo;20g;68
+pão;pão integral de trigo;100g;261
+pão;pão sírio integral;50g;147
+massa;canelone;150g;552
+massa;capelete;100g;278
+massa;espaguete ao sugo;160g;163
+massa;lasanha;100g;139
+massa;macarrão cozido;100g;154
+massa;macarronada;100g;289
+massa;nhoque s/ molho;160g;227
+massa;pizza de calabresa;140g;412
+massa;pizza de mussarela;140g;304
+massa;pizza portuguesa;140g;396
+massa;pizza quatro queijos;140g;432
+cereal;aveia em flocos;15g;50
+cereal;granola com castanhas;60g;300
+cereal;grão de aveia cru;15g;48
+cereal;germe de trigo;15g;55
