@@ -1013,16 +1013,19 @@ public class Home extends javax.swing.JFrame {
 
             if (repositorio.getRefeicoes().containsKey(id)) {
                 Refeicao r = repositorio.getRefeicoes().get(id);
-                
+
                 for (Alimento a : almTmp) {
                     if (!r.getAlimentos().containsKey(a.getNome())) {
                         r.getAlimentos().put(a.getNome(), a);
                     }
                 }
-                
+
                 r.setTipo(tipo);
                 repositorio.getRefeicoes().put(id, r);
                 repositorio.attRefeicoes();
+                JOptionPane.showMessageDialog(null, "Refeição atualizada!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+                idRefeicao.setText("");
+                tipoRefeição.setText("");
             } else {
                 Refeicao r = new Refeicao(id, tipo);
 
@@ -1031,6 +1034,9 @@ public class Home extends javax.swing.JFrame {
                 }
                 repositorio.getRefeicoes().put(id, r);
                 repositorio.attRefeicoes();
+                JOptionPane.showMessageDialog(null, "Refeição nova cadastrada!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+                idRefeicao.setText("");
+                tipoRefeição.setText("");
             }
 
         }
