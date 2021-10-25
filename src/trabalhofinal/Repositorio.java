@@ -311,9 +311,9 @@ public class Repositorio {
                 for (int i = 2; i < valores.length; i += 4) {
 
                     String tipoAlimento = valores[i];
-                    String nomeAlimento = valores[i+1];
-                    String quantidadeAlimento = valores[i+2];
-                    float calQuantidade = Float.parseFloat(valores[i+3]);
+                    String nomeAlimento = valores[i + 1];
+                    String quantidadeAlimento = valores[i + 2];
+                    float calQuantidade = Float.parseFloat(valores[i + 3]);
 
                     Alimento aux = new Alimento(tipoAlimento, nomeAlimento, quantidadeAlimento, calQuantidade);
                     refeicao.getAlimentos().put(aux.getNome(), aux);
