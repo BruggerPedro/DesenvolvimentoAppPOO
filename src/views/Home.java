@@ -5,6 +5,7 @@
  */
 package views;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import trabalhofinal.Data;
@@ -23,6 +24,8 @@ public class Home extends javax.swing.JFrame {
 
     private Usuario logado;
     private Repositorio repositorio = new Repositorio();
+
+    private ArrayList<Exercicio> exsTmp = new ArrayList<>();
 
     /**
      * Creates new form Home
@@ -68,6 +71,7 @@ public class Home extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         exerciciosTabela = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         exercicioPanel = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         nomejLabel2 = new javax.swing.JLabel();
@@ -161,10 +165,19 @@ public class Home extends javax.swing.JFrame {
         exerciciosTabela.setToolTipText("");
         jScrollPane2.setViewportView(exerciciosTabela);
 
-        jButton4.setText("Adiconar");
+        jButton4.setText("Adiconar Exercicio");
+        jButton4.setToolTipText("Adiciona o exercicio selecionado na lista");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Salvar");
+        jButton2.setToolTipText("");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -173,29 +186,31 @@ public class Home extends javax.swing.JFrame {
         treinoPanelLayout.setHorizontalGroup(
             treinoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(treinoPanelLayout.createSequentialGroup()
-                .addGroup(treinoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton4)
-                    .addGroup(treinoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(treinoPanelLayout.createSequentialGroup()
-                            .addGap(41, 41, 41)
-                            .addComponent(jLabel5))
-                        .addGroup(treinoPanelLayout.createSequentialGroup()
-                            .addGap(18, 18, 18)
-                            .addComponent(nomejLabel1))
-                        .addGroup(treinoPanelLayout.createSequentialGroup()
-                            .addGap(18, 18, 18)
-                            .addComponent(idTreino, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(treinoPanelLayout.createSequentialGroup()
-                            .addGap(18, 18, 18)
-                            .addComponent(usuariojLabel1))
-                        .addGroup(treinoPanelLayout.createSequentialGroup()
-                            .addGap(18, 18, 18)
-                            .addComponent(sexojLabel1))
-                        .addGroup(treinoPanelLayout.createSequentialGroup()
-                            .addGap(18, 18, 18)
-                            .addGroup(treinoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(tituloTreino, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGroup(treinoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(treinoPanelLayout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jLabel5))
+                    .addGroup(treinoPanelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(nomejLabel1))
+                    .addGroup(treinoPanelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(idTreino, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(treinoPanelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(usuariojLabel1))
+                    .addGroup(treinoPanelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(sexojLabel1))
+                    .addGroup(treinoPanelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(treinoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tituloTreino, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton4)))
+                    .addGroup(treinoPanelLayout.createSequentialGroup()
+                        .addGap(189, 189, 189)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(68, 68, 68))
         );
         treinoPanelLayout.setVerticalGroup(
@@ -213,11 +228,13 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(tituloTreino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
                 .addComponent(sexojLabel1)
-                .addGap(3, 3, 3)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton4)
-                .addGap(71, 71, 71))
+                .addGap(45, 45, 45)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64))
         );
 
         getContentPane().add(treinoPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 530, 550));
@@ -606,6 +623,7 @@ public class Home extends javax.swing.JFrame {
 
     private void cadastroTreinojButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroTreinojButtonActionPerformed
         // TODO add your handling code here:
+        exsTmp.clear();
         editarDadosPanel.setVisible(false);
         treinoPanel.setVisible(true);
         exercicioPanel.setVisible(false);
@@ -765,20 +783,52 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        if (idTreino.getText().isEmpty() || tituloTreino.getText().isEmpty() || exerciciosTabela.getSelectedRow() == -1) {
+        if (exerciciosTabela.getSelectedRow() != -1) {
+            String key = (String) exerciciosTabela.getValueAt(exerciciosTabela.getSelectedRow(), 0);
+            Exercicio aux = repositorio.getExercicios().get(key);
+
+            if (!exsTmp.contains(aux)) {
+                exsTmp.add(aux);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione um exercício", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        if (idTreino.getText().isEmpty() || tituloTreino.getText().isEmpty() || exsTmp.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos", "Alerta", JOptionPane.INFORMATION_MESSAGE);
         } else {
+            repositorio.leTreinos();
             String id = idTreino.getText();
             String nome = tituloTreino.getText();
-            String key = (String) exerciciosTabela.getValueAt(exerciciosTabela.getSelectedRow(), 0);
-
-            Exercicio aux = repositorio.getExercicios().get(key);
-            Treino t = new Treino(id, nome);
-            t.getExercicios().add(aux);
-            repositorio.addTreino(t);
-            //System.out.println(aux.getNome());
+            
+            if (repositorio.getTreinos().containsKey(id)){
+                Treino te = repositorio.getTreinos().get(id);
+                
+                for (Exercicio e : exsTmp){
+                    if (!te.getExercicios().containsKey(e.getNome()))
+                            te.getExercicios().put(e.getNome(), e);
+                }
+                
+                repositorio.getTreinos().put(id, te);
+                repositorio.attTreinos();
+            }
+            else {
+                Treino t = new Treino(id, nome);
+            
+                for (Exercicio e : exsTmp){
+                    t.getExercicios().put(e.getNome(), e);
+                }
+                repositorio.addTreino(t);
+            }
+            
         }
-    }//GEN-LAST:event_jButton4ActionPerformed
+        exsTmp.clear();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -835,6 +885,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField horasGastas;
     private javax.swing.JTextField idTreino;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBox1;

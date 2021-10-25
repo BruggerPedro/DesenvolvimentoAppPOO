@@ -5,7 +5,7 @@
  */
 package trabalhofinal;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
@@ -14,11 +14,11 @@ import java.util.ArrayList;
 public class Treino {
     public String id;
     public String nome;
-    public ArrayList<Exercicio> exercicios = new ArrayList<>();
+    public HashMap<String, Exercicio> exercicios = new HashMap<>();
     
     public String tempoGasto() {
         int ht = 0, mt = 0, st = 0;
-        for (Exercicio e : getExercicios()){
+        for (Exercicio e : getExercicios().values()){
             String tempo = e.getTempoGasto();
             String[] val = tempo.split(":");
             ht += Integer.parseInt(val[0]);
@@ -31,7 +31,7 @@ public class Treino {
     
     public float caloriasGastas() {
         float total = 0;
-        for (Exercicio e : getExercicios()){
+        for (Exercicio e : getExercicios().values()){
             total += e.caloriasGastasExercicio();
         }
         
@@ -67,11 +67,11 @@ public class Treino {
         this.nome = nome;
     }
 
-    public ArrayList<Exercicio> getExercicios() {
+    public HashMap<String, Exercicio> getExercicios() {
         return exercicios;
     }
 
-    public void setExercicios(ArrayList<Exercicio> exercicios) {
+    public void setExercicios(HashMap<String, Exercicio> exercicios) {
         this.exercicios = exercicios;
     }
     

@@ -19,9 +19,9 @@ import java.util.HashMap;
  */
 public class Repositorio {
 
-    public HashMap<String, Usuario> usuarios = new HashMap<>();
-    public HashMap<String, Exercicio> exercicios = new HashMap<>();
-    public HashMap<String, Treino> treinos = new HashMap<>();
+    private HashMap<String, Usuario> usuarios = new HashMap<>();
+    private HashMap<String, Exercicio> exercicios = new HashMap<>();
+    private HashMap<String, Treino> treinos = new HashMap<>();
 
     public void leUsuarios() {
         String linha;
@@ -184,11 +184,11 @@ public class Repositorio {
                 Treino treino = new Treino(id, nome);
 
                 // antes de fazer a leitura dos treinos tem que ler os exercícios
-                for (int i = 2; i < valores.length - 1; i++) {
+                for (int i = 2; i < valores.length; i++) {
 
                     String nomeEx = valores[i];
                     Exercicio aux = this.getExercicios().get(nomeEx);
-                    treino.getExercicios().add(aux);
+                    treino.getExercicios().put(aux.getNome(), aux);
 
                 }
 
@@ -210,7 +210,7 @@ public class Repositorio {
 
             // nomeCompleto, sexo, nomeUsuario, senha, dataNascimento, peso, altura
             String exercicios = "";
-            for (Exercicio e : t.getExercicios()) {
+            for (Exercicio e : t.getExercicios().values()) {
 
                 exercicios = exercicios + ";" + e.getNome();
 
@@ -232,7 +232,7 @@ public class Repositorio {
                 Treino t = this.getTreinos().get(key);
 
                 String exercicios = "";
-                for (Exercicio e : t.getExercicios()) {
+                for (Exercicio e : t.getExercicios().values()) {
 
                     exercicios = exercicios + ";" + e.getNome();
 
