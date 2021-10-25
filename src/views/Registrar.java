@@ -219,7 +219,7 @@ public class Registrar extends javax.swing.JFrame {
             float weight = Float.parseFloat(peso.getText());
             float height = Float.parseFloat(altura.getText());
             
-            if (!rep.usuarios.containsKey(user)){
+            if (!rep.getUsuarios().containsKey(user)){
                 Usuario u = new Usuario (name, sex, user, password, new Data(dayN, monthN, yearN), weight, height);
                 rep.addUsuario(u);
                 JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso!", "Alerta", JOptionPane.INFORMATION_MESSAGE);

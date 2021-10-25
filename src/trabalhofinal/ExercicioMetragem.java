@@ -12,7 +12,8 @@ package trabalhofinal;
 public class ExercicioMetragem extends Exercicio {
     private float distancia, calPorMetro;
 
-    public ExercicioMetragem(float distancia, float calPorMetro, int hg, int mg, int sg) {
+    public ExercicioMetragem(String nome, float distancia, float calPorMetro, int hg, int mg, int sg) {
+        super.setNome(nome);
         super.setTempoGasto(hg, mg, sg);
         this.distancia = distancia;
         this.calPorMetro = calPorMetro;

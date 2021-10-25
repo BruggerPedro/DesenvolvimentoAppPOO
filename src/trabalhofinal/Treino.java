@@ -12,12 +12,13 @@ import java.util.ArrayList;
  * @author tainass
  */
 public class Treino {
-    String nome;
-    ArrayList<Exercicio> exercicios = new ArrayList<>();
+    public String id;
+    public String nome;
+    public ArrayList<Exercicio> exercicios = new ArrayList<>();
     
     public String tempoGasto() {
         int ht = 0, mt = 0, st = 0;
-        for (Exercicio e : exercicios){
+        for (Exercicio e : getExercicios()){
             String tempo = e.getTempoGasto();
             String[] val = tempo.split(":");
             ht += Integer.parseInt(val[0]);
@@ -30,12 +31,49 @@ public class Treino {
     
     public float caloriasGastas() {
         float total = 0;
-        for (Exercicio e : exercicios){
+        for (Exercicio e : getExercicios()){
             total += e.caloriasGastasExercicio();
         }
         
         return total;
     }
     
+    
+    
     // TODO - MostrarTreino
+
+    
+    public Treino() {
+    }
+
+    public Treino(String id, String nome) {
+        this.id = id;
+        this.nome = nome;
+    }
+    
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public ArrayList<Exercicio> getExercicios() {
+        return exercicios;
+    }
+
+    public void setExercicios(ArrayList<Exercicio> exercicios) {
+        this.exercicios = exercicios;
+    }
+    
+    
 }

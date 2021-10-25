@@ -13,7 +13,8 @@ public class ExercicioRepeticao extends Exercicio {
     private int numSeries, numRepet;
     private float calPorSerie;
 
-    public ExercicioRepeticao(int numSeries, int numRepet, float calPorSerie, int hg, int mg, int sg) {
+    public ExercicioRepeticao(String nome, int numSeries, int numRepet, float calPorSerie, int hg, int mg, int sg) {
+        super.setNome(nome);
         super.setTempoGasto(hg, mg, sg);
         this.numSeries = numSeries;
         this.numRepet = numRepet;

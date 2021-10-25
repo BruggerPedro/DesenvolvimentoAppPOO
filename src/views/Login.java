@@ -146,8 +146,8 @@ public class Login extends javax.swing.JFrame {
             String password = String.valueOf(senha.getPassword());
             boolean flag = false;
             
-            for (String key : rep.usuarios.keySet()) {
-                Usuario u = rep.usuarios.get(key);
+            for (String key : rep.getUsuarios().keySet()) {
+                Usuario u = rep.getUsuarios().get(key);
                 
                 if (u.getNomeUsuario().equals(user) && u.getSenha().equals(password)){
                     this.logado = u;

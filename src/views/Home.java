@@ -6,10 +6,13 @@
 package views;
 
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import trabalhofinal.Data;
 import trabalhofinal.Exercicio;
 import trabalhofinal.ExercicioMetragem;
+import trabalhofinal.ExercicioRepeticao;
 import trabalhofinal.Repositorio;
+import trabalhofinal.Treino;
 import trabalhofinal.Usuario;
 
 /**
@@ -17,29 +20,33 @@ import trabalhofinal.Usuario;
  * @author huryel
  */
 public class Home extends javax.swing.JFrame {
+
     private Usuario logado;
+    private Repositorio repositorio = new Repositorio();
+
     /**
      * Creates new form Home
+     *
      * @param logado
      */
     public Home(Usuario logado) {
         initComponents();
-        
+
         editarDadosPanel.setVisible(true);
         treinoPanel.setVisible(false);
         exercicioPanel.setVisible(false);
-        
+
         this.logado = logado;
-        
+
         nomeCompleto.setText(logado.getNomeCompleto());
         usuario.setText(logado.getNomeUsuario());
         sexo.setText(logado.getSexo());
         senha.setText(logado.getSenha());
-        diaNascimento.setText(""+logado.getDataNascimento().getDia());
-        mesNascimento.setText(""+logado.getDataNascimento().getMes());
-        anoNascimento.setText(""+logado.getDataNascimento().getAno());
-        peso.setText(""+logado.getPeso());
-        altura.setText(""+logado.getAltura());
+        diaNascimento.setText("" + logado.getDataNascimento().getDia());
+        mesNascimento.setText("" + logado.getDataNascimento().getMes());
+        anoNascimento.setText("" + logado.getDataNascimento().getAno());
+        peso.setText("" + logado.getPeso());
+        altura.setText("" + logado.getAltura());
     }
 
     /**
@@ -51,6 +58,16 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        treinoPanel = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        nomejLabel1 = new javax.swing.JLabel();
+        idTreino = new javax.swing.JTextField();
+        usuariojLabel1 = new javax.swing.JLabel();
+        tituloTreino = new javax.swing.JTextField();
+        sexojLabel1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        exerciciosTabela = new javax.swing.JTable();
+        jButton4 = new javax.swing.JButton();
         exercicioPanel = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         nomejLabel2 = new javax.swing.JLabel();
@@ -60,10 +77,10 @@ public class Home extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         repeticaoPanel = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        numSeries = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        numRepeticoes = new javax.swing.JTextField();
+        calSeries = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         metragemPanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -76,16 +93,6 @@ public class Home extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         segundosGastos = new javax.swing.JTextField();
         minutosGastos = new javax.swing.JTextField();
-        treinoPanel = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        nomejLabel1 = new javax.swing.JLabel();
-        nomeCompleto1 = new javax.swing.JTextField();
-        usuariojLabel1 = new javax.swing.JLabel();
-        usuario1 = new javax.swing.JTextField();
-        sexojLabel1 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton4 = new javax.swing.JButton();
         editarDadosPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         nomejLabel = new javax.swing.JLabel();
@@ -120,6 +127,101 @@ public class Home extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        treinoPanel.setBackground(new java.awt.Color(231, 231, 231));
+
+        jLabel5.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(241, 90, 35));
+        jLabel5.setText("----------- CADASTRO TREINO -----------");
+
+        nomejLabel1.setText("ID :");
+
+        usuariojLabel1.setText("Título :");
+
+        sexojLabel1.setText("Exercícios :");
+
+        exerciciosTabela.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Título", "Tipo", "Tempo Gasto", "Calorias Gastas"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        exerciciosTabela.setToolTipText("");
+        jScrollPane2.setViewportView(exerciciosTabela);
+
+        jButton4.setText("Adiconar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout treinoPanelLayout = new javax.swing.GroupLayout(treinoPanel);
+        treinoPanel.setLayout(treinoPanelLayout);
+        treinoPanelLayout.setHorizontalGroup(
+            treinoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(treinoPanelLayout.createSequentialGroup()
+                .addGroup(treinoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton4)
+                    .addGroup(treinoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(treinoPanelLayout.createSequentialGroup()
+                            .addGap(41, 41, 41)
+                            .addComponent(jLabel5))
+                        .addGroup(treinoPanelLayout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addComponent(nomejLabel1))
+                        .addGroup(treinoPanelLayout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addComponent(idTreino, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(treinoPanelLayout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addComponent(usuariojLabel1))
+                        .addGroup(treinoPanelLayout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addComponent(sexojLabel1))
+                        .addGroup(treinoPanelLayout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addGroup(treinoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tituloTreino, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(68, 68, 68))
+        );
+        treinoPanelLayout.setVerticalGroup(
+            treinoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(treinoPanelLayout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(jLabel5)
+                .addGap(6, 6, 6)
+                .addComponent(nomejLabel1)
+                .addGap(6, 6, 6)
+                .addComponent(idTreino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(usuariojLabel1)
+                .addGap(6, 6, 6)
+                .addComponent(tituloTreino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(sexojLabel1)
+                .addGap(3, 3, 3)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton4)
+                .addGap(71, 71, 71))
+        );
+
+        getContentPane().add(treinoPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 530, 550));
+
         exercicioPanel.setBackground(new java.awt.Color(231, 231, 231));
 
         jLabel6.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
@@ -148,12 +250,20 @@ public class Home extends javax.swing.JFrame {
 
         jLabel7.setText("Número de Séries :");
         repeticaoPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
-        repeticaoPanel.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 31, 180, -1));
+        repeticaoPanel.add(numSeries, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 31, 180, -1));
 
         jLabel8.setText("Número de Repetições :");
         repeticaoPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 69, -1, -1));
-        repeticaoPanel.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 89, 180, -1));
-        repeticaoPanel.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 180, -1));
+        repeticaoPanel.add(numRepeticoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 89, 180, -1));
+
+        calSeries.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                calSeriesInputMethodTextChanged(evt);
+            }
+        });
+        repeticaoPanel.add(calSeries, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 180, -1));
 
         jLabel9.setText("Calorias per Séries :");
         repeticaoPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
@@ -212,11 +322,11 @@ public class Home extends javax.swing.JFrame {
                     .addGroup(exercicioPanelLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addGroup(exercicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(exercicioPanelLayout.createSequentialGroup()
+                                .addGap(310, 310, 310)
+                                .addComponent(jButton5))
                             .addComponent(metragemPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(repeticaoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(exercicioPanelLayout.createSequentialGroup()
-                        .addGap(400, 400, 400)
-                        .addComponent(jButton5)))
+                            .addComponent(repeticaoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(27, 27, 27))
         );
         exercicioPanelLayout.setVerticalGroup(
@@ -250,95 +360,6 @@ public class Home extends javax.swing.JFrame {
         );
 
         getContentPane().add(exercicioPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 530, 550));
-
-        treinoPanel.setBackground(new java.awt.Color(231, 231, 231));
-
-        jLabel5.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(241, 90, 35));
-        jLabel5.setText("----------- CADASTRO TREINO -----------");
-
-        nomejLabel1.setText("ID :");
-
-        usuariojLabel1.setText("Título :");
-
-        sexojLabel1.setText("Exercícios :");
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Título", "Tipo", "Tempo Gasto", "Calorias Gastas"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jTable1.setToolTipText("");
-        jScrollPane2.setViewportView(jTable1);
-
-        jButton4.setText("Adiconar");
-
-        javax.swing.GroupLayout treinoPanelLayout = new javax.swing.GroupLayout(treinoPanel);
-        treinoPanel.setLayout(treinoPanelLayout);
-        treinoPanelLayout.setHorizontalGroup(
-            treinoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(treinoPanelLayout.createSequentialGroup()
-                .addGroup(treinoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton4)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(treinoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(treinoPanelLayout.createSequentialGroup()
-                            .addGap(41, 41, 41)
-                            .addComponent(jLabel5))
-                        .addGroup(treinoPanelLayout.createSequentialGroup()
-                            .addGap(18, 18, 18)
-                            .addComponent(nomejLabel1))
-                        .addGroup(treinoPanelLayout.createSequentialGroup()
-                            .addGap(18, 18, 18)
-                            .addComponent(nomeCompleto1, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(treinoPanelLayout.createSequentialGroup()
-                            .addGap(18, 18, 18)
-                            .addComponent(usuariojLabel1))
-                        .addGroup(treinoPanelLayout.createSequentialGroup()
-                            .addGap(18, 18, 18)
-                            .addComponent(usuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(treinoPanelLayout.createSequentialGroup()
-                            .addGap(18, 18, 18)
-                            .addComponent(sexojLabel1))))
-                .addGap(68, 68, 68))
-        );
-        treinoPanelLayout.setVerticalGroup(
-            treinoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(treinoPanelLayout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addComponent(jLabel5)
-                .addGap(6, 6, 6)
-                .addComponent(nomejLabel1)
-                .addGap(6, 6, 6)
-                .addComponent(nomeCompleto1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(usuariojLabel1)
-                .addGap(6, 6, 6)
-                .addComponent(usuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(sexojLabel1)
-                .addGap(3, 3, 3)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton4)
-                .addGap(71, 71, 71))
-        );
-
-        getContentPane().add(treinoPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 530, 550));
 
         editarDadosPanel.setBackground(new java.awt.Color(231, 231, 231));
 
@@ -588,6 +609,28 @@ public class Home extends javax.swing.JFrame {
         editarDadosPanel.setVisible(false);
         treinoPanel.setVisible(true);
         exercicioPanel.setVisible(false);
+
+        repositorio.leExercicios();
+
+        if (repositorio.getExercicios().size() <= 0) {
+            JOptionPane.showMessageDialog(null, "Nenhum exercício cadastrado!");
+        }
+
+        DefaultTableModel model = (DefaultTableModel) exerciciosTabela.getModel();
+        model.setNumRows(0);
+
+        for (String key : repositorio.getExercicios().keySet()) {
+            Exercicio e = repositorio.getExercicios().get(key);
+            String tipo = "Repetição";
+
+            if (e instanceof ExercicioMetragem) {
+                tipo = "Metragem";
+            }
+
+            model.addRow(new Object[]{e.getNome(), tipo, e.getTempoGasto(), String.valueOf(e.caloriasGastasExercicio())});
+
+        }
+
     }//GEN-LAST:event_cadastroTreinojButtonActionPerformed
 
     private void cadastroExerciciosjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroExerciciosjButtonActionPerformed
@@ -595,6 +638,8 @@ public class Home extends javax.swing.JFrame {
         editarDadosPanel.setVisible(false);
         treinoPanel.setVisible(false);
         exercicioPanel.setVisible(true);
+
+        metragemPanel.setVisible(false);
     }//GEN-LAST:event_cadastroExerciciosjButtonActionPerformed
 
     private void registrarDiajButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarDiajButtonActionPerformed
@@ -616,80 +661,124 @@ public class Home extends javax.swing.JFrame {
         String user = usuario.getText();
         String sex = sexo.getText();
         String password = String.valueOf(senha.getPassword());
-        
-        if (name.isEmpty() || user.isEmpty() || sex.isEmpty() || password.isEmpty() || diaNascimento.getText().isEmpty() || mesNascimento.getText().isEmpty() || anoNascimento.getText().isEmpty()){
+
+        if (name.isEmpty() || user.isEmpty() || sex.isEmpty() || password.isEmpty() || diaNascimento.getText().isEmpty() || mesNascimento.getText().isEmpty() || anoNascimento.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos", "Alerta", JOptionPane.INFORMATION_MESSAGE);
-        }
-        else {
-            Repositorio rep = new Repositorio();
-            rep.leUsuarios();
-            
+        } else {
+            repositorio.leUsuarios();
+
             int dayN = Integer.parseInt(diaNascimento.getText());
             int monthN = Integer.parseInt(mesNascimento.getText());
             int yearN = Integer.parseInt(anoNascimento.getText());
             float weight = Float.parseFloat(peso.getText());
             float height = Float.parseFloat(altura.getText());
-            
-            rep.usuarios.remove(logado.getNomeUsuario());
-            
-            if (!rep.usuarios.containsKey(user)){
-                Usuario u = new Usuario (name, sex, user, password, new Data(dayN, monthN, yearN), weight, height);
-                rep.usuarios.put(user, u);
-                rep.attUsuarios();
+
+            repositorio.getUsuarios().remove(logado.getNomeUsuario());
+
+            if (!repositorio.getUsuarios().containsKey(user)) {
+                Usuario u = new Usuario(name, sex, user, password, new Data(dayN, monthN, yearN), weight, height);
+                repositorio.getUsuarios().put(user, u);
+                repositorio.attUsuarios();
                 JOptionPane.showMessageDialog(null, "Usuario editado com sucesso!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
                 this.logado = u;
-            }
-            else {
+            } else {
                 JOptionPane.showMessageDialog(null, "Nome de usuario já existe", "Alerta", JOptionPane.INFORMATION_MESSAGE);
             }
-            
+
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
         String tipo = jComboBox1.getSelectedItem().toString();
-        
-        if (tipo.equals("Metragem")){
+
+        if (tipo.equals("Metragem")) {
             metragemPanel.setVisible(true);
             repeticaoPanel.setVisible(false);
-        }
-        else {
+        } else {
             metragemPanel.setVisible(false);
             repeticaoPanel.setVisible(true);
         }
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        if (tituloEx.getText().isEmpty() || horasGastas.getText().isEmpty() || minutosGastos.getText().isEmpty() || segundosGastos.getText().isEmpty()){
+        if (tituloEx.getText().isEmpty() || horasGastas.getText().isEmpty() || minutosGastos.getText().isEmpty() || segundosGastos.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos", "Alerta", JOptionPane.INFORMATION_MESSAGE);
-        }
-        else {
+        } else {
             String titleEx = tituloEx.getText();
             int hG = Integer.parseInt(horasGastas.getText());
             int mG = Integer.parseInt(minutosGastos.getText());
             int sG = Integer.parseInt(segundosGastos.getText());
-            
+
             String tipo = jComboBox1.getSelectedItem().toString();
-            
+
             Exercicio ex;
-            
-            if (tipo.equals("Metragem")){
-                if (dist.getText().isEmpty() || calMetro.getText().isEmpty()){
+
+            if (tipo.equals("Metragem")) {
+                if (dist.getText().isEmpty() || calMetro.getText().isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Preencha todos os campos", "Alerta", JOptionPane.INFORMATION_MESSAGE);
-                }
-                else {
+
+                } else {
                     float distancia = Float.parseFloat(dist.getText());
                     float caloriasMetro = Float.parseFloat(calMetro.getText());
-                    ex = new ExercicioMetragem(distancia, caloriasMetro, hG, mG, sG);
+                    ex = new ExercicioMetragem(titleEx, distancia, caloriasMetro, hG, mG, sG);
+                    repositorio.addExercicio(ex);
+                    JOptionPane.showMessageDialog(null, "Exercício cadastrado! \nCalorias gastas: " + ex.caloriasGastasExercicio(), "Alerta", JOptionPane.INFORMATION_MESSAGE);
+                    tituloEx.setText("");
+                    horasGastas.setText("");
+                    minutosGastos.setText("");
+                    segundosGastos.setText("");
+                    dist.setText("");
+                    calMetro.setText("");
+                    numSeries.setText("");
+                    numRepeticoes.setText("");
+                    calSeries.setText("");
                 }
-            }
-            else {
-                metragemPanel.setVisible(false);
-                repeticaoPanel.setVisible(true);
+            } else {
+                if (numSeries.getText().isEmpty() || numRepeticoes.getText().isEmpty() || calSeries.getText().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Preencha todos os campos", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+
+                } else {
+                    int numeroSeries = Integer.parseInt(numSeries.getText());
+                    int numeroRepeticoes = Integer.parseInt(numRepeticoes.getText());
+                    float caloriasSeries = Float.parseFloat(calSeries.getText());
+                    ex = new ExercicioRepeticao(titleEx, numeroSeries, numeroRepeticoes, caloriasSeries, hG, mG, sG);
+                    repositorio.addExercicio(ex);
+                    JOptionPane.showMessageDialog(null, "Exercício cadastrado! \nCalorias gastas: " + ex.caloriasGastasExercicio(), "Alerta", JOptionPane.INFORMATION_MESSAGE);
+                    tituloEx.setText("");
+                    horasGastas.setText("");
+                    minutosGastos.setText("");
+                    segundosGastos.setText("");
+                    dist.setText("");
+                    calMetro.setText("");
+                    numSeries.setText("");
+                    numRepeticoes.setText("");
+                    calSeries.setText("");
+                }
             }
         }
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void calSeriesInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_calSeriesInputMethodTextChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_calSeriesInputMethodTextChanged
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        if (idTreino.getText().isEmpty() || tituloTreino.getText().isEmpty() || exerciciosTabela.getSelectedRow() == -1) {
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            String id = idTreino.getText();
+            String nome = tituloTreino.getText();
+            String key = (String) exerciciosTabela.getValueAt(exerciciosTabela.getSelectedRow(), 0);
+
+            Exercicio aux = repositorio.getExercicios().get(key);
+            Treino t = new Treino(id, nome);
+            t.getExercicios().add(aux);
+            repositorio.addTreino(t);
+            //System.out.println(aux.getNome());
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -735,13 +824,16 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton cadastroRefeicaojButton;
     private javax.swing.JButton cadastroTreinojButton;
     private javax.swing.JTextField calMetro;
+    private javax.swing.JTextField calSeries;
     private javax.swing.JLabel dataNascimentojLabel;
     private javax.swing.JTextField diaNascimento;
     private javax.swing.JTextField dist;
     private javax.swing.JPanel editarDadosPanel;
     private javax.swing.JButton editarDadosjButton;
     private javax.swing.JPanel exercicioPanel;
+    private javax.swing.JTable exerciciosTabela;
     private javax.swing.JTextField horasGastas;
+    private javax.swing.JTextField idTreino;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -759,20 +851,17 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JLabel logoIconjLabel;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JTextField mesNascimento;
     private javax.swing.JPanel metragemPanel;
     private javax.swing.JTextField minutosGastos;
     private javax.swing.JTextField nomeCompleto;
-    private javax.swing.JTextField nomeCompleto1;
     private javax.swing.JLabel nomejLabel;
     private javax.swing.JLabel nomejLabel1;
     private javax.swing.JLabel nomejLabel2;
+    private javax.swing.JTextField numRepeticoes;
+    private javax.swing.JTextField numSeries;
     private javax.swing.JLabel passwordjLabel;
     private javax.swing.JTextField peso;
     private javax.swing.JLabel pesojLabel;
@@ -786,9 +875,9 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel sexojLabel;
     private javax.swing.JLabel sexojLabel1;
     private javax.swing.JTextField tituloEx;
+    private javax.swing.JTextField tituloTreino;
     private javax.swing.JPanel treinoPanel;
     private javax.swing.JTextField usuario;
-    private javax.swing.JTextField usuario1;
     private javax.swing.JLabel usuariojLabel;
     private javax.swing.JLabel usuariojLabel1;
     // End of variables declaration//GEN-END:variables
