@@ -52,6 +52,9 @@ public class Home extends javax.swing.JFrame {
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
+        refeicoesVisualizacao.setVisible(false);
+        alimentosVisualizacao.setVisible(false);
+        dietasVisualizacao.setVisible(false);
 
         this.logado = logado;
 
@@ -75,6 +78,30 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        dietasVisualizacao = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
+        nomejLabel10 = new javax.swing.JLabel();
+        jButton24 = new javax.swing.JButton();
+        jButton25 = new javax.swing.JButton();
+        jButton26 = new javax.swing.JButton();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        dietasTabela1 = new javax.swing.JTable();
+        alimentosVisualizacao = new javax.swing.JPanel();
+        jLabel32 = new javax.swing.JLabel();
+        nomejLabel9 = new javax.swing.JLabel();
+        jButton21 = new javax.swing.JButton();
+        jButton22 = new javax.swing.JButton();
+        jButton23 = new javax.swing.JButton();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        alimentosTabela1 = new javax.swing.JTable();
+        refeicoesVisualizacao = new javax.swing.JPanel();
+        jLabel31 = new javax.swing.JLabel();
+        nomejLabel8 = new javax.swing.JLabel();
+        jButton18 = new javax.swing.JButton();
+        jButton19 = new javax.swing.JButton();
+        jButton20 = new javax.swing.JButton();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        refeicoesTabela1 = new javax.swing.JTable();
         treinosVisualizacao = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         nomejLabel7 = new javax.swing.JLabel();
@@ -221,6 +248,278 @@ public class Home extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        dietasVisualizacao.setBackground(new java.awt.Color(231, 231, 231));
+
+        jLabel33.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(241, 90, 35));
+        jLabel33.setText("------------------------------ DIETAS -----------------------------");
+
+        nomejLabel10.setText("Dietas:");
+
+        jButton24.setText("Excluir");
+        jButton24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton24ActionPerformed(evt);
+            }
+        });
+
+        jButton25.setText("Adicionar Novo");
+        jButton25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton25ActionPerformed(evt);
+            }
+        });
+
+        jButton26.setText("Editar");
+        jButton26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton26ActionPerformed(evt);
+            }
+        });
+
+        dietasTabela1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Nome", "Obj Hidrico", "Obj Calórico", "Calorias Ingeridas", "Alimentos"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane11.setViewportView(dietasTabela1);
+
+        javax.swing.GroupLayout dietasVisualizacaoLayout = new javax.swing.GroupLayout(dietasVisualizacao);
+        dietasVisualizacao.setLayout(dietasVisualizacaoLayout);
+        dietasVisualizacaoLayout.setHorizontalGroup(
+            dietasVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dietasVisualizacaoLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(dietasVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(dietasVisualizacaoLayout.createSequentialGroup()
+                        .addComponent(jButton25)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton26)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton24)
+                        .addGap(68, 68, 68))
+                    .addGroup(dietasVisualizacaoLayout.createSequentialGroup()
+                        .addGroup(dietasVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(nomejLabel10)
+                            .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane11))
+                        .addContainerGap(50, Short.MAX_VALUE))))
+        );
+        dietasVisualizacaoLayout.setVerticalGroup(
+            dietasVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dietasVisualizacaoLayout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(jLabel33)
+                .addGap(40, 40, 40)
+                .addComponent(nomejLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(dietasVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton24)
+                    .addComponent(jButton25)
+                    .addComponent(jButton26))
+                .addGap(198, 198, 198))
+        );
+
+        getContentPane().add(dietasVisualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 720, 550));
+
+        alimentosVisualizacao.setBackground(new java.awt.Color(231, 231, 231));
+
+        jLabel32.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(241, 90, 35));
+        jLabel32.setText("---------------------------- ALIMENTOS ---------------------------");
+
+        nomejLabel9.setText("Alimentos:");
+
+        jButton21.setText("Excluir");
+        jButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton21ActionPerformed(evt);
+            }
+        });
+
+        jButton22.setText("Adicionar Novo");
+        jButton22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton22ActionPerformed(evt);
+            }
+        });
+
+        jButton23.setText("Editar");
+        jButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton23ActionPerformed(evt);
+            }
+        });
+
+        alimentosTabela1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Nome", "Tipo", "Quantidade", "Calorias por quantidade"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        alimentosTabela1.setToolTipText("");
+        jScrollPane8.setViewportView(alimentosTabela1);
+
+        javax.swing.GroupLayout alimentosVisualizacaoLayout = new javax.swing.GroupLayout(alimentosVisualizacao);
+        alimentosVisualizacao.setLayout(alimentosVisualizacaoLayout);
+        alimentosVisualizacaoLayout.setHorizontalGroup(
+            alimentosVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(alimentosVisualizacaoLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(alimentosVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(alimentosVisualizacaoLayout.createSequentialGroup()
+                        .addComponent(jButton22)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton23)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton21))
+                    .addGroup(alimentosVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(nomejLabel9)
+                        .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane8)))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+        alimentosVisualizacaoLayout.setVerticalGroup(
+            alimentosVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(alimentosVisualizacaoLayout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(jLabel32)
+                .addGap(40, 40, 40)
+                .addComponent(nomejLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(alimentosVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton21)
+                    .addComponent(jButton22)
+                    .addComponent(jButton23))
+                .addGap(198, 198, 198))
+        );
+
+        getContentPane().add(alimentosVisualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 720, 550));
+
+        refeicoesVisualizacao.setBackground(new java.awt.Color(231, 231, 231));
+
+        jLabel31.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(241, 90, 35));
+        jLabel31.setText("----------------------------- REFEIÇÕES ----------------------------");
+
+        nomejLabel8.setText("Refeições:");
+
+        jButton18.setText("Excluir");
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
+
+        jButton19.setText("Adicionar Novo");
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
+
+        jButton20.setText("Editar");
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
+
+        refeicoesTabela1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "ID", "Tipo", "Alimentos"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane9.setViewportView(refeicoesTabela1);
+
+        javax.swing.GroupLayout refeicoesVisualizacaoLayout = new javax.swing.GroupLayout(refeicoesVisualizacao);
+        refeicoesVisualizacao.setLayout(refeicoesVisualizacaoLayout);
+        refeicoesVisualizacaoLayout.setHorizontalGroup(
+            refeicoesVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(refeicoesVisualizacaoLayout.createSequentialGroup()
+                .addGroup(refeicoesVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, refeicoesVisualizacaoLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton19)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton20)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton18))
+                    .addGroup(refeicoesVisualizacaoLayout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(refeicoesVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane9)
+                            .addGroup(refeicoesVisualizacaoLayout.createSequentialGroup()
+                                .addGroup(refeicoesVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(nomejLabel8)
+                                    .addComponent(jLabel31))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap())
+        );
+        refeicoesVisualizacaoLayout.setVerticalGroup(
+            refeicoesVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(refeicoesVisualizacaoLayout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(jLabel31)
+                .addGap(40, 40, 40)
+                .addComponent(nomejLabel8)
+                .addGap(2, 2, 2)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(refeicoesVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton18)
+                    .addComponent(jButton19)
+                    .addComponent(jButton20))
+                .addGap(198, 198, 198))
+        );
+
+        getContentPane().add(refeicoesVisualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 720, 550));
 
         treinosVisualizacao.setBackground(new java.awt.Color(231, 231, 231));
 
@@ -942,7 +1241,7 @@ public class Home extends javax.swing.JFrame {
 
         usuariojLabel2.setText("Título :");
 
-        sexojLabel2.setText("Exercícios :");
+        sexojLabel2.setText("Alimentos:");
 
         alimentosTabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1274,14 +1573,14 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        cadastroDietajButton.setText("Cadastro de dieta");
+        cadastroDietajButton.setText("Dieta");
         cadastroDietajButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastroDietajButtonActionPerformed(evt);
             }
         });
 
-        cadastroRefeicaojButton.setText("Cadastro de refeição");
+        cadastroRefeicaojButton.setText("Refeições");
         cadastroRefeicaojButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastroRefeicaojButtonActionPerformed(evt);
@@ -1318,7 +1617,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        cadastroAlimentosjButton.setText("Cadastro de alimentos");
+        cadastroAlimentosjButton.setText("Alimentos");
         cadastroAlimentosjButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastroAlimentosjButtonActionPerformed(evt);
@@ -1400,33 +1699,92 @@ public class Home extends javax.swing.JFrame {
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
+        refeicoesVisualizacao.setVisible(false);
+        alimentosVisualizacao.setVisible(false);
+        dietasVisualizacao.setVisible(false);
+
     }//GEN-LAST:event_editarDadosjButtonActionPerformed
 
     private void cadastroDietajButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroDietajButtonActionPerformed
         // TODO add your handling code here:
-        refsTmp.clear();
         editarDadosPanel.setVisible(false);
         treinoPanel.setVisible(false);
         exercicioPanel.setVisible(false);
         refeicaoPanel.setVisible(false);
         alimentosPanel.setVisible(false);
-        dietaPanel.setVisible(true);
+        dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
+        refeicoesVisualizacao.setVisible(false);
+        alimentosVisualizacao.setVisible(false);
+        dietasVisualizacao.setVisible(true);
+
+        repositorio.leDietas();
+
+        if (repositorio.getDietas().size() <= 0) {
+            JOptionPane.showMessageDialog(null, "Nenhuma dieta cadastrada!");
+        }
+
+        DefaultTableModel modelDietas = (DefaultTableModel) dietasTabela1.getModel();
+        modelDietas.setNumRows(0);
+
+        dietasTabela1.getColumnModel().getColumn(0).setPreferredWidth(50);
+        dietasTabela1.getColumnModel().getColumn(1).setPreferredWidth(200);
+        dietasTabela1.getColumnModel().getColumn(2).setPreferredWidth(80);
+        dietasTabela1.getColumnModel().getColumn(3).setPreferredWidth(80);
+        dietasTabela1.getColumnModel().getColumn(4).setPreferredWidth(100);
+        dietasTabela1.getColumnModel().getColumn(5).setPreferredWidth(600);
+
+        ArrayList<String> keysDietas = new ArrayList<>(repositorio.getDietas().keySet());
+
+        Collections.sort(keysDietas);
+
+        for (String key : keysDietas) {
+            Dieta d = repositorio.getDietas().get(key);
+
+            String alimentos = "";
+            for (Refeicao r : d.getRefeicoes().values()) {
+                for (Alimento a : r.getAlimentos().values()) {
+                    alimentos = alimentos + "/" + a.getNome();
+                }
+            }
+
+            modelDietas.addRow(new Object[]{d.getId(), d.getNome(), d.getObjHidrico(), d.getObjCalorico(), d.caloriasIngeridas(), alimentos});
+
+        }
+
+    }//GEN-LAST:event_cadastroDietajButtonActionPerformed
+
+    private void cadastroRefeicaojButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroRefeicaojButtonActionPerformed
+        // TODO add your handling code here:
+        editarDadosPanel.setVisible(false);
+        treinoPanel.setVisible(false);
+        exercicioPanel.setVisible(false);
+        refeicaoPanel.setVisible(false);
+        alimentosPanel.setVisible(false);
+        dietaPanel.setVisible(false);
+        registrarDiaPanel.setVisible(false);
+
+        exerciciosVisualizacao.setVisible(false);
+        treinosVisualizacao.setVisible(false);
+        refeicoesVisualizacao.setVisible(true);
+        alimentosVisualizacao.setVisible(false);
+        dietasVisualizacao.setVisible(false);
+
         repositorio.leRefeicoes();
 
         if (repositorio.getRefeicoes().size() <= 0) {
-            JOptionPane.showMessageDialog(null, "Nenhuma refeição cadastrado!");
+            JOptionPane.showMessageDialog(null, "Nenhuma refeição cadastrada!");
         }
 
-        DefaultTableModel model = (DefaultTableModel) refeicoesTabela.getModel();
+        DefaultTableModel model = (DefaultTableModel) refeicoesTabela1.getModel();
         model.setNumRows(0);
 
-        refeicoesTabela.getColumnModel().getColumn(0).setPreferredWidth(100);
-        refeicoesTabela.getColumnModel().getColumn(1).setPreferredWidth(200);
-        refeicoesTabela.getColumnModel().getColumn(2).setPreferredWidth(600);
+        refeicoesTabela1.getColumnModel().getColumn(0).setPreferredWidth(100);
+        refeicoesTabela1.getColumnModel().getColumn(1).setPreferredWidth(200);
+        refeicoesTabela1.getColumnModel().getColumn(2).setPreferredWidth(600);
 
         ArrayList<String> keys = new ArrayList<String>(repositorio.getRefeicoes().keySet());
 
@@ -1443,41 +1801,8 @@ public class Home extends javax.swing.JFrame {
             model.addRow(new Object[]{r.getId(), r.getTipo(), alimentos});
 
         }
-    }//GEN-LAST:event_cadastroDietajButtonActionPerformed
 
-    private void cadastroRefeicaojButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroRefeicaojButtonActionPerformed
-        // TODO add your handling code here:
-        almTmp.clear();
-        editarDadosPanel.setVisible(false);
-        treinoPanel.setVisible(false);
-        exercicioPanel.setVisible(false);
-        refeicaoPanel.setVisible(true);
-        alimentosPanel.setVisible(false);
-        dietaPanel.setVisible(false);
-        registrarDiaPanel.setVisible(false);
 
-        exerciciosVisualizacao.setVisible(false);
-        treinosVisualizacao.setVisible(false);
-
-        repositorio.leAlimentos();
-
-        if (repositorio.getAlimentos().size() <= 0) {
-            JOptionPane.showMessageDialog(null, "Nenhum alimento cadastrado!");
-        }
-
-        DefaultTableModel model = (DefaultTableModel) alimentosTabela.getModel();
-        model.setNumRows(0);
-
-        ArrayList<String> keys = new ArrayList<String>(repositorio.getAlimentos().keySet());
-
-        Collections.sort(keys);
-
-        for (String key : keys) {
-            Alimento a = repositorio.getAlimentos().get(key);
-
-            model.addRow(new Object[]{a.getNome(), a.getTipo(), a.getQuantidade(), String.valueOf(a.getCaloriasTotais())});
-
-        }
     }//GEN-LAST:event_cadastroRefeicaojButtonActionPerformed
 
     private void cadastroTreinojButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroTreinojButtonActionPerformed
@@ -1493,6 +1818,9 @@ public class Home extends javax.swing.JFrame {
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(true);
+        refeicoesVisualizacao.setVisible(false);
+        alimentosVisualizacao.setVisible(false);
+        dietasVisualizacao.setVisible(false);
 
         repositorio.leTreinos();
 
@@ -1540,6 +1868,9 @@ public class Home extends javax.swing.JFrame {
 
         exerciciosVisualizacao.setVisible(true);
         treinosVisualizacao.setVisible(false);
+        refeicoesVisualizacao.setVisible(false);
+        alimentosVisualizacao.setVisible(false);
+        dietasVisualizacao.setVisible(false);
 
         metragemPanel.setVisible(false);
 
@@ -1574,10 +1905,13 @@ public class Home extends javax.swing.JFrame {
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(true);
-        
+
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
-        
+        refeicoesVisualizacao.setVisible(false);
+        alimentosVisualizacao.setVisible(false);
+        dietasVisualizacao.setVisible(false);
+
         repositorio.leTreinos();
         repositorio.leDietas();
 
@@ -1923,12 +2257,35 @@ public class Home extends javax.swing.JFrame {
         treinoPanel.setVisible(false);
         exercicioPanel.setVisible(false);
         refeicaoPanel.setVisible(false);
-        alimentosPanel.setVisible(true);
+        alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
+        refeicoesVisualizacao.setVisible(false);
+        alimentosVisualizacao.setVisible(true);
+        dietasVisualizacao.setVisible(false);
+
+        repositorio.leAlimentos();
+
+        if (repositorio.getAlimentos().size() <= 0) {
+            JOptionPane.showMessageDialog(null, "Nenhum alimento cadastrado!");
+        }
+
+        DefaultTableModel model = (DefaultTableModel) alimentosTabela1.getModel();
+        model.setNumRows(0);
+
+        ArrayList<String> keys = new ArrayList<String>(repositorio.getAlimentos().keySet());
+
+        Collections.sort(keys);
+
+        for (String key : keys) {
+            Alimento a = repositorio.getAlimentos().get(key);
+
+            model.addRow(new Object[]{a.getNome(), a.getTipo(), a.getQuantidade(), String.valueOf(a.getCaloriasTotais())});
+
+        }
 
     }//GEN-LAST:event_cadastroAlimentosjButtonActionPerformed
 
@@ -2099,6 +2456,9 @@ public class Home extends javax.swing.JFrame {
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
+        refeicoesVisualizacao.setVisible(false);
+        alimentosVisualizacao.setVisible(false);
+        dietasVisualizacao.setVisible(false);
 
         metragemPanel.setVisible(false);
     }//GEN-LAST:event_jButton13ActionPerformed
@@ -2107,20 +2467,26 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         editarDadosPanel.setVisible(false);
         treinoPanel.setVisible(false);
-        exercicioPanel.setVisible(true);
+        exercicioPanel.setVisible(false);
         refeicaoPanel.setVisible(false);
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
 
-        exerciciosVisualizacao.setVisible(false);
+        exerciciosVisualizacao.setVisible(true);
         treinosVisualizacao.setVisible(false);
+        refeicoesVisualizacao.setVisible(false);
+        alimentosVisualizacao.setVisible(false);
+        dietasVisualizacao.setVisible(false);
 
         metragemPanel.setVisible(false);
 
         repositorio.leExercicios();
 
         if (exerciciosTabela1.getSelectedRow() != -1) {
+            exercicioPanel.setVisible(true);
+            exerciciosVisualizacao.setVisible(false);
+
             String key = (String) exerciciosTabela1.getValueAt(exerciciosTabela1.getSelectedRow(), 0);
             Exercicio aux = repositorio.getExercicios().get(key);
 
@@ -2188,6 +2554,9 @@ public class Home extends javax.swing.JFrame {
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
+        refeicoesVisualizacao.setVisible(false);
+        alimentosVisualizacao.setVisible(false);
+        dietasVisualizacao.setVisible(false);
 
         repositorio.leExercicios();
 
@@ -2223,7 +2592,229 @@ public class Home extends javax.swing.JFrame {
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
+        refeicoesVisualizacao.setVisible(false);
+        alimentosVisualizacao.setVisible(false);
+        dietasVisualizacao.setVisible(false);
+
     }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        // TODO add your handling code here:
+        almTmp.clear();
+        editarDadosPanel.setVisible(false);
+        treinoPanel.setVisible(false);
+        exercicioPanel.setVisible(false);
+        refeicaoPanel.setVisible(true);
+        alimentosPanel.setVisible(false);
+        dietaPanel.setVisible(false);
+        registrarDiaPanel.setVisible(false);
+
+        exerciciosVisualizacao.setVisible(false);
+        treinosVisualizacao.setVisible(false);
+        refeicoesVisualizacao.setVisible(false);
+        alimentosVisualizacao.setVisible(false);
+        dietasVisualizacao.setVisible(false);
+
+        repositorio.leAlimentos();
+
+        if (repositorio.getAlimentos().size() <= 0) {
+            JOptionPane.showMessageDialog(null, "Nenhum alimento cadastrado!");
+        }
+
+        DefaultTableModel model = (DefaultTableModel) alimentosTabela.getModel();
+        model.setNumRows(0);
+
+        ArrayList<String> keys = new ArrayList<String>(repositorio.getAlimentos().keySet());
+
+        Collections.sort(keys);
+
+        for (String key : keys) {
+            Alimento a = repositorio.getAlimentos().get(key);
+
+            model.addRow(new Object[]{a.getNome(), a.getTipo(), a.getQuantidade(), String.valueOf(a.getCaloriasTotais())});
+
+        }
+    }//GEN-LAST:event_jButton19ActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        // TODO add your handling code here:
+        almTmp.clear();
+        editarDadosPanel.setVisible(false);
+        treinoPanel.setVisible(false);
+        exercicioPanel.setVisible(false);
+        refeicaoPanel.setVisible(true);
+        alimentosPanel.setVisible(false);
+        dietaPanel.setVisible(false);
+        registrarDiaPanel.setVisible(false);
+
+        exerciciosVisualizacao.setVisible(false);
+        treinosVisualizacao.setVisible(false);
+        refeicoesVisualizacao.setVisible(false);
+        alimentosVisualizacao.setVisible(false);
+        dietasVisualizacao.setVisible(false);
+
+        repositorio.leAlimentos();
+
+        if (repositorio.getAlimentos().size() <= 0) {
+            JOptionPane.showMessageDialog(null, "Nenhum alimento cadastrado!");
+        }
+
+        DefaultTableModel model = (DefaultTableModel) alimentosTabela.getModel();
+        model.setNumRows(0);
+
+        ArrayList<String> keys = new ArrayList<String>(repositorio.getAlimentos().keySet());
+
+        Collections.sort(keys);
+
+        for (String key : keys) {
+            Alimento a = repositorio.getAlimentos().get(key);
+
+            model.addRow(new Object[]{a.getNome(), a.getTipo(), a.getQuantidade(), String.valueOf(a.getCaloriasTotais())});
+
+        }
+    }//GEN-LAST:event_jButton20ActionPerformed
+
+    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton21ActionPerformed
+
+    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+        // TODO add your handling code here:
+        editarDadosPanel.setVisible(false);
+        treinoPanel.setVisible(false);
+        exercicioPanel.setVisible(false);
+        refeicaoPanel.setVisible(false);
+        alimentosPanel.setVisible(true);
+        dietaPanel.setVisible(false);
+        registrarDiaPanel.setVisible(false);
+
+        exerciciosVisualizacao.setVisible(false);
+        treinosVisualizacao.setVisible(false);
+        refeicoesVisualizacao.setVisible(false);
+        alimentosVisualizacao.setVisible(false);
+        dietasVisualizacao.setVisible(false);
+
+    }//GEN-LAST:event_jButton22ActionPerformed
+
+    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+        // TODO add your handling code here:
+        editarDadosPanel.setVisible(false);
+        treinoPanel.setVisible(false);
+        exercicioPanel.setVisible(false);
+        refeicaoPanel.setVisible(false);
+        alimentosPanel.setVisible(true);
+        dietaPanel.setVisible(false);
+        registrarDiaPanel.setVisible(false);
+
+        exerciciosVisualizacao.setVisible(false);
+        treinosVisualizacao.setVisible(false);
+        refeicoesVisualizacao.setVisible(false);
+        alimentosVisualizacao.setVisible(false);
+        dietasVisualizacao.setVisible(false);
+
+    }//GEN-LAST:event_jButton23ActionPerformed
+
+    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton24ActionPerformed
+
+    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+        // TODO add your handling code here:
+        refsTmp.clear();
+        editarDadosPanel.setVisible(false);
+        treinoPanel.setVisible(false);
+        exercicioPanel.setVisible(false);
+        refeicaoPanel.setVisible(false);
+        alimentosPanel.setVisible(false);
+        dietaPanel.setVisible(true);
+        registrarDiaPanel.setVisible(false);
+
+        exerciciosVisualizacao.setVisible(false);
+        treinosVisualizacao.setVisible(false);
+        refeicoesVisualizacao.setVisible(false);
+        alimentosVisualizacao.setVisible(false);
+        dietasVisualizacao.setVisible(false);
+
+        repositorio.leRefeicoes();
+
+        if (repositorio.getRefeicoes().size() <= 0) {
+            JOptionPane.showMessageDialog(null, "Nenhuma refeição cadastradA!");
+        }
+
+        DefaultTableModel model = (DefaultTableModel) refeicoesTabela.getModel();
+        model.setNumRows(0);
+
+        refeicoesTabela.getColumnModel().getColumn(0).setPreferredWidth(100);
+        refeicoesTabela.getColumnModel().getColumn(1).setPreferredWidth(200);
+        refeicoesTabela.getColumnModel().getColumn(2).setPreferredWidth(600);
+
+        ArrayList<String> keys = new ArrayList<String>(repositorio.getRefeicoes().keySet());
+
+        Collections.sort(keys);
+
+        for (String key : keys) {
+            Refeicao r = repositorio.getRefeicoes().get(key);
+
+            String alimentos = "";
+            for (Alimento a : r.getAlimentos().values()) {
+                alimentos = alimentos + "/" + a.getNome();
+            }
+
+            model.addRow(new Object[]{r.getId(), r.getTipo(), alimentos});
+
+        }
+    }//GEN-LAST:event_jButton25ActionPerformed
+
+    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+        // TODO add your handling code here:
+        refsTmp.clear();
+        editarDadosPanel.setVisible(false);
+        treinoPanel.setVisible(false);
+        exercicioPanel.setVisible(false);
+        refeicaoPanel.setVisible(false);
+        alimentosPanel.setVisible(false);
+        dietaPanel.setVisible(true);
+        registrarDiaPanel.setVisible(false);
+
+        exerciciosVisualizacao.setVisible(false);
+        treinosVisualizacao.setVisible(false);
+        refeicoesVisualizacao.setVisible(false);
+        alimentosVisualizacao.setVisible(false);
+        dietasVisualizacao.setVisible(false);
+
+        repositorio.leRefeicoes();
+
+        if (repositorio.getRefeicoes().size() <= 0) {
+            JOptionPane.showMessageDialog(null, "Nenhuma refeição cadastradA!");
+        }
+
+        DefaultTableModel model = (DefaultTableModel) refeicoesTabela.getModel();
+        model.setNumRows(0);
+
+        refeicoesTabela.getColumnModel().getColumn(0).setPreferredWidth(100);
+        refeicoesTabela.getColumnModel().getColumn(1).setPreferredWidth(200);
+        refeicoesTabela.getColumnModel().getColumn(2).setPreferredWidth(600);
+
+        ArrayList<String> keys = new ArrayList<String>(repositorio.getRefeicoes().keySet());
+
+        Collections.sort(keys);
+
+        for (String key : keys) {
+            Refeicao r = repositorio.getRefeicoes().get(key);
+
+            String alimentos = "";
+            for (Alimento a : r.getAlimentos().values()) {
+                alimentos = alimentos + "/" + a.getNome();
+            }
+
+            model.addRow(new Object[]{r.getId(), r.getTipo(), alimentos});
+
+        }
+    }//GEN-LAST:event_jButton26ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2264,6 +2855,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField aguaIngerida;
     private javax.swing.JPanel alimentosPanel;
     private javax.swing.JTable alimentosTabela;
+    private javax.swing.JTable alimentosTabela1;
+    private javax.swing.JPanel alimentosVisualizacao;
     private javax.swing.JTextField altura;
     private javax.swing.JLabel alturajLabel;
     private javax.swing.JTextField ano;
@@ -2283,6 +2876,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField diaNascimento;
     private javax.swing.JPanel dietaPanel;
     private javax.swing.JTable dietasTabela;
+    private javax.swing.JTable dietasTabela1;
+    private javax.swing.JPanel dietasVisualizacao;
     private javax.swing.JTextField dist;
     private javax.swing.JPanel editarDadosPanel;
     private javax.swing.JButton editarDadosjButton;
@@ -2303,7 +2898,16 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton20;
+    private javax.swing.JButton jButton21;
+    private javax.swing.JButton jButton22;
+    private javax.swing.JButton jButton23;
+    private javax.swing.JButton jButton24;
+    private javax.swing.JButton jButton25;
+    private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -2336,6 +2940,9 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
@@ -2347,12 +2954,15 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JLabel logoIconjLabel;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JTextField mes;
@@ -2364,12 +2974,15 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField nomeDieta;
     private javax.swing.JLabel nomejLabel;
     private javax.swing.JLabel nomejLabel1;
+    private javax.swing.JLabel nomejLabel10;
     private javax.swing.JLabel nomejLabel2;
     private javax.swing.JLabel nomejLabel3;
     private javax.swing.JLabel nomejLabel4;
     private javax.swing.JLabel nomejLabel5;
     private javax.swing.JLabel nomejLabel6;
     private javax.swing.JLabel nomejLabel7;
+    private javax.swing.JLabel nomejLabel8;
+    private javax.swing.JLabel nomejLabel9;
     private javax.swing.JTextField numRepeticoes;
     private javax.swing.JTextField numSeries;
     private javax.swing.JTextField objCal;
@@ -2380,6 +2993,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField quantidadeAlimento;
     private javax.swing.JPanel refeicaoPanel;
     private javax.swing.JTable refeicoesTabela;
+    private javax.swing.JTable refeicoesTabela1;
+    private javax.swing.JPanel refeicoesVisualizacao;
     private javax.swing.JPanel registrarDiaPanel;
     private javax.swing.JButton registrarDiajButton;
     private javax.swing.JPanel repeticaoPanel;
