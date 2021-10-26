@@ -10,7 +10,8 @@ package trabalhofinal;
  * @author tainass
  */
 public class ExercicioMetragem extends Exercicio {
-    private float distancia, calPorMetro;
+    public float distancia;
+    public float calPorMetro;
 
     public ExercicioMetragem(String nome, float distancia, float calPorMetro, int hg, int mg, int sg) {
         super.setNome(nome);
@@ -29,7 +30,7 @@ public class ExercicioMetragem extends Exercicio {
 
     @Override
     public float caloriasGastasExercicio() {
-        return distancia * calPorMetro;
+        return getDistancia() * getCalPorMetro();
     }
 
     @Override
@@ -39,4 +40,14 @@ public class ExercicioMetragem extends Exercicio {
         System.out.println("Calorias gastas por metro: "+getCalPorMetro());
         System.out.println("Calorias gastas no exercicio: "+caloriasGastasExercicio());
     }
+
+    public void setDistancia(float distancia) {
+        this.distancia = distancia;
+    }
+
+    public void setCalPorMetro(float calPorMetro) {
+        this.calPorMetro = calPorMetro;
+    }
+    
+    
 }

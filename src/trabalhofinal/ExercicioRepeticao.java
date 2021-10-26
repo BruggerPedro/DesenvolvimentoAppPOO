@@ -10,8 +10,9 @@ package trabalhofinal;
  * @author tainass
  */
 public class ExercicioRepeticao extends Exercicio {
-    private int numSeries, numRepet;
-    private float calPorSerie;
+    public int numSeries;
+    public int numRepet;
+    public float calPorSerie;
 
     public ExercicioRepeticao(String nome, int numSeries, int numRepet, float calPorSerie, int hg, int mg, int sg) {
         super.setNome(nome);
@@ -23,7 +24,7 @@ public class ExercicioRepeticao extends Exercicio {
 
     @Override
     public float caloriasGastasExercicio() {
-        return numSeries * calPorSerie;
+        return getNumSeries() * getCalPorSerie();
     }
 
     @Override
@@ -46,4 +47,18 @@ public class ExercicioRepeticao extends Exercicio {
     public float getCalPorSerie() {
         return calPorSerie;
     }
+
+    public void setNumSeries(int numSeries) {
+        this.numSeries = numSeries;
+    }
+
+    public void setNumRepet(int numRepet) {
+        this.numRepet = numRepet;
+    }
+
+    public void setCalPorSerie(float calPorSerie) {
+        this.calPorSerie = calPorSerie;
+    }
+    
+    
 }

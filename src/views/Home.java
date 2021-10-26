@@ -72,6 +72,39 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        exercicioVisualizacao = new javax.swing.JPanel();
+        jLabel27 = new javax.swing.JLabel();
+        nomejLabel6 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        exerciciosTabela1 = new javax.swing.JTable();
+        jButton11 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        exercicioPanel = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        nomejLabel2 = new javax.swing.JLabel();
+        tituloEx = new javax.swing.JTextField();
+        jButton5 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        repeticaoPanel = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        numSeries = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        numRepeticoes = new javax.swing.JTextField();
+        calSeries = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        metragemPanel = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        dist = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        calMetro = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        horasGastas = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        segundosGastos = new javax.swing.JTextField();
+        minutosGastos = new javax.swing.JTextField();
         registrarDiaPanel = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jButton10 = new javax.swing.JButton();
@@ -121,31 +154,6 @@ public class Home extends javax.swing.JFrame {
         quantidadeAlimento = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         calQuantidade = new javax.swing.JTextField();
-        exercicioPanel = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        nomejLabel2 = new javax.swing.JLabel();
-        tituloEx = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        repeticaoPanel = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        numSeries = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        numRepeticoes = new javax.swing.JTextField();
-        calSeries = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        metragemPanel = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        dist = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        calMetro = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        horasGastas = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        segundosGastos = new javax.swing.JTextField();
-        minutosGastos = new javax.swing.JTextField();
         refeicaoPanel = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         nomejLabel3 = new javax.swing.JLabel();
@@ -202,6 +210,234 @@ public class Home extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        exercicioVisualizacao.setBackground(new java.awt.Color(231, 231, 231));
+
+        jLabel27.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(241, 90, 35));
+        jLabel27.setText("---------------- EXERCICIOS ---------------");
+
+        nomejLabel6.setText("Título :");
+
+        exerciciosTabela1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Título", "Tipo", "Tempo Gasto", "Calorias Gastas"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        exerciciosTabela1.setToolTipText("");
+        jScrollPane7.setViewportView(exerciciosTabela1);
+
+        jButton11.setText("Excluir");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
+        jButton13.setText("Adicionar Novo");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+
+        jButton14.setText("Editar");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout exercicioVisualizacaoLayout = new javax.swing.GroupLayout(exercicioVisualizacao);
+        exercicioVisualizacao.setLayout(exercicioVisualizacaoLayout);
+        exercicioVisualizacaoLayout.setHorizontalGroup(
+            exercicioVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exercicioVisualizacaoLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(exercicioVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(nomejLabel6)
+                    .addComponent(jLabel27)
+                    .addGroup(exercicioVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(exercicioVisualizacaoLayout.createSequentialGroup()
+                            .addComponent(jButton13)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jButton14)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jButton11))
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(27, 27, 27))
+        );
+        exercicioVisualizacaoLayout.setVerticalGroup(
+            exercicioVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exercicioVisualizacaoLayout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(jLabel27)
+                .addGap(40, 40, 40)
+                .addComponent(nomejLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(exercicioVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton11)
+                    .addComponent(jButton13)
+                    .addComponent(jButton14))
+                .addGap(198, 198, 198))
+        );
+
+        getContentPane().add(exercicioVisualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 530, 550));
+
+        exercicioPanel.setBackground(new java.awt.Color(231, 231, 231));
+
+        jLabel6.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(241, 90, 35));
+        jLabel6.setText("----------- CADASTRO EXERCICIO -----------");
+
+        nomejLabel2.setText("Título :");
+
+        jButton5.setText("Salvar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Tipo :");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Repetição", "Metragem" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+
+        repeticaoPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setText("Número de Séries :");
+        repeticaoPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
+        repeticaoPanel.add(numSeries, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 31, 180, -1));
+
+        jLabel8.setText("Número de Repetições :");
+        repeticaoPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 69, -1, -1));
+        repeticaoPanel.add(numRepeticoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 89, 180, -1));
+
+        calSeries.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                calSeriesInputMethodTextChanged(evt);
+            }
+        });
+        repeticaoPanel.add(calSeries, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 180, -1));
+
+        jLabel9.setText("Calorias per Séries :");
+        repeticaoPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
+
+        metragemPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setText("Distância :");
+        metragemPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
+        metragemPanel.add(dist, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 31, 180, -1));
+
+        jLabel3.setText("Calorias por metro :");
+        metragemPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 69, -1, -1));
+        metragemPanel.add(calMetro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 89, 180, -1));
+
+        jLabel10.setText("Tempo gasto :");
+
+        jLabel11.setText(":");
+
+        jLabel12.setText(":");
+
+        javax.swing.GroupLayout exercicioPanelLayout = new javax.swing.GroupLayout(exercicioPanel);
+        exercicioPanel.setLayout(exercicioPanelLayout);
+        exercicioPanelLayout.setHorizontalGroup(
+            exercicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exercicioPanelLayout.createSequentialGroup()
+                .addGroup(exercicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(exercicioPanelLayout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jLabel6))
+                    .addGroup(exercicioPanelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(nomejLabel2))
+                    .addGroup(exercicioPanelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(tituloEx, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(exercicioPanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel10))
+                    .addGroup(exercicioPanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(horasGastas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(minutosGastos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(segundosGastos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(exercicioPanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel1))
+                    .addGroup(exercicioPanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(exercicioPanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(exercicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(exercicioPanelLayout.createSequentialGroup()
+                                .addGap(310, 310, 310)
+                                .addComponent(jButton5))
+                            .addComponent(metragemPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(repeticaoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(27, 27, 27))
+        );
+        exercicioPanelLayout.setVerticalGroup(
+            exercicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exercicioPanelLayout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(jLabel6)
+                .addGap(6, 6, 6)
+                .addComponent(nomejLabel2)
+                .addGap(6, 6, 6)
+                .addComponent(tituloEx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel10)
+                .addGap(9, 9, 9)
+                .addGroup(exercicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(horasGastas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(segundosGastos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(minutosGastos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(jLabel1)
+                .addGap(6, 6, 6)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addGroup(exercicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(metragemPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(repeticaoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addComponent(jButton5))
+        );
+
+        getContentPane().add(exercicioPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 530, 550));
 
         registrarDiaPanel.setBackground(new java.awt.Color(231, 231, 231));
 
@@ -290,25 +526,27 @@ public class Home extends javax.swing.JFrame {
                         .addGroup(registrarDiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE)
                             .addComponent(jScrollPane5)
-                            .addComponent(jLabel38)
-                            .addComponent(jLabel35)
-                            .addComponent(dataNascimentojLabel1)
                             .addGroup(registrarDiaPanelLayout.createSequentialGroup()
-                                .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel36)
-                                .addGap(7, 7, 7)
-                                .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(6, 6, 6)
-                                .addComponent(jLabel37)
-                                .addGap(8, 8, 8)
-                                .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(dataNascimentojLabel2)
-                            .addGroup(registrarDiaPanelLayout.createSequentialGroup()
-                                .addComponent(aguaIngerida, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel20)
-                                .addGap(351, 351, 351))))
+                                .addGroup(registrarDiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel38)
+                                    .addComponent(jLabel35)
+                                    .addComponent(dataNascimentojLabel1)
+                                    .addGroup(registrarDiaPanelLayout.createSequentialGroup()
+                                        .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel36)
+                                        .addGap(7, 7, 7)
+                                        .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(6, 6, 6)
+                                        .addComponent(jLabel37)
+                                        .addGap(8, 8, 8)
+                                        .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(dataNascimentojLabel2)
+                                    .addGroup(registrarDiaPanelLayout.createSequentialGroup()
+                                        .addComponent(aguaIngerida, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel20)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, registrarDiaPanelLayout.createSequentialGroup()
                         .addGap(197, 197, 197)
                         .addGroup(registrarDiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -592,145 +830,6 @@ public class Home extends javax.swing.JFrame {
         );
 
         getContentPane().add(alimentosPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 530, 550));
-
-        exercicioPanel.setBackground(new java.awt.Color(231, 231, 231));
-
-        jLabel6.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(241, 90, 35));
-        jLabel6.setText("----------- CADASTRO EXERCICIO -----------");
-
-        nomejLabel2.setText("Título :");
-
-        jButton5.setText("Salvar");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Tipo :");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Repetição", "Metragem" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-
-        repeticaoPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel7.setText("Número de Séries :");
-        repeticaoPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
-        repeticaoPanel.add(numSeries, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 31, 180, -1));
-
-        jLabel8.setText("Número de Repetições :");
-        repeticaoPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 69, -1, -1));
-        repeticaoPanel.add(numRepeticoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 89, 180, -1));
-
-        calSeries.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-            }
-            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
-                calSeriesInputMethodTextChanged(evt);
-            }
-        });
-        repeticaoPanel.add(calSeries, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 180, -1));
-
-        jLabel9.setText("Calorias per Séries :");
-        repeticaoPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
-
-        metragemPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setText("Distância :");
-        metragemPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
-        metragemPanel.add(dist, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 31, 180, -1));
-
-        jLabel3.setText("Calorias por metro :");
-        metragemPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 69, -1, -1));
-        metragemPanel.add(calMetro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 89, 180, -1));
-
-        jLabel10.setText("Tempo gasto :");
-
-        jLabel11.setText(":");
-
-        jLabel12.setText(":");
-
-        javax.swing.GroupLayout exercicioPanelLayout = new javax.swing.GroupLayout(exercicioPanel);
-        exercicioPanel.setLayout(exercicioPanelLayout);
-        exercicioPanelLayout.setHorizontalGroup(
-            exercicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(exercicioPanelLayout.createSequentialGroup()
-                .addGroup(exercicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(exercicioPanelLayout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jLabel6))
-                    .addGroup(exercicioPanelLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(nomejLabel2))
-                    .addGroup(exercicioPanelLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(tituloEx, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(exercicioPanelLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel10))
-                    .addGroup(exercicioPanelLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(horasGastas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(minutosGastos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(segundosGastos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(exercicioPanelLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel1))
-                    .addGroup(exercicioPanelLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(exercicioPanelLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(exercicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(exercicioPanelLayout.createSequentialGroup()
-                                .addGap(310, 310, 310)
-                                .addComponent(jButton5))
-                            .addComponent(metragemPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(repeticaoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(27, 27, 27))
-        );
-        exercicioPanelLayout.setVerticalGroup(
-            exercicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(exercicioPanelLayout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addComponent(jLabel6)
-                .addGap(6, 6, 6)
-                .addComponent(nomejLabel2)
-                .addGap(6, 6, 6)
-                .addComponent(tituloEx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel10)
-                .addGap(9, 9, 9)
-                .addGroup(exercicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(horasGastas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(segundosGastos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(minutosGastos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addComponent(jLabel1)
-                .addGap(6, 6, 6)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addGroup(exercicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(metragemPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(repeticaoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addComponent(jButton5))
-        );
-
-        getContentPane().add(exercicioPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 530, 550));
 
         refeicaoPanel.setBackground(new java.awt.Color(231, 231, 231));
 
@@ -1218,9 +1317,9 @@ public class Home extends javax.swing.JFrame {
 
         DefaultTableModel model = (DefaultTableModel) refeicoesTabela.getModel();
         model.setNumRows(0);
-        
-        refeicoesTabela.getColumnModel().getColumn(0).setPreferredWidth(100); 
-        refeicoesTabela.getColumnModel().getColumn(1).setPreferredWidth(200); 
+
+        refeicoesTabela.getColumnModel().getColumn(0).setPreferredWidth(100);
+        refeicoesTabela.getColumnModel().getColumn(1).setPreferredWidth(200);
         refeicoesTabela.getColumnModel().getColumn(2).setPreferredWidth(600);
 
         ArrayList<String> keys = new ArrayList<String>(repositorio.getRefeicoes().keySet());
@@ -1229,9 +1328,9 @@ public class Home extends javax.swing.JFrame {
 
         for (String key : keys) {
             Refeicao r = repositorio.getRefeicoes().get(key);
-            
+
             String alimentos = "";
-            for (Alimento a : r.getAlimentos().values()){
+            for (Alimento a : r.getAlimentos().values()) {
                 alimentos = alimentos + "/" + a.getNome();
             }
 
@@ -1310,12 +1409,34 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         editarDadosPanel.setVisible(false);
         treinoPanel.setVisible(false);
-        exercicioPanel.setVisible(true);
+        exercicioPanel.setVisible(false);
+        exercicioVisualizacao.setVisible(true);
         refeicaoPanel.setVisible(false);
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         metragemPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
+
+        repositorio.leExercicios();
+
+        if (repositorio.getExercicios().size() <= 0) {
+            JOptionPane.showMessageDialog(null, "Nenhum exercício cadastrado!");
+        }
+
+        DefaultTableModel model = (DefaultTableModel) exerciciosTabela1.getModel();
+        model.setNumRows(0);
+
+        for (String key : repositorio.getExercicios().keySet()) {
+            Exercicio e = repositorio.getExercicios().get(key);
+            String tipo = "Repetição";
+
+            if (e instanceof ExercicioMetragem) {
+                tipo = "Metragem";
+            }
+
+            model.addRow(new Object[]{e.getNome(), tipo, e.getTempoGasto(), String.valueOf(e.caloriasGastasExercicio())});
+
+        }
     }//GEN-LAST:event_cadastroExerciciosjButtonActionPerformed
 
     private void registrarDiajButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarDiajButtonActionPerformed
@@ -1334,25 +1455,25 @@ public class Home extends javax.swing.JFrame {
         if (repositorio.getTreinos().size() <= 0) {
             JOptionPane.showMessageDialog(null, "Nenhum treino cadastrado!");
         }
-        
+
         if (repositorio.getDietas().size() <= 0) {
             JOptionPane.showMessageDialog(null, "Nenhuma dieta cadastrada!");
         }
 
         DefaultTableModel modelTreinos = (DefaultTableModel) treinosTabela.getModel();
         modelTreinos.setNumRows(0);
-        
+
         DefaultTableModel modelDietas = (DefaultTableModel) dietasTabela.getModel();
         modelDietas.setNumRows(0);
-        
-        treinosTabela.getColumnModel().getColumn(0).setPreferredWidth(100); 
-        treinosTabela.getColumnModel().getColumn(1).setPreferredWidth(300); 
+
+        treinosTabela.getColumnModel().getColumn(0).setPreferredWidth(100);
+        treinosTabela.getColumnModel().getColumn(1).setPreferredWidth(300);
         treinosTabela.getColumnModel().getColumn(2).setPreferredWidth(200);
         treinosTabela.getColumnModel().getColumn(3).setPreferredWidth(200);
         treinosTabela.getColumnModel().getColumn(4).setPreferredWidth(600);
-        
-        dietasTabela.getColumnModel().getColumn(0).setPreferredWidth(50); 
-        dietasTabela.getColumnModel().getColumn(1).setPreferredWidth(200); 
+
+        dietasTabela.getColumnModel().getColumn(0).setPreferredWidth(50);
+        dietasTabela.getColumnModel().getColumn(1).setPreferredWidth(200);
         dietasTabela.getColumnModel().getColumn(2).setPreferredWidth(80);
         dietasTabela.getColumnModel().getColumn(3).setPreferredWidth(80);
         dietasTabela.getColumnModel().getColumn(4).setPreferredWidth(100);
@@ -1366,23 +1487,22 @@ public class Home extends javax.swing.JFrame {
 
         for (String key : keysTreinos) {
             Treino t = repositorio.getTreinos().get(key);
-            
+
             String exercicios = "";
-            for (Exercicio e : t.getExercicios().values()){
+            for (Exercicio e : t.getExercicios().values()) {
                 exercicios = exercicios + "/" + e.getNome();
             }
 
             modelTreinos.addRow(new Object[]{t.getId(), t.getNome(), t.caloriasGastas(), t.tempoGasto(), exercicios});
 
         }
-        
-        
+
         for (String key : keysDietas) {
             Dieta d = repositorio.getDietas().get(key);
-            
+
             String alimentos = "";
-            for (Refeicao r : d.getRefeicoes().values()){
-                for (Alimento a : r.getAlimentos().values()){
+            for (Refeicao r : d.getRefeicoes().values()) {
+                for (Alimento a : r.getAlimentos().values()) {
                     alimentos = alimentos + "/" + a.getNome();
                 }
             }
@@ -1390,7 +1510,7 @@ public class Home extends javax.swing.JFrame {
             modelDietas.addRow(new Object[]{d.getId(), d.getNome(), d.getObjHidrico(), d.getObjCalorico(), d.caloriasIngeridas(), alimentos});
 
         }
-        
+
     }//GEN-LAST:event_registrarDiajButtonActionPerformed
 
     private void sairIconjLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sairIconjLabelMouseClicked
@@ -1459,6 +1579,7 @@ public class Home extends javax.swing.JFrame {
 
             String tipo = jComboBox1.getSelectedItem().toString();
 
+            repositorio.leExercicios();
             Exercicio ex;
 
             if (tipo.equals("Metragem")) {
@@ -1468,18 +1589,40 @@ public class Home extends javax.swing.JFrame {
                 } else {
                     float distancia = Float.parseFloat(dist.getText());
                     float caloriasMetro = Float.parseFloat(calMetro.getText());
-                    ex = new ExercicioMetragem(titleEx, distancia, caloriasMetro, hG, mG, sG);
-                    repositorio.addExercicio(ex);
-                    JOptionPane.showMessageDialog(null, "Exercício cadastrado! \nCalorias gastas: " + ex.caloriasGastasExercicio(), "Alerta", JOptionPane.INFORMATION_MESSAGE);
-                    tituloEx.setText("");
-                    horasGastas.setText("");
-                    minutosGastos.setText("");
-                    segundosGastos.setText("");
-                    dist.setText("");
-                    calMetro.setText("");
-                    numSeries.setText("");
-                    numRepeticoes.setText("");
-                    calSeries.setText("");
+                    if (repositorio.getExercicios().containsKey(titleEx)) {
+                        repositorio.getExercicios().remove(titleEx);
+
+                        ex = new ExercicioMetragem(titleEx, distancia, caloriasMetro, hG, mG, sG);
+                        repositorio.getExercicios().put(ex.getNome(), ex);
+                        repositorio.attExercicio();
+
+                        JOptionPane.showMessageDialog(null, "Exercício atualizado! \nCalorias gastas: " + ex.caloriasGastasExercicio(), "Alerta", JOptionPane.INFORMATION_MESSAGE);
+                        tituloEx.setText("");
+                        horasGastas.setText("");
+                        minutosGastos.setText("");
+                        segundosGastos.setText("");
+                        dist.setText("");
+                        calMetro.setText("");
+                        numSeries.setText("");
+                        numRepeticoes.setText("");
+                        calSeries.setText("");
+                    } else {
+                        ex = new ExercicioMetragem(titleEx, distancia, caloriasMetro, hG, mG, sG);
+
+                        repositorio.getExercicios().put(ex.getNome(), ex);
+                        repositorio.attExercicio();
+
+                        JOptionPane.showMessageDialog(null, "Exercício cadastrado! \nCalorias gastas: " + ex.caloriasGastasExercicio(), "Alerta", JOptionPane.INFORMATION_MESSAGE);
+                        tituloEx.setText("");
+                        horasGastas.setText("");
+                        minutosGastos.setText("");
+                        segundosGastos.setText("");
+                        dist.setText("");
+                        calMetro.setText("");
+                        numSeries.setText("");
+                        numRepeticoes.setText("");
+                        calSeries.setText("");
+                    }
                 }
             } else {
                 if (numSeries.getText().isEmpty() || numRepeticoes.getText().isEmpty() || calSeries.getText().isEmpty()) {
@@ -1489,26 +1632,44 @@ public class Home extends javax.swing.JFrame {
                     int numeroSeries = Integer.parseInt(numSeries.getText());
                     int numeroRepeticoes = Integer.parseInt(numRepeticoes.getText());
                     float caloriasSeries = Float.parseFloat(calSeries.getText());
-                    ex = new ExercicioRepeticao(titleEx, numeroSeries, numeroRepeticoes, caloriasSeries, hG, mG, sG);
-                    repositorio.addExercicio(ex);
-                    JOptionPane.showMessageDialog(null, "Exercício cadastrado! \nCalorias gastas: " + ex.caloriasGastasExercicio(), "Alerta", JOptionPane.INFORMATION_MESSAGE);
-                    tituloEx.setText("");
-                    horasGastas.setText("");
-                    minutosGastos.setText("");
-                    segundosGastos.setText("");
-                    dist.setText("");
-                    calMetro.setText("");
-                    numSeries.setText("");
-                    numRepeticoes.setText("");
-                    calSeries.setText("");
+
+                    if (repositorio.getExercicios().containsKey(titleEx)) {
+                        repositorio.getExercicios().remove(titleEx);
+
+                        ex = new ExercicioRepeticao(titleEx, numeroSeries, numeroRepeticoes, caloriasSeries, hG, mG, sG);
+                        repositorio.getExercicios().put(ex.getNome(), ex);
+                        repositorio.attExercicio();
+
+                        JOptionPane.showMessageDialog(null, "Exercício atualizado! \nCalorias gastas: " + ex.caloriasGastasExercicio(), "Alerta", JOptionPane.INFORMATION_MESSAGE);
+                        tituloEx.setText("");
+                        horasGastas.setText("");
+                        minutosGastos.setText("");
+                        segundosGastos.setText("");
+                        dist.setText("");
+                        calMetro.setText("");
+                        numSeries.setText("");
+                        numRepeticoes.setText("");
+                        calSeries.setText("");
+                    } else {
+
+                        ex = new ExercicioRepeticao(titleEx, numeroSeries, numeroRepeticoes, caloriasSeries, hG, mG, sG);
+                        repositorio.getExercicios().put(ex.getNome(), ex);
+                        repositorio.attExercicio();
+                        JOptionPane.showMessageDialog(null, "Exercício cadastrado! \nCalorias gastas: " + ex.caloriasGastasExercicio(), "Alerta", JOptionPane.INFORMATION_MESSAGE);
+                        tituloEx.setText("");
+                        horasGastas.setText("");
+                        minutosGastos.setText("");
+                        segundosGastos.setText("");
+                        dist.setText("");
+                        calMetro.setText("");
+                        numSeries.setText("");
+                        numRepeticoes.setText("");
+                        calSeries.setText("");
+                    }
                 }
             }
         }
     }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void calSeriesInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_calSeriesInputMethodTextChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_calSeriesInputMethodTextChanged
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -1749,7 +1910,7 @@ public class Home extends javax.swing.JFrame {
             int mesRD = Integer.parseInt(mes.getText());
             int anoRD = Integer.parseInt(ano.getText());
             float agua = Float.parseFloat(aguaIngerida.getText());
-            
+
             Data data = new Data(diaRD, mesRD, anoRD);
 
             if (repositorio.getRegistrosDiarios().containsKey(data.retornaData())) {
@@ -1759,11 +1920,11 @@ public class Home extends javax.swing.JFrame {
                 String keyDieta = (String) dietasTabela.getValueAt(dietasTabela.getSelectedRow(), 0); // valor da key
                 Treino t = repositorio.getTreinos().get(keyTreino);
                 Dieta d = repositorio.getDietas().get(keyDieta);
-                
+
                 rd.setTreino(t);
                 rd.setDieta(d);
                 rd.setAguaIngerida(agua);
-                
+
                 repositorio.getRegistrosDiarios().put(data.retornaData(), rd);
                 repositorio.attRegistrosDiarios();
                 JOptionPane.showMessageDialog(null, "Registro diário atualizado!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
@@ -1776,9 +1937,9 @@ public class Home extends javax.swing.JFrame {
                 String keyDieta = (String) dietasTabela.getValueAt(dietasTabela.getSelectedRow(), 0); // valor da key
                 Treino t = repositorio.getTreinos().get(keyTreino);
                 Dieta d = repositorio.getDietas().get(keyDieta);
-                
+
                 RegistroDiario rd = new RegistroDiario(data, agua, t, d);
-                
+
                 repositorio.getRegistrosDiarios().put(data.retornaData(), rd);
                 repositorio.attRegistrosDiarios();
                 JOptionPane.showMessageDialog(null, "Registro diário cadastrado!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
@@ -1789,6 +1950,89 @@ public class Home extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void calSeriesInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_calSeriesInputMethodTextChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_calSeriesInputMethodTextChanged
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+        editarDadosPanel.setVisible(false);
+        treinoPanel.setVisible(false);
+        exercicioPanel.setVisible(true);
+        exercicioVisualizacao.setVisible(false);
+        refeicaoPanel.setVisible(false);
+        alimentosPanel.setVisible(false);
+        dietaPanel.setVisible(false);
+        metragemPanel.setVisible(false);
+        registrarDiaPanel.setVisible(false);
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+        editarDadosPanel.setVisible(false);
+        treinoPanel.setVisible(false);
+        exercicioPanel.setVisible(true);
+        exercicioVisualizacao.setVisible(false);
+        refeicaoPanel.setVisible(false);
+        alimentosPanel.setVisible(false);
+        dietaPanel.setVisible(false);
+        metragemPanel.setVisible(false);
+        registrarDiaPanel.setVisible(false);
+
+        repositorio.leExercicios();
+
+        if (exerciciosTabela1.getSelectedRow() != -1) {
+            String key = (String) exerciciosTabela1.getValueAt(exerciciosTabela1.getSelectedRow(), 0);
+            Exercicio aux = repositorio.getExercicios().get(key);
+
+            tituloEx.setText(aux.getNome());
+            String[] valores = String.valueOf(aux.getTempoGasto()).split(":");
+            horasGastas.setText(valores[0]);
+            minutosGastos.setText(valores[1]);
+            segundosGastos.setText(valores[2]);
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione um exercício", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        repositorio.leExercicios();
+
+        if (exerciciosTabela1.getSelectedRow() != -1) {
+            String key = (String) exerciciosTabela1.getValueAt(exerciciosTabela1.getSelectedRow(), 0);
+
+            repositorio.getExercicios().remove(key);
+            repositorio.attExercicio();
+            repositorio.leExercicios();
+
+            if (repositorio.getExercicios().size() <= 0) {
+                JOptionPane.showMessageDialog(null, "Nenhum exercício cadastrado!");
+            }
+
+            DefaultTableModel model = (DefaultTableModel) exerciciosTabela1.getModel();
+            model.setNumRows(0);
+
+            for (String keys : repositorio.getExercicios().keySet()) {
+                Exercicio e = repositorio.getExercicios().get(keys);
+                String tipo = "Repetição";
+
+                if (e instanceof ExercicioMetragem) {
+                    tipo = "Metragem";
+                }
+
+                model.addRow(new Object[]{e.getNome(), tipo, e.getTempoGasto(), String.valueOf(e.caloriasGastasExercicio())});
+
+            }
+            JOptionPane.showMessageDialog(null, "Exercício excluído!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione um exercício", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton11ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1852,14 +2096,19 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel editarDadosPanel;
     private javax.swing.JButton editarDadosjButton;
     private javax.swing.JPanel exercicioPanel;
+    private javax.swing.JPanel exercicioVisualizacao;
     private javax.swing.JTable exerciciosTabela;
+    private javax.swing.JTable exerciciosTabela1;
     private javax.swing.JTextField horasGastas;
     private javax.swing.JTextField idDieta;
     private javax.swing.JTextField idRefeicao;
     private javax.swing.JTextField idTreino;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1888,6 +2137,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -1906,6 +2156,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JLabel logoIconjLabel;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JTextField mes;
@@ -1921,6 +2172,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel nomejLabel3;
     private javax.swing.JLabel nomejLabel4;
     private javax.swing.JLabel nomejLabel5;
+    private javax.swing.JLabel nomejLabel6;
     private javax.swing.JTextField numRepeticoes;
     private javax.swing.JTextField numSeries;
     private javax.swing.JTextField objCal;
