@@ -14,16 +14,16 @@ public class Alimento {
     private String tipo;
     private String nome;
     private String quantidade;
-    private float calQuantidade;
+    private float caloriasTotais;
 
     public Alimento() {
     }
 
-    public Alimento(String tipo, String nome, String quantidade, float calQuantidade) {
+    public Alimento(String tipo, String nome, String quantidade, float caloriasTotais) {
         this.tipo = tipo;
         this.nome = nome;
         this.quantidade = quantidade;
-        this.calQuantidade = calQuantidade;
+        this.caloriasTotais = caloriasTotais;
     }
 
     public String getTipo() {
@@ -50,12 +50,12 @@ public class Alimento {
         this.quantidade = quantidade;
     }
 
-    public float getCalQuantidade() {
-        return calQuantidade;
+    public float getCaloriasTotais() {
+        return caloriasTotais;
     }
 
-    public void setCalQuantidade(float calQuantidade) {
-        this.calQuantidade = calQuantidade;
+    public void setCaloriasTotais(float calQuantidade) {
+        this.caloriasTotais = calQuantidade;
     }
 
 }

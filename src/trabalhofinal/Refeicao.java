@@ -24,6 +24,15 @@ public class Refeicao {
         this.id = id;
         this.tipo = tipo;
     }
+    
+    public float caloriasGastasRefeicao() {
+        float total = 0;
+        for (Alimento e : this.getAlimentos().values()){
+            total += e.getCaloriasTotais();
+        }
+        
+        return total;
+    }
 
     public String getId() {
         return id;
