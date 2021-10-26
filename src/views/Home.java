@@ -50,6 +50,9 @@ public class Home extends javax.swing.JFrame {
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
 
+        exerciciosVisualizacao.setVisible(false);
+        treinosVisualizacao.setVisible(false);
+
         this.logado = logado;
 
         nomeCompleto.setText(logado.getNomeCompleto());
@@ -72,7 +75,15 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        exercicioVisualizacao = new javax.swing.JPanel();
+        treinosVisualizacao = new javax.swing.JPanel();
+        jLabel28 = new javax.swing.JLabel();
+        nomejLabel7 = new javax.swing.JLabel();
+        jButton15 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        treinosTabela1 = new javax.swing.JTable();
+        exerciciosVisualizacao = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
         nomejLabel6 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
@@ -211,7 +222,100 @@ public class Home extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        exercicioVisualizacao.setBackground(new java.awt.Color(231, 231, 231));
+        treinosVisualizacao.setBackground(new java.awt.Color(231, 231, 231));
+
+        jLabel28.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(241, 90, 35));
+        jLabel28.setText("------------------ TREINOS -----------------");
+
+        nomejLabel7.setText("Treinos:");
+
+        jButton15.setText("Excluir");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+
+        jButton16.setText("Adicionar Novo");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+
+        jButton17.setText("Editar");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+
+        treinosTabela1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Nome", "Calorias Gastas", "Tempo Gasto", "Exercícios"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane6.setViewportView(treinosTabela1);
+
+        javax.swing.GroupLayout treinosVisualizacaoLayout = new javax.swing.GroupLayout(treinosVisualizacao);
+        treinosVisualizacao.setLayout(treinosVisualizacaoLayout);
+        treinosVisualizacaoLayout.setHorizontalGroup(
+            treinosVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(treinosVisualizacaoLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(treinosVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(treinosVisualizacaoLayout.createSequentialGroup()
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 667, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(treinosVisualizacaoLayout.createSequentialGroup()
+                        .addGroup(treinosVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nomejLabel7)
+                            .addComponent(jLabel28))
+                        .addGap(40, 40, 40))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, treinosVisualizacaoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton15)
+                .addContainerGap())
+        );
+        treinosVisualizacaoLayout.setVerticalGroup(
+            treinosVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(treinosVisualizacaoLayout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(jLabel28)
+                .addGap(40, 40, 40)
+                .addComponent(nomejLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(treinosVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton15)
+                    .addComponent(jButton16)
+                    .addComponent(jButton17))
+                .addGap(198, 198, 198))
+        );
+
+        getContentPane().add(treinosVisualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 720, 550));
+
+        exerciciosVisualizacao.setBackground(new java.awt.Color(231, 231, 231));
 
         jLabel27.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(241, 90, 35));
@@ -262,17 +366,17 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout exercicioVisualizacaoLayout = new javax.swing.GroupLayout(exercicioVisualizacao);
-        exercicioVisualizacao.setLayout(exercicioVisualizacaoLayout);
-        exercicioVisualizacaoLayout.setHorizontalGroup(
-            exercicioVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(exercicioVisualizacaoLayout.createSequentialGroup()
+        javax.swing.GroupLayout exerciciosVisualizacaoLayout = new javax.swing.GroupLayout(exerciciosVisualizacao);
+        exerciciosVisualizacao.setLayout(exerciciosVisualizacaoLayout);
+        exerciciosVisualizacaoLayout.setHorizontalGroup(
+            exerciciosVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exerciciosVisualizacaoLayout.createSequentialGroup()
                 .addGap(41, 41, 41)
-                .addGroup(exercicioVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(exerciciosVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(nomejLabel6)
                     .addComponent(jLabel27)
-                    .addGroup(exercicioVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(exercicioVisualizacaoLayout.createSequentialGroup()
+                    .addGroup(exerciciosVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(exerciciosVisualizacaoLayout.createSequentialGroup()
                             .addComponent(jButton13)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(jButton14)
@@ -281,9 +385,9 @@ public class Home extends javax.swing.JFrame {
                         .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(27, 27, 27))
         );
-        exercicioVisualizacaoLayout.setVerticalGroup(
-            exercicioVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(exercicioVisualizacaoLayout.createSequentialGroup()
+        exerciciosVisualizacaoLayout.setVerticalGroup(
+            exerciciosVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exerciciosVisualizacaoLayout.createSequentialGroup()
                 .addGap(11, 11, 11)
                 .addComponent(jLabel27)
                 .addGap(40, 40, 40)
@@ -291,14 +395,14 @@ public class Home extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(exercicioVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(exerciciosVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton11)
                     .addComponent(jButton13)
                     .addComponent(jButton14))
                 .addGap(198, 198, 198))
         );
 
-        getContentPane().add(exercicioVisualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 530, 550));
+        getContentPane().add(exerciciosVisualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 530, 550));
 
         exercicioPanel.setBackground(new java.awt.Color(231, 231, 231));
 
@@ -526,27 +630,24 @@ public class Home extends javax.swing.JFrame {
                         .addGroup(registrarDiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE)
                             .addComponent(jScrollPane5)
+                            .addComponent(jLabel38)
+                            .addComponent(jLabel35)
+                            .addComponent(dataNascimentojLabel1)
                             .addGroup(registrarDiaPanelLayout.createSequentialGroup()
-                                .addGroup(registrarDiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel38)
-                                    .addComponent(jLabel35)
-                                    .addComponent(dataNascimentojLabel1)
-                                    .addGroup(registrarDiaPanelLayout.createSequentialGroup()
-                                        .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel36)
-                                        .addGap(7, 7, 7)
-                                        .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(6, 6, 6)
-                                        .addComponent(jLabel37)
-                                        .addGap(8, 8, 8)
-                                        .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(dataNascimentojLabel2)
-                                    .addGroup(registrarDiaPanelLayout.createSequentialGroup()
-                                        .addComponent(aguaIngerida, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel20)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
+                                .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel36)
+                                .addGap(7, 7, 7)
+                                .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel37)
+                                .addGap(8, 8, 8)
+                                .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(dataNascimentojLabel2)
+                            .addGroup(registrarDiaPanelLayout.createSequentialGroup()
+                                .addComponent(aguaIngerida, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel20))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, registrarDiaPanelLayout.createSequentialGroup()
                         .addGap(197, 197, 197)
                         .addGroup(registrarDiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -1187,14 +1288,14 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        cadastroTreinojButton.setText("Cadastro de treino");
+        cadastroTreinojButton.setText("Treinos");
         cadastroTreinojButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastroTreinojButtonActionPerformed(evt);
             }
         });
 
-        cadastroExerciciosjButton.setText("Cadastro de exercícios");
+        cadastroExerciciosjButton.setText("Exercícios");
         cadastroExerciciosjButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastroExerciciosjButtonActionPerformed(evt);
@@ -1296,6 +1397,9 @@ public class Home extends javax.swing.JFrame {
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
+
+        exerciciosVisualizacao.setVisible(false);
+        treinosVisualizacao.setVisible(false);
     }//GEN-LAST:event_editarDadosjButtonActionPerformed
 
     private void cadastroDietajButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroDietajButtonActionPerformed
@@ -1309,6 +1413,8 @@ public class Home extends javax.swing.JFrame {
         dietaPanel.setVisible(true);
         registrarDiaPanel.setVisible(false);
 
+        exerciciosVisualizacao.setVisible(false);
+        treinosVisualizacao.setVisible(false);
         repositorio.leRefeicoes();
 
         if (repositorio.getRefeicoes().size() <= 0) {
@@ -1350,6 +1456,9 @@ public class Home extends javax.swing.JFrame {
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
 
+        exerciciosVisualizacao.setVisible(false);
+        treinosVisualizacao.setVisible(false);
+
         repositorio.leAlimentos();
 
         if (repositorio.getAlimentos().size() <= 0) {
@@ -1375,33 +1484,47 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         exsTmp.clear();
         editarDadosPanel.setVisible(false);
-        treinoPanel.setVisible(true);
+        treinoPanel.setVisible(false);
         exercicioPanel.setVisible(false);
         refeicaoPanel.setVisible(false);
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
 
-        repositorio.leExercicios();
+        exerciciosVisualizacao.setVisible(false);
+        treinosVisualizacao.setVisible(true);
 
-        if (repositorio.getExercicios().size() <= 0) {
-            JOptionPane.showMessageDialog(null, "Nenhum exercício cadastrado!");
+        repositorio.leTreinos();
+
+        if (repositorio.getTreinos().size() <= 0) {
+            JOptionPane.showMessageDialog(null, "Nenhum treino cadastrado!");
         }
 
-        DefaultTableModel model = (DefaultTableModel) exerciciosTabela.getModel();
-        model.setNumRows(0);
+        DefaultTableModel modelTreinos = (DefaultTableModel) treinosTabela1.getModel();
+        modelTreinos.setNumRows(0);
 
-        for (String key : repositorio.getExercicios().keySet()) {
-            Exercicio e = repositorio.getExercicios().get(key);
-            String tipo = "Repetição";
+        treinosTabela1.getColumnModel().getColumn(0).setPreferredWidth(100);
+        treinosTabela1.getColumnModel().getColumn(1).setPreferredWidth(300);
+        treinosTabela1.getColumnModel().getColumn(2).setPreferredWidth(200);
+        treinosTabela1.getColumnModel().getColumn(3).setPreferredWidth(200);
+        treinosTabela1.getColumnModel().getColumn(4).setPreferredWidth(600);
 
-            if (e instanceof ExercicioMetragem) {
-                tipo = "Metragem";
+        ArrayList<String> keysTreinos = new ArrayList<>(repositorio.getTreinos().keySet());
+
+        Collections.sort(keysTreinos);
+
+        for (String key : keysTreinos) {
+            Treino t = repositorio.getTreinos().get(key);
+
+            String exercicios = "";
+            for (Exercicio e : t.getExercicios().values()) {
+                exercicios = exercicios + "/" + e.getNome();
             }
 
-            model.addRow(new Object[]{e.getNome(), tipo, e.getTempoGasto(), String.valueOf(e.caloriasGastasExercicio())});
+            modelTreinos.addRow(new Object[]{t.getId(), t.getNome(), t.caloriasGastas(), t.tempoGasto(), exercicios});
 
         }
+
 
     }//GEN-LAST:event_cadastroTreinojButtonActionPerformed
 
@@ -1410,12 +1533,15 @@ public class Home extends javax.swing.JFrame {
         editarDadosPanel.setVisible(false);
         treinoPanel.setVisible(false);
         exercicioPanel.setVisible(false);
-        exercicioVisualizacao.setVisible(true);
         refeicaoPanel.setVisible(false);
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
-        metragemPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
+
+        exerciciosVisualizacao.setVisible(true);
+        treinosVisualizacao.setVisible(false);
+
+        metragemPanel.setVisible(false);
 
         repositorio.leExercicios();
 
@@ -1448,7 +1574,10 @@ public class Home extends javax.swing.JFrame {
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(true);
-
+        
+        exerciciosVisualizacao.setVisible(false);
+        treinosVisualizacao.setVisible(false);
+        
         repositorio.leTreinos();
         repositorio.leDietas();
 
@@ -1798,6 +1927,9 @@ public class Home extends javax.swing.JFrame {
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
 
+        exerciciosVisualizacao.setVisible(false);
+        treinosVisualizacao.setVisible(false);
+
     }//GEN-LAST:event_cadastroAlimentosjButtonActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -1960,12 +2092,15 @@ public class Home extends javax.swing.JFrame {
         editarDadosPanel.setVisible(false);
         treinoPanel.setVisible(false);
         exercicioPanel.setVisible(true);
-        exercicioVisualizacao.setVisible(false);
         refeicaoPanel.setVisible(false);
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
-        metragemPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
+
+        exerciciosVisualizacao.setVisible(false);
+        treinosVisualizacao.setVisible(false);
+
+        metragemPanel.setVisible(false);
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
@@ -1973,12 +2108,15 @@ public class Home extends javax.swing.JFrame {
         editarDadosPanel.setVisible(false);
         treinoPanel.setVisible(false);
         exercicioPanel.setVisible(true);
-        exercicioVisualizacao.setVisible(false);
         refeicaoPanel.setVisible(false);
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
-        metragemPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
+
+        exerciciosVisualizacao.setVisible(false);
+        treinosVisualizacao.setVisible(false);
+
+        metragemPanel.setVisible(false);
 
         repositorio.leExercicios();
 
@@ -2033,6 +2171,59 @@ public class Home extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Selecione um exercício", "Alerta", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+        editarDadosPanel.setVisible(false);
+        treinoPanel.setVisible(true);
+        exercicioPanel.setVisible(false);
+        refeicaoPanel.setVisible(false);
+        alimentosPanel.setVisible(false);
+        dietaPanel.setVisible(false);
+        registrarDiaPanel.setVisible(false);
+
+        exerciciosVisualizacao.setVisible(false);
+        treinosVisualizacao.setVisible(false);
+
+        repositorio.leExercicios();
+
+        if (repositorio.getExercicios().size() <= 0) {
+            JOptionPane.showMessageDialog(null, "Nenhum exercício cadastrado!");
+        }
+
+        DefaultTableModel model = (DefaultTableModel) exerciciosTabela.getModel();
+        model.setNumRows(0);
+
+        for (String key : repositorio.getExercicios().keySet()) {
+            Exercicio e = repositorio.getExercicios().get(key);
+            String tipo = "Repetição";
+
+            if (e instanceof ExercicioMetragem) {
+                tipo = "Metragem";
+            }
+
+            model.addRow(new Object[]{e.getNome(), tipo, e.getTempoGasto(), String.valueOf(e.caloriasGastasExercicio())});
+
+        }
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        // TODO add your handling code here:
+        editarDadosPanel.setVisible(false);
+        treinoPanel.setVisible(true);
+        exercicioPanel.setVisible(false);
+        refeicaoPanel.setVisible(false);
+        alimentosPanel.setVisible(false);
+        dietaPanel.setVisible(false);
+        registrarDiaPanel.setVisible(false);
+
+        exerciciosVisualizacao.setVisible(false);
+        treinosVisualizacao.setVisible(false);
+    }//GEN-LAST:event_jButton17ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2096,9 +2287,9 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel editarDadosPanel;
     private javax.swing.JButton editarDadosjButton;
     private javax.swing.JPanel exercicioPanel;
-    private javax.swing.JPanel exercicioVisualizacao;
     private javax.swing.JTable exerciciosTabela;
     private javax.swing.JTable exerciciosTabela1;
+    private javax.swing.JPanel exerciciosVisualizacao;
     private javax.swing.JTextField horasGastas;
     private javax.swing.JTextField idDieta;
     private javax.swing.JTextField idRefeicao;
@@ -2109,6 +2300,9 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -2138,6 +2332,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -2156,6 +2351,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JLabel logoIconjLabel;
     private javax.swing.JPanel menuPanel;
@@ -2173,6 +2369,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel nomejLabel4;
     private javax.swing.JLabel nomejLabel5;
     private javax.swing.JLabel nomejLabel6;
+    private javax.swing.JLabel nomejLabel7;
     private javax.swing.JTextField numRepeticoes;
     private javax.swing.JTextField numSeries;
     private javax.swing.JTextField objCal;
@@ -2200,6 +2397,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField tituloTreino;
     private javax.swing.JPanel treinoPanel;
     private javax.swing.JTable treinosTabela;
+    private javax.swing.JTable treinosTabela1;
+    private javax.swing.JPanel treinosVisualizacao;
     private javax.swing.JTextField usuario;
     private javax.swing.JLabel usuariojLabel;
     private javax.swing.JLabel usuariojLabel1;
