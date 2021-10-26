@@ -25,7 +25,7 @@ public class Repositorio {
     private HashMap<String, Refeicao> refeicoes = new HashMap<>();
     private HashMap<String, Alimento> alimentos = new HashMap<>();
     private HashMap<String, Dieta> dietas = new HashMap<>();
-    private HashMap<Data, RegistroDiario> registrosDiarios = new HashMap<>();
+    private HashMap<String, RegistroDiario> registrosDiarios = new HashMap<>();
 
     public void leUsuarios() {
         String linha;
@@ -426,16 +426,17 @@ public class Repositorio {
                 String[] valores = linha.split(";");
                 
                 String[] data = valores[0].split("/");
-                String idTreino = valores[1];
-                String idDieta = valores[2];
+                String aguaIngerida = valores[1];
+                String idTreino = valores[2];
+                String idDieta = valores[3];
                 
                 Data d = new Data(Integer.parseInt(data[0]), Integer.parseInt(data[1]), Integer.parseInt(data[2]));
                 Treino t = this.getTreinos().get(idTreino);
                 Dieta di = this.getDietas().get(idDieta);
                 
-                RegistroDiario rd = new RegistroDiario(d, t, di);
+                RegistroDiario rd = new RegistroDiario(d, Float.parseFloat(aguaIngerida), t, di);
                 
-                this.getRegistrosDiarios().put(d, rd);
+                this.getRegistrosDiarios().put(d.retornaData(), rd);
                 linha = arquivo.readLine();
             }
             arquivo.close(); //fechamento do arquivo
@@ -449,10 +450,10 @@ public class Repositorio {
         try {
             escritor = new BufferedWriter(new FileWriter(new File("registrosDiarios.txt")));
             //Instanciação do objeto escritor
-            for (Data key : this.getRegistrosDiarios().keySet()) {
+            for (String key : this.getRegistrosDiarios().keySet()) {
                 RegistroDiario rd = this.getRegistrosDiarios().get(key);
                 
-                escritor.write(rd.getData().retornaData() + ";" + rd.getTreino().getId()+ ";" + rd.getDieta().getId() + "\n"); //Gravação do texto
+                escritor.write(rd.getData().retornaData() + ";" + rd.getAguaIngerida() + ";" + rd.getTreino().getId()+ ";" + rd.getDieta().getId() + "\n"); //Gravação do texto
             }
             escritor.flush(); //descarga do buffer de escrita
             escritor.close(); //fechamento do arquivo
@@ -509,12 +510,11 @@ public class Repositorio {
         this.dietas = dietas;
     }
 
-    public HashMap<Data, RegistroDiario> getRegistrosDiarios() {
+    public HashMap<String, RegistroDiario> getRegistrosDiarios() {
         return registrosDiarios;
     }
 
-    public void setRegistrosDiarios(HashMap<Data, RegistroDiario> registrosDiarios) {
+    public void setRegistrosDiarios(HashMap<String, RegistroDiario> registrosDiarios) {
         this.registrosDiarios = registrosDiarios;
     }
-
 }

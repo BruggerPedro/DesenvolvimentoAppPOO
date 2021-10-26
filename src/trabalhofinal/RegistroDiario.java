@@ -13,11 +13,13 @@ public class RegistroDiario {
     private Data data;
     private Treino treino;
     private Dieta dieta;
+    private float aguaIngerida;
 
-    public RegistroDiario(Data data, Treino treino, Dieta dieta) {
+    public RegistroDiario(Data data, float aguaIngerida, Treino treino, Dieta dieta) {
         this.data = data;
         this.treino = treino;
         this.dieta = dieta;
+        this.aguaIngerida = aguaIngerida;
     }
 
     public Data getData() {
@@ -43,5 +45,12 @@ public class RegistroDiario {
     public void setDieta(Dieta dieta) {
         this.dieta = dieta;
     }
-    
+
+    public float getAguaIngerida() {
+        return aguaIngerida;
+    }
+
+    public void setAguaIngerida(float aguaIngerida) {
+        this.aguaIngerida = aguaIngerida;
+    }
 }
