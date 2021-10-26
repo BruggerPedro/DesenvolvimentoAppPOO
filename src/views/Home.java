@@ -579,13 +579,16 @@ public class Home extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addGroup(treinosVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(treinosVisualizacaoLayout.createSequentialGroup()
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 667, Short.MAX_VALUE)
-                        .addContainerGap())
+                        .addComponent(nomejLabel7)
+                        .addGap(407, 615, Short.MAX_VALUE))
                     .addGroup(treinosVisualizacaoLayout.createSequentialGroup()
                         .addGroup(treinosVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nomejLabel7)
-                            .addComponent(jLabel28))
-                        .addGap(40, 40, 40))))
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 667, Short.MAX_VALUE)
+                            .addGroup(treinosVisualizacaoLayout.createSequentialGroup()
+                                .addGap(106, 106, 106)
+                                .addComponent(jLabel28)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, treinosVisualizacaoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton16)
@@ -598,9 +601,9 @@ public class Home extends javax.swing.JFrame {
         treinosVisualizacaoLayout.setVerticalGroup(
             treinosVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(treinosVisualizacaoLayout.createSequentialGroup()
-                .addGap(11, 11, 11)
+                .addContainerGap()
                 .addComponent(jLabel28)
-                .addGap(40, 40, 40)
+                .addGap(39, 39, 39)
                 .addComponent(nomejLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1239,7 +1242,7 @@ public class Home extends javax.swing.JFrame {
 
         nomejLabel3.setText("ID :");
 
-        usuariojLabel2.setText("Título :");
+        usuariojLabel2.setText("Tipo:");
 
         sexojLabel2.setText("Alimentos:");
 
@@ -1752,9 +1755,7 @@ public class Home extends javax.swing.JFrame {
             }
 
             modelDietas.addRow(new Object[]{d.getId(), d.getNome(), d.getObjHidrico(), d.getObjCalorico(), d.caloriasIngeridas(), alimentos});
-
         }
-
     }//GEN-LAST:event_cadastroDietajButtonActionPerformed
 
     private void cadastroRefeicaojButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroRefeicaojButtonActionPerformed
@@ -1797,12 +1798,8 @@ public class Home extends javax.swing.JFrame {
             for (Alimento a : r.getAlimentos().values()) {
                 alimentos = alimentos + "/" + a.getNome();
             }
-
             model.addRow(new Object[]{r.getId(), r.getTipo(), alimentos});
-
         }
-
-
     }//GEN-LAST:event_cadastroRefeicaojButtonActionPerformed
 
     private void cadastroTreinojButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroTreinojButtonActionPerformed
@@ -1848,12 +1845,8 @@ public class Home extends javax.swing.JFrame {
             for (Exercicio e : t.getExercicios().values()) {
                 exercicios = exercicios + "/" + e.getNome();
             }
-
             modelTreinos.addRow(new Object[]{t.getId(), t.getNome(), t.caloriasGastas(), t.tempoGasto(), exercicios});
-
         }
-
-
     }//GEN-LAST:event_cadastroTreinojButtonActionPerformed
 
     private void cadastroExerciciosjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroExerciciosjButtonActionPerformed
@@ -2149,8 +2142,6 @@ public class Home extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Selecione um exercício", "Alerta", JOptionPane.INFORMATION_MESSAGE);
         }
-
-
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -2187,7 +2178,6 @@ public class Home extends javax.swing.JFrame {
                 idTreino.setText("");
                 tituloTreino.setText("");
             }
-
         }
         exsTmp.clear();
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -2284,9 +2274,7 @@ public class Home extends javax.swing.JFrame {
             Alimento a = repositorio.getAlimentos().get(key);
 
             model.addRow(new Object[]{a.getNome(), a.getTipo(), a.getQuantidade(), String.valueOf(a.getCaloriasTotais())});
-
         }
-
     }//GEN-LAST:event_cadastroAlimentosjButtonActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -2498,8 +2486,6 @@ public class Home extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Selecione um exercício", "Alerta", JOptionPane.INFORMATION_MESSAGE);
         }
-
-
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
@@ -2527,12 +2513,9 @@ public class Home extends javax.swing.JFrame {
                 if (e instanceof ExercicioMetragem) {
                     tipo = "Metragem";
                 }
-
                 model.addRow(new Object[]{e.getNome(), tipo, e.getTempoGasto(), String.valueOf(e.caloriasGastasExercicio())});
-
             }
             JOptionPane.showMessageDialog(null, "Exercício excluído!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
-
         } else {
             JOptionPane.showMessageDialog(null, "Selecione um exercício", "Alerta", JOptionPane.INFORMATION_MESSAGE);
         }
@@ -2540,6 +2523,47 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         // TODO add your handling code here:
+        repositorio.leExercicios();
+        repositorio.leTreinos();
+
+        if (treinosTabela1.getSelectedRow() != -1) {
+            String key = (String) treinosTabela1.getValueAt(treinosTabela1.getSelectedRow(), 0);
+
+            repositorio.getTreinos().remove(key);
+            repositorio.attTreinos();
+            repositorio.leExercicios();
+            repositorio.leTreinos();
+
+            if (repositorio.getTreinos().size() <= 0) {
+                JOptionPane.showMessageDialog(null, "Nenhum treino cadastrado!");
+            }
+
+            DefaultTableModel modelTreinos = (DefaultTableModel) treinosTabela1.getModel();
+            modelTreinos.setNumRows(0);
+            
+            treinosTabela1.getColumnModel().getColumn(0).setPreferredWidth(100);
+            treinosTabela1.getColumnModel().getColumn(1).setPreferredWidth(300);
+            treinosTabela1.getColumnModel().getColumn(2).setPreferredWidth(200);
+            treinosTabela1.getColumnModel().getColumn(3).setPreferredWidth(200);
+            treinosTabela1.getColumnModel().getColumn(4).setPreferredWidth(600);
+
+            ArrayList<String> keysTreinos = new ArrayList<>(repositorio.getTreinos().keySet());
+
+            Collections.sort(keysTreinos);
+
+            for (String k : keysTreinos) {
+                Treino t = repositorio.getTreinos().get(k);
+
+                String exercicios = "";
+                for (Exercicio e : t.getExercicios().values()) {
+                    exercicios = exercicios + "/" + e.getNome();
+                }
+                modelTreinos.addRow(new Object[]{t.getId(), t.getNome(), t.caloriasGastas(), t.tempoGasto(), exercicios});
+            }
+            JOptionPane.showMessageDialog(null, "Treino excluído!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione um treino", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
@@ -2576,14 +2600,13 @@ public class Home extends javax.swing.JFrame {
             }
 
             model.addRow(new Object[]{e.getNome(), tipo, e.getTempoGasto(), String.valueOf(e.caloriasGastasExercicio())});
-
         }
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
         // TODO add your handling code here:
         editarDadosPanel.setVisible(false);
-        treinoPanel.setVisible(true);
+        treinoPanel.setVisible(false);
         exercicioPanel.setVisible(false);
         refeicaoPanel.setVisible(false);
         alimentosPanel.setVisible(false);
@@ -2591,15 +2614,69 @@ public class Home extends javax.swing.JFrame {
         registrarDiaPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
-        treinosVisualizacao.setVisible(false);
+        treinosVisualizacao.setVisible(true);
         refeicoesVisualizacao.setVisible(false);
         alimentosVisualizacao.setVisible(false);
         dietasVisualizacao.setVisible(false);
 
+        repositorio.leExercicios();
+        repositorio.leTreinos();
+
+        if (treinosTabela1.getSelectedRow() != -1) {
+            treinoPanel.setVisible(true);
+            treinosVisualizacao.setVisible(false);
+
+            String key = (String) treinosTabela1.getValueAt(treinosTabela1.getSelectedRow(), 0);
+            Treino aux = repositorio.getTreinos().get(key);
+
+            idTreino.setText(aux.getId());
+            tituloTreino.setText(aux.getNome());
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione um treino", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         // TODO add your handling code here:
+         repositorio.leAlimentos();
+        repositorio.leRefeicoes();
+
+        if (refeicoesTabela1.getSelectedRow() != -1) {
+            String key = (String) refeicoesTabela1.getValueAt(refeicoesTabela1.getSelectedRow(), 0);
+
+            repositorio.getRefeicoes().remove(key);
+            repositorio.attRefeicoes();
+            repositorio.leAlimentos();
+            repositorio.leRefeicoes();
+
+            if (repositorio.getRefeicoes().size() <= 0) {
+                JOptionPane.showMessageDialog(null, "Nenhuma refeição cadastrada!");
+            }
+
+            DefaultTableModel model = (DefaultTableModel) refeicoesTabela1.getModel();
+            model.setNumRows(0);
+
+            refeicoesTabela1.getColumnModel().getColumn(0).setPreferredWidth(100);
+            refeicoesTabela1.getColumnModel().getColumn(1).setPreferredWidth(200);
+            refeicoesTabela1.getColumnModel().getColumn(2).setPreferredWidth(600);
+
+            ArrayList<String> keys = new ArrayList<String>(repositorio.getRefeicoes().keySet());
+
+            Collections.sort(keys);
+
+            for (String k : keys) {
+                Refeicao r = repositorio.getRefeicoes().get(k);
+
+                String alimentos = "";
+                for (Alimento a : r.getAlimentos().values()) {
+                    alimentos = alimentos + "/" + a.getNome();
+                }
+                model.addRow(new Object[]{r.getId(), r.getTipo(), alimentos});
+            }
+            JOptionPane.showMessageDialog(null, "Refeição excluída!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione uma refeição", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
@@ -2634,9 +2711,7 @@ public class Home extends javax.swing.JFrame {
 
         for (String key : keys) {
             Alimento a = repositorio.getAlimentos().get(key);
-
             model.addRow(new Object[]{a.getNome(), a.getTipo(), a.getQuantidade(), String.valueOf(a.getCaloriasTotais())});
-
         }
     }//GEN-LAST:event_jButton19ActionPerformed
 
@@ -2646,40 +2721,81 @@ public class Home extends javax.swing.JFrame {
         editarDadosPanel.setVisible(false);
         treinoPanel.setVisible(false);
         exercicioPanel.setVisible(false);
-        refeicaoPanel.setVisible(true);
+        refeicaoPanel.setVisible(false);
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
-        refeicoesVisualizacao.setVisible(false);
+        refeicoesVisualizacao.setVisible(true);
         alimentosVisualizacao.setVisible(false);
         dietasVisualizacao.setVisible(false);
 
         repositorio.leAlimentos();
+        repositorio.leRefeicoes();
 
-        if (repositorio.getAlimentos().size() <= 0) {
-            JOptionPane.showMessageDialog(null, "Nenhum alimento cadastrado!");
-        }
+        if (refeicoesTabela1.getSelectedRow() != -1) {
+            refeicaoPanel.setVisible(true);
+            refeicoesVisualizacao.setVisible(false);
+            
+            if (repositorio.getAlimentos().size() <= 0) {
+                JOptionPane.showMessageDialog(null, "Nenhum alimento cadastrado!");
+            }
 
-        DefaultTableModel model = (DefaultTableModel) alimentosTabela.getModel();
-        model.setNumRows(0);
+            DefaultTableModel model = (DefaultTableModel) alimentosTabela.getModel();
+            model.setNumRows(0);
 
-        ArrayList<String> keys = new ArrayList<String>(repositorio.getAlimentos().keySet());
+            ArrayList<String> keys = new ArrayList<String>(repositorio.getAlimentos().keySet());
 
-        Collections.sort(keys);
+            Collections.sort(keys);
 
-        for (String key : keys) {
-            Alimento a = repositorio.getAlimentos().get(key);
+            for (String key : keys) {
+                Alimento a = repositorio.getAlimentos().get(key);
+                model.addRow(new Object[]{a.getNome(), a.getTipo(), a.getQuantidade(), String.valueOf(a.getCaloriasTotais())});
+            }
 
-            model.addRow(new Object[]{a.getNome(), a.getTipo(), a.getQuantidade(), String.valueOf(a.getCaloriasTotais())});
+            String key = (String) refeicoesTabela1.getValueAt(refeicoesTabela1.getSelectedRow(), 0);
+            Refeicao aux = repositorio.getRefeicoes().get(key);
 
+            idRefeicao.setText(aux.getId());
+            tipoRefeição.setText(aux.getTipo());
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione uma refeição", "Alerta", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
         // TODO add your handling code here:
+        repositorio.leAlimentos();
+
+        if (alimentosTabela1.getSelectedRow() != -1) {
+            String key = (String) alimentosTabela1.getValueAt(alimentosTabela1.getSelectedRow(), 0);
+
+            repositorio.getAlimentos().remove(key);
+            repositorio.attAlimento();
+            repositorio.leAlimentos();
+
+            if (repositorio.getAlimentos().size() <= 0) {
+                JOptionPane.showMessageDialog(null, "Nenhum alimento cadastrado!");
+            }
+
+            DefaultTableModel model = (DefaultTableModel) alimentosTabela1.getModel();
+            model.setNumRows(0);
+
+            ArrayList<String> keys = new ArrayList<String>(repositorio.getAlimentos().keySet());
+
+            Collections.sort(keys);
+
+            for (String k : keys) {
+                Alimento a = repositorio.getAlimentos().get(k);
+
+                model.addRow(new Object[]{a.getNome(), a.getTipo(), a.getQuantidade(), String.valueOf(a.getCaloriasTotais())});
+            }
+            JOptionPane.showMessageDialog(null, "Alimento excluído!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione um alimento", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_jButton21ActionPerformed
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
@@ -2706,20 +2822,87 @@ public class Home extends javax.swing.JFrame {
         treinoPanel.setVisible(false);
         exercicioPanel.setVisible(false);
         refeicaoPanel.setVisible(false);
-        alimentosPanel.setVisible(true);
+        alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
         refeicoesVisualizacao.setVisible(false);
-        alimentosVisualizacao.setVisible(false);
+        alimentosVisualizacao.setVisible(true);
         dietasVisualizacao.setVisible(false);
 
+        repositorio.leAlimentos();
+
+        if (alimentosTabela1.getSelectedRow() != -1) {
+            alimentosPanel.setVisible(true);
+            alimentosVisualizacao.setVisible(false);
+
+            String key = (String) alimentosTabela1.getValueAt(alimentosTabela1.getSelectedRow(), 0);
+            Alimento aux = repositorio.getAlimentos().get(key);
+
+            nomeAlimento.setText(aux.getNome());
+            tipoAlimento.setText(aux.getTipo());
+            quantidadeAlimento.setText(aux.getQuantidade());
+            calQuantidade.setText(String.valueOf(aux.getCaloriasTotais()));
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione um alimento", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_jButton23ActionPerformed
 
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
         // TODO add your handling code here:
+        repositorio.leAlimentos();
+        repositorio.leRefeicoes();
+        repositorio.leExercicios();
+        repositorio.leTreinos();
+        repositorio.leDietas();
+
+        if (dietasTabela1.getSelectedRow() != -1) {
+            String key = (String) dietasTabela1.getValueAt(dietasTabela1.getSelectedRow(), 0);
+
+            repositorio.getDietas().remove(key);
+            repositorio.attDietas();
+            repositorio.leAlimentos();
+            repositorio.leRefeicoes();
+            repositorio.leExercicios();
+            repositorio.leTreinos();
+            repositorio.leDietas();
+
+            if (repositorio.getDietas().size() <= 0) {
+                JOptionPane.showMessageDialog(null, "Nenhuma dieta cadastrada!");
+            }
+
+            DefaultTableModel modelDietas = (DefaultTableModel) dietasTabela1.getModel();
+            modelDietas.setNumRows(0);
+
+            dietasTabela1.getColumnModel().getColumn(0).setPreferredWidth(50);
+            dietasTabela1.getColumnModel().getColumn(1).setPreferredWidth(200);
+            dietasTabela1.getColumnModel().getColumn(2).setPreferredWidth(80);
+            dietasTabela1.getColumnModel().getColumn(3).setPreferredWidth(80);
+            dietasTabela1.getColumnModel().getColumn(4).setPreferredWidth(100);
+            dietasTabela1.getColumnModel().getColumn(5).setPreferredWidth(600);
+
+            ArrayList<String> keysDietas = new ArrayList<>(repositorio.getDietas().keySet());
+
+            Collections.sort(keysDietas);
+
+            for (String k : keysDietas) {
+                Dieta d = repositorio.getDietas().get(k);
+
+                String alimentos = "";
+                for (Refeicao r : d.getRefeicoes().values()) {
+                    for (Alimento a : r.getAlimentos().values()) {
+                        alimentos = alimentos + "/" + a.getNome();
+                    }
+                }
+
+                modelDietas.addRow(new Object[]{d.getId(), d.getNome(), d.getObjHidrico(), d.getObjCalorico(), d.caloriasIngeridas(), alimentos});
+            }
+            JOptionPane.showMessageDialog(null, "Dieta excluída!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione uma dieta", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_jButton24ActionPerformed
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
@@ -2742,7 +2925,7 @@ public class Home extends javax.swing.JFrame {
         repositorio.leRefeicoes();
 
         if (repositorio.getRefeicoes().size() <= 0) {
-            JOptionPane.showMessageDialog(null, "Nenhuma refeição cadastradA!");
+            JOptionPane.showMessageDialog(null, "Nenhuma refeição cadastrada!");
         }
 
         DefaultTableModel model = (DefaultTableModel) refeicoesTabela.getModel();
@@ -2763,9 +2946,7 @@ public class Home extends javax.swing.JFrame {
             for (Alimento a : r.getAlimentos().values()) {
                 alimentos = alimentos + "/" + a.getNome();
             }
-
             model.addRow(new Object[]{r.getId(), r.getTipo(), alimentos});
-
         }
     }//GEN-LAST:event_jButton25ActionPerformed
 
@@ -2777,42 +2958,57 @@ public class Home extends javax.swing.JFrame {
         exercicioPanel.setVisible(false);
         refeicaoPanel.setVisible(false);
         alimentosPanel.setVisible(false);
-        dietaPanel.setVisible(true);
+        dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
         refeicoesVisualizacao.setVisible(false);
         alimentosVisualizacao.setVisible(false);
-        dietasVisualizacao.setVisible(false);
+        dietasVisualizacao.setVisible(true);
 
         repositorio.leRefeicoes();
+        
 
-        if (repositorio.getRefeicoes().size() <= 0) {
-            JOptionPane.showMessageDialog(null, "Nenhuma refeição cadastradA!");
-        }
 
-        DefaultTableModel model = (DefaultTableModel) refeicoesTabela.getModel();
-        model.setNumRows(0);
-
-        refeicoesTabela.getColumnModel().getColumn(0).setPreferredWidth(100);
-        refeicoesTabela.getColumnModel().getColumn(1).setPreferredWidth(200);
-        refeicoesTabela.getColumnModel().getColumn(2).setPreferredWidth(600);
-
-        ArrayList<String> keys = new ArrayList<String>(repositorio.getRefeicoes().keySet());
-
-        Collections.sort(keys);
-
-        for (String key : keys) {
-            Refeicao r = repositorio.getRefeicoes().get(key);
-
-            String alimentos = "";
-            for (Alimento a : r.getAlimentos().values()) {
-                alimentos = alimentos + "/" + a.getNome();
+        if (dietasTabela1.getSelectedRow() != -1) {
+            dietaPanel.setVisible(true);
+            dietasVisualizacao.setVisible(false);
+            
+            if (repositorio.getRefeicoes().size() <= 0) {
+                JOptionPane.showMessageDialog(null, "Nenhuma refeição cadastrada!");
             }
 
-            model.addRow(new Object[]{r.getId(), r.getTipo(), alimentos});
+            DefaultTableModel model = (DefaultTableModel) refeicoesTabela.getModel();
+            model.setNumRows(0);
 
+            refeicoesTabela.getColumnModel().getColumn(0).setPreferredWidth(100);
+            refeicoesTabela.getColumnModel().getColumn(1).setPreferredWidth(200);
+            refeicoesTabela.getColumnModel().getColumn(2).setPreferredWidth(600);
+
+            ArrayList<String> keys = new ArrayList<String>(repositorio.getRefeicoes().keySet());
+
+            Collections.sort(keys);
+
+            for (String key : keys) {
+                Refeicao r = repositorio.getRefeicoes().get(key);
+
+                String alimentos = "";
+                for (Alimento a : r.getAlimentos().values()) {
+                    alimentos = alimentos + "/" + a.getNome();
+                }
+                model.addRow(new Object[]{r.getId(), r.getTipo(), alimentos});
+            }
+
+            String key = (String) dietasTabela1.getValueAt(dietasTabela1.getSelectedRow(), 0);
+            Dieta aux = repositorio.getDietas().get(key);
+
+            idDieta.setText(aux.getId());
+            nomeDieta.setText(aux.getNome());
+            objCal.setText(String.valueOf(aux.getObjCalorico()));
+            objHid.setText(String.valueOf(aux.getObjHidrico()));
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione uma dieta", "Alerta", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jButton26ActionPerformed
 

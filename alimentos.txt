@@ -34,7 +34,7 @@ bala;goma;1 unidade;18.0
 chocolate/doce;suspiro pequeno;10g;37.0
 bolo;bolo de fubá;50g;310.0
 bebida;suco de melão natural;240ml;60.0
-fruta;abacate;100g;177.0
+fruta doce;abacate;50g;100.0
 bebida;refrigerante de cola;350ml;137.0
 fruta;laranja;1 unidade;46.0
 chocolate/doce;banana caramelada;1 unidade;140.0
@@ -178,7 +178,6 @@ chocolate/doce;chocolate meio amargo;200g;1074.0
 massa;macarronada;100g;289.0
 bebida;café sem açúcar;40ml;3.0
 bebida;chope;300ml;180.0
-biscoito;água e sal;1 unidade;32.0
 fruta;maçã vermelha;130g;85.0
 bebida;suco de acerola natural;240ml;36.0
 bolo;bolo de laranja;50g;173.0
