@@ -238,6 +238,12 @@ public class Registrar extends javax.swing.JFrame {
                 Home h = new Home(u);
                 h.setVisible(true);
                 this.setVisible(false);
+                rep.setNomeUser(u.getNomeUsuario());
+                rep.attAlimento();
+                rep.attExercicio();
+                rep.attDietas();
+                rep.attTreinos();
+                rep.attRegistrosDiarios();
             }
             else {
                 JOptionPane.showMessageDialog(null, "Nome de usuario já existe", "Alerta", JOptionPane.INFORMATION_MESSAGE);

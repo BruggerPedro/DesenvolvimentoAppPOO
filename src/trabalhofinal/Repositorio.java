@@ -19,13 +19,23 @@ import java.util.HashMap;
  */
 public class Repositorio {
 
-    private HashMap<String, Usuario> usuarios = new HashMap<>();
-    private HashMap<String, Exercicio> exercicios = new HashMap<>();
-    private HashMap<String, Treino> treinos = new HashMap<>();
-    private HashMap<String, Refeicao> refeicoes = new HashMap<>();
-    private HashMap<String, Alimento> alimentos = new HashMap<>();
-    private HashMap<String, Dieta> dietas = new HashMap<>();
-    private HashMap<String, RegistroDiario> registrosDiarios = new HashMap<>();
+    public String nomeUser;
+    public HashMap<String, Usuario> usuarios = new HashMap<>();
+    public HashMap<String, Exercicio> exercicios = new HashMap<>();
+    public HashMap<String, Treino> treinos = new HashMap<>();
+    public HashMap<String, Refeicao> refeicoes = new HashMap<>();
+    public HashMap<String, Alimento> alimentos = new HashMap<>();
+    public HashMap<String, Dieta> dietas = new HashMap<>();
+    public HashMap<String, RegistroDiario> registrosDiarios = new HashMap<>();
+
+    public Repositorio() {
+    }
+
+    public Repositorio(String nomeUser) {
+        this.nomeUser = nomeUser;
+    }
+    
+    
 
     public void leUsuarios() {
         String linha;
@@ -98,7 +108,7 @@ public class Repositorio {
         String linha;
         BufferedReader arquivo; //Objeto leitor 
         try {
-            arquivo = new BufferedReader(new FileReader(new File("exercicios.txt")));
+            arquivo = new BufferedReader(new FileReader(new File("dados/"+this.getNomeUser()+"-exercicios.txt")));
             //Instanciação do objeto leitor
             linha = arquivo.readLine();
             while (linha != null) {
@@ -134,7 +144,7 @@ public class Repositorio {
     public void addExercicio(Exercicio e) {
         BufferedWriter escritor = null; //objeto escritor
         try {
-            escritor = new BufferedWriter(new FileWriter(new File("exercicios.txt"), true));
+            escritor = new BufferedWriter(new FileWriter(new File("dados/"+this.getNomeUser()+"-exercicios.txt"), true));
             //Instanciação do objeto escritor
 
             // nomeCompleto, sexo, nomeUsuario, senha, dataNascimento, peso, altura
@@ -154,7 +164,7 @@ public class Repositorio {
     public void attExercicio() {
         BufferedWriter escritor = null; //objeto escritor
         try {
-            escritor = new BufferedWriter(new FileWriter(new File("exercicios.txt")));
+            escritor = new BufferedWriter(new FileWriter(new File("dados/"+this.getNomeUser()+"-exercicios.txt")));
             //Instanciação do objeto escritor
             for (String key : this.getExercicios().keySet()) {
                 Exercicio e = this.getExercicios().get(key);
@@ -178,7 +188,7 @@ public class Repositorio {
         String linha;
         BufferedReader arquivo; //Objeto leitor 
         try {
-            arquivo = new BufferedReader(new FileReader(new File("treinos.txt")));
+            arquivo = new BufferedReader(new FileReader(new File("dados/"+this.getNomeUser()+"-treinos.txt")));
             //Instanciação do objeto leitor
             linha = arquivo.readLine();
             while (linha != null) {
@@ -210,7 +220,7 @@ public class Repositorio {
         this.leExercicios();
         BufferedWriter escritor = null; //objeto escritor
         try {
-            escritor = new BufferedWriter(new FileWriter(new File("treinos.txt"), true));
+            escritor = new BufferedWriter(new FileWriter(new File("dados/"+this.getNomeUser()+"-treinos.txt"), true));
             //Instanciação do objeto escritor
 
             // nomeCompleto, sexo, nomeUsuario, senha, dataNascimento, peso, altura
@@ -230,7 +240,7 @@ public class Repositorio {
         this.leExercicios();
         BufferedWriter escritor = null; //objeto escritor
         try {
-            escritor = new BufferedWriter(new FileWriter(new File("treinos.txt")));
+            escritor = new BufferedWriter(new FileWriter(new File("dados/"+this.getNomeUser()+"-treinos.txt")));
             //Instanciação do objeto escritor
             for (String key : this.getTreinos().keySet()) {
                 Treino t = this.getTreinos().get(key);
@@ -252,7 +262,7 @@ public class Repositorio {
         String linha;
         BufferedReader arquivo; //Objeto leitor 
         try {
-            arquivo = new BufferedReader(new FileReader(new File("alimentos.txt")));
+            arquivo = new BufferedReader(new FileReader(new File("dados/"+this.getNomeUser()+"-alimentos.txt")));
             //Instanciação do objeto leitor
             linha = arquivo.readLine();
             while (linha != null) {
@@ -278,7 +288,7 @@ public class Repositorio {
     public void attAlimento() {
         BufferedWriter escritor = null; //objeto escritor
         try {
-            escritor = new BufferedWriter(new FileWriter(new File("alimentos.txt")));
+            escritor = new BufferedWriter(new FileWriter(new File("dados/"+this.getNomeUser()+"-alimentos.txt")));
             //Instanciação do objeto escritor
             for (String key : this.getAlimentos().keySet()) {
                 Alimento a = this.getAlimentos().get(key);
@@ -297,7 +307,7 @@ public class Repositorio {
         String linha;
         BufferedReader arquivo; //Objeto leitor 
         try {
-            arquivo = new BufferedReader(new FileReader(new File("refeicoes.txt")));
+            arquivo = new BufferedReader(new FileReader(new File("dados/"+this.getNomeUser()+"-refeicoes.txt")));
             //Instanciação do objeto leitor
             linha = arquivo.readLine();
             while (linha != null) {
@@ -328,7 +338,7 @@ public class Repositorio {
         this.leAlimentos();
         BufferedWriter escritor = null; //objeto escritor
         try {
-            escritor = new BufferedWriter(new FileWriter(new File("refeicoes.txt")));
+            escritor = new BufferedWriter(new FileWriter(new File("dados/"+this.getNomeUser()+"-refeicoes.txt")));
             //Instanciação do objeto escritor
             for (String key : this.getRefeicoes().keySet()) {
                 Refeicao r = this.getRefeicoes().get(key);
@@ -351,7 +361,7 @@ public class Repositorio {
         String linha;
         BufferedReader arquivo; //Objeto leitor 
         try {
-            arquivo = new BufferedReader(new FileReader(new File("dietas.txt")));
+            arquivo = new BufferedReader(new FileReader(new File("dados/"+this.getNomeUser()+"-dietas.txt")));
             //Instanciação do objeto leitor
             linha = arquivo.readLine();
             while (linha != null) {
@@ -384,7 +394,7 @@ public class Repositorio {
         this.leRefeicoes();
         BufferedWriter escritor = null; //objeto escritor
         try {
-            escritor = new BufferedWriter(new FileWriter(new File("dietas.txt")));
+            escritor = new BufferedWriter(new FileWriter(new File("dados/"+this.getNomeUser()+"-dietas.txt")));
             //Instanciação do objeto escritor
             for (String key : this.getDietas().keySet()) {
                 Dieta d = this.getDietas().get(key);
@@ -408,7 +418,7 @@ public class Repositorio {
         String linha;
         BufferedReader arquivo; //Objeto leitor 
         try {
-            arquivo = new BufferedReader(new FileReader(new File("registrosDiarios.txt")));
+            arquivo = new BufferedReader(new FileReader(new File("dados/"+this.getNomeUser()+"-registrosDiarios.txt")));
             //Instanciação do objeto leitor
             linha = arquivo.readLine();
             while (linha != null) {
@@ -441,7 +451,7 @@ public class Repositorio {
         this.leDietas();
         BufferedWriter escritor = null; //objeto escritor
         try {
-            escritor = new BufferedWriter(new FileWriter(new File("registrosDiarios.txt")));
+            escritor = new BufferedWriter(new FileWriter(new File("dados/"+this.getNomeUser()+"-registrosDiarios.txt")));
             //Instanciação do objeto escritor
             for (String key : this.getRegistrosDiarios().keySet()) {
                 RegistroDiario rd = this.getRegistrosDiarios().get(key);
@@ -510,4 +520,14 @@ public class Repositorio {
     public void setRegistrosDiarios(HashMap<String, RegistroDiario> registrosDiarios) {
         this.registrosDiarios = registrosDiarios;
     }
+
+    public String getNomeUser() {
+        return nomeUser;
+    }
+
+    public void setNomeUser(String nomeUser) {
+        this.nomeUser = nomeUser;
+    }
+    
+    
 }

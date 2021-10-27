@@ -64,6 +64,7 @@ public class Home extends javax.swing.JFrame {
         registrosVisualizacao.setVisible(false);
 
         this.logado = logado;
+        repositorio.setNomeUser(this.logado.getNomeUsuario());
 
         nomeCompleto.setText(logado.getNomeCompleto());
         usuario.setText(logado.getNomeUsuario());
