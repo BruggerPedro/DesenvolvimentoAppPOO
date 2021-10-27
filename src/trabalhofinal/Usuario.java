@@ -11,17 +11,19 @@ package trabalhofinal;
  */
 public class Usuario {
     protected String nomeCompleto, sexo, nomeUsuario, senha;
-    protected float peso, altura, IMC;
+    protected float pesoInicio, alturaInicio, peso, altura;
     protected Data dataNascimento;
-
-    public Usuario(String nomeCompleto, String sexo, String nomeUsuario, String senha, Data dataNascimento, float peso, float altura) {
+    
+    public Usuario(String nomeCompleto, String sexo, String nomeUsuario, String senha, Data dataNascimento, float peso, float altura, float pesoInicio, float alturaInicio) {
         this.nomeCompleto = nomeCompleto;
         this.sexo = sexo;
         this.nomeUsuario = nomeUsuario;
         this.senha = senha;
         this.dataNascimento = dataNascimento;
-        this.altura = peso;
-        this.peso = altura;
+        this.altura = altura;
+        this.peso = peso;
+        this.pesoInicio = pesoInicio;
+        this.alturaInicio = alturaInicio;
     }
     
     public String getNomeCompleto() {
@@ -72,10 +74,6 @@ public class Usuario {
         this.altura = altura;
     }
 
-    public float getIMC() {
-        return IMC;
-    }
-
     public Data getDataNascimento() {
         return dataNascimento;
     }
@@ -83,20 +81,28 @@ public class Usuario {
     public void setDataNascimento(Data dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
-    
-    public void calculaIMC() {
-        if(peso > 0 && altura > 0) {
-            this.IMC = peso/(altura*altura);
-        } else {
-            System.out.println("Impossível calcular IMC... por favor atribua valores ao peso e a altura!");
-        }
+
+    public float getPesoInicio() {
+        return pesoInicio;
+    }
+
+    public void setPesoInicio(float pesoInicio) {
+        this.pesoInicio = pesoInicio;
+    }
+
+    public float getAlturaInicio() {
+        return alturaInicio;
+    }
+
+    public void setAlturaInicio(float alturaInicio) {
+        this.alturaInicio = alturaInicio;
     }
     
-    public void perfilUsuario() {
-        System.out.println("Nome completo: " + getNomeCompleto());
-        System.out.println("Sexo: " + getSexo());
-        System.out.print("Data de nascimento: ");
-        getDataNascimento().mostrarData();
-        System.out.println("Nome completo: " + getNomeCompleto());
+    public float calculaIMCInicial() {
+        return pesoInicio/(alturaInicio*alturaInicio);
+    }
+    
+    public float calculaIMC() {
+        return peso/(altura*altura);
     }
 }

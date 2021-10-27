@@ -47,8 +47,10 @@ public class Repositorio {
 
                 float peso = Float.parseFloat(valores[5]);
                 float altura = Float.parseFloat(valores[6]);
+                float pesoIni = Float.parseFloat(valores[7]);
+                float alturaIni = Float.parseFloat(valores[8]);
 
-                Usuario u = new Usuario(nomeCompleto, sexo, nomeUsuario, senha, dataNascimento, peso, altura);
+                Usuario u = new Usuario(nomeCompleto, sexo, nomeUsuario, senha, dataNascimento, peso, altura, pesoIni, alturaIni);
 
                 getUsuarios().put(nomeUsuario, u);
 
@@ -67,7 +69,7 @@ public class Repositorio {
             //Instanciação do objeto escritor
 
             // nomeCompleto, sexo, nomeUsuario, senha, dataNascimento, peso, altura
-            escritor.write(u.getNomeCompleto() + ";" + u.getSexo() + ";" + u.getNomeUsuario() + ";" + u.getSenha() + ";" + u.getDataNascimento().retornaData() + ";" + u.getPeso() + ";" + u.getAltura() + "\n"); //Gravação do texto
+            escritor.write(u.getNomeCompleto() + ";" + u.getSexo() + ";" + u.getNomeUsuario() + ";" + u.getSenha() + ";" + u.getDataNascimento().retornaData() + ";" + u.getPeso() + ";" + u.getAltura() + ";" + u.getPesoInicio()+ ";" + u.getAlturaInicio()+ "\n"); //Gravação do texto
             escritor.flush(); //descarga do buffer de escrita
             escritor.close(); //fechamento do arquivo
         } catch (IOException e) {
@@ -83,7 +85,7 @@ public class Repositorio {
             for (String key : this.getUsuarios().keySet()) {
                 Usuario u = this.getUsuarios().get(key);
 
-                escritor.write(u.getNomeCompleto() + ";" + u.getSexo() + ";" + u.getNomeUsuario() + ";" + u.getSenha() + ";" + u.getDataNascimento().retornaData() + ";" + u.getPeso() + ";" + u.getAltura() + "\n"); //Gravação do texto
+                escritor.write(u.getNomeCompleto() + ";" + u.getSexo() + ";" + u.getNomeUsuario() + ";" + u.getSenha() + ";" + u.getDataNascimento().retornaData() + ";" + u.getPeso() + ";" + u.getAltura() + ";" + u.getPesoInicio()+ ";" + u.getAlturaInicio()+ "\n"); //Gravação do texto
             }
             escritor.flush(); //descarga do buffer de escrita
             escritor.close(); //fechamento do arquivo
@@ -189,11 +191,10 @@ public class Repositorio {
 
                 // antes de fazer a leitura dos treinos tem que ler os exercícios
                 for (int i = 2; i < valores.length; i++) {
-
                     String nomeEx = valores[i];
                     Exercicio aux = this.getExercicios().get(nomeEx);
-                    treino.getExercicios().put(aux.getNome(), aux);
-
+                    if(aux != null)
+                        treino.getExercicios().put(aux.getNome(), aux);
                 }
 
                 this.getTreinos().put(id, treino);
@@ -215,9 +216,7 @@ public class Repositorio {
             // nomeCompleto, sexo, nomeUsuario, senha, dataNascimento, peso, altura
             String exercicios = "";
             for (Exercicio e : t.getExercicios().values()) {
-
                 exercicios = exercicios + ";" + e.getNome();
-
             }
             escritor.write(t.getId() + ";" + t.getNome() + exercicios + "\n"); //Gravação do texto
             escritor.flush(); //descarga do buffer de escrita
@@ -237,9 +236,7 @@ public class Repositorio {
 
                 String exercicios = "";
                 for (Exercicio e : t.getExercicios().values()) {
-
                     exercicios = exercicios + ";" + e.getNome();
-
                 }
                 escritor.write(t.getId() + ";" + t.getNome() + exercicios + "\n"); //Gravação do texto
             }
@@ -295,10 +292,11 @@ public class Repositorio {
     }
 
     public void leRefeicoes() {
+        this.leAlimentos();
         String linha;
         BufferedReader arquivo; //Objeto leitor 
         try {
-            arquivo = new BufferedReader(new FileReader(new File("refeições.txt")));
+            arquivo = new BufferedReader(new FileReader(new File("refeicoes.txt")));
             //Instanciação do objeto leitor
             linha = arquivo.readLine();
             while (linha != null) {
@@ -309,17 +307,11 @@ public class Repositorio {
 
                 Refeicao refeicao = new Refeicao(id, tipo);
 
-                // antes de fazer a leitura dos treinos tem que ler os exercícios
-                for (int i = 2; i < valores.length; i += 4) {
-
-                    String tipoAlimento = valores[i];
-                    String nomeAlimento = valores[i + 1];
-                    String quantidadeAlimento = valores[i + 2];
-                    float calQuantidade = Float.parseFloat(valores[i + 3]);
-
-                    Alimento aux = new Alimento(tipoAlimento, nomeAlimento, quantidadeAlimento, calQuantidade);
-                    refeicao.getAlimentos().put(aux.getNome(), aux);
-
+                for (int i = 2; i < valores.length; i ++) {
+                    String nomeAlimento = valores[i];
+                    Alimento aux = this.getAlimentos().get(nomeAlimento);
+                    if(aux != null)
+                        refeicao.getAlimentos().put(aux.getNome(), aux);
                 }
 
                 this.getRefeicoes().put(id, refeicao);
@@ -334,16 +326,14 @@ public class Repositorio {
     public void attRefeicoes() {
         BufferedWriter escritor = null; //objeto escritor
         try {
-            escritor = new BufferedWriter(new FileWriter(new File("refeições.txt")));
+            escritor = new BufferedWriter(new FileWriter(new File("refeicoes.txt")));
             //Instanciação do objeto escritor
             for (String key : this.getRefeicoes().keySet()) {
                 Refeicao r = this.getRefeicoes().get(key);
 
                 String alimentos = "";
                 for (Alimento a : r.getAlimentos().values()) {
-
-                    alimentos = alimentos + ";" + a.getTipo() + ";" + a.getNome() + ";" + a.getQuantidade() + ";" + a.getCaloriasTotais();
-
+                    alimentos = alimentos + ";" +  a.getNome();
                 }
                 escritor.write(r.getId() + ";" + r.getTipo() + alimentos + "\n"); //Gravação do texto
             }
@@ -372,13 +362,11 @@ public class Repositorio {
 
                 Dieta d = new Dieta(id, nome, objCal, objHid);
 
-                // antes de fazer a leitura dos treinos tem que ler os exercícios
                 for (int i = 4; i < valores.length; i ++) {
-
                     String idRefeicao = valores[i];
                     Refeicao aux = this.getRefeicoes().get(idRefeicao);
-                    d.getRefeicoes().put(aux.getId(), aux);
-
+                    if(aux != null)
+                        d.getRefeicoes().put(aux.getId(), aux);
                 }
 
                 this.getDietas().put(id, d);
@@ -400,9 +388,7 @@ public class Repositorio {
 
                 String refeicoes = "";
                 for (Refeicao r : d.getRefeicoes().values()) {
-
                     refeicoes = refeicoes + ";" + r.getId();
-
                 }
                 escritor.write(d.getId() + ";" + d.getNome()+ ";" + d.getObjCalorico() + ";" + d.getObjHidrico() + refeicoes + "\n"); //Gravação do texto
             }
@@ -434,9 +420,11 @@ public class Repositorio {
                 Treino t = this.getTreinos().get(idTreino);
                 Dieta di = this.getDietas().get(idDieta);
                 
-                RegistroDiario rd = new RegistroDiario(d, Float.parseFloat(aguaIngerida), t, di);
+                if(t != null && di != null) {
+                    RegistroDiario rd = new RegistroDiario(d, Float.parseFloat(aguaIngerida), t, di);
+                    this.getRegistrosDiarios().put(d.retornaData(), rd);
+                }
                 
-                this.getRegistrosDiarios().put(d.retornaData(), rd);
                 linha = arquivo.readLine();
             }
             arquivo.close(); //fechamento do arquivo
@@ -446,6 +434,7 @@ public class Repositorio {
     }
 
     public void attRegistrosDiarios() {
+        this.leRegistrosDiarios();
         BufferedWriter escritor = null; //objeto escritor
         try {
             escritor = new BufferedWriter(new FileWriter(new File("registrosDiarios.txt")));

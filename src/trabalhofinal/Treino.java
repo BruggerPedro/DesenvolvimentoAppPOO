@@ -21,9 +21,21 @@ public class Treino {
         for (Exercicio e : getExercicios().values()){
             String tempo = e.getTempoGasto();
             String[] val = tempo.split(":");
-            ht += Integer.parseInt(val[0]);
-            mt += Integer.parseInt(val[1]);
             st += Integer.parseInt(val[2]);
+            if(st > 59) {
+                mt++;
+                st -= 59;
+                if(mt > 59) {
+                    ht++;
+                    mt -= 59;
+                }
+            }
+            mt += Integer.parseInt(val[1]);
+            if(mt > 59) {
+                ht++;
+                mt -= 59;
+            }
+            ht += Integer.parseInt(val[0]);
         }
         
         return ht+":"+mt+":"+st;
@@ -34,7 +46,6 @@ public class Treino {
         for (Exercicio e : getExercicios().values()){
             total += e.caloriasGastasExercicio();
         }
-        
         return total;
     }
     

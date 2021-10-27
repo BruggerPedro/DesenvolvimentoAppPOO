@@ -52,6 +52,7 @@ public class Registrar extends javax.swing.JFrame {
         cadastrarjLabel = new javax.swing.JLabel();
         cadastrarTitlejLabel = new javax.swing.JLabel();
         registrarjButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(35, 31, 32));
@@ -104,6 +105,13 @@ public class Registrar extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("VOLTAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout editarDadosPanelLayout = new javax.swing.GroupLayout(editarDadosPanel);
         editarDadosPanel.setLayout(editarDadosPanelLayout);
         editarDadosPanelLayout.setHorizontalGroup(
@@ -139,7 +147,9 @@ public class Registrar extends javax.swing.JFrame {
                                 .addComponent(peso, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(altura, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(editarDadosPanelLayout.createSequentialGroup()
-                        .addGap(189, 189, 189)
+                        .addContainerGap()
+                        .addComponent(jButton1)
+                        .addGap(96, 96, 96)
                         .addGroup(editarDadosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(editarDadosPanelLayout.createSequentialGroup()
                                 .addGap(21, 21, 21)
@@ -155,7 +165,9 @@ public class Registrar extends javax.swing.JFrame {
             editarDadosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(editarDadosPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(cadastrarjLabel)
+                .addGroup(editarDadosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cadastrarjLabel)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cadastrarTitlejLabel)
                 .addGap(18, 18, 18)
@@ -220,7 +232,7 @@ public class Registrar extends javax.swing.JFrame {
             float height = Float.parseFloat(altura.getText());
             
             if (!rep.getUsuarios().containsKey(user)){
-                Usuario u = new Usuario (name, sex, user, password, new Data(dayN, monthN, yearN), weight, height);
+                Usuario u = new Usuario (name, sex, user, password, new Data(dayN, monthN, yearN), weight, height, weight, height);
                 rep.addUsuario(u);
                 JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
                 Home h = new Home(u);
@@ -230,11 +242,15 @@ public class Registrar extends javax.swing.JFrame {
             else {
                 JOptionPane.showMessageDialog(null, "Nome de usuario já existe", "Alerta", JOptionPane.INFORMATION_MESSAGE);
             }
-            
-            
         }
-        
     }//GEN-LAST:event_registrarjButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Login l = new Login();
+        l.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -281,6 +297,7 @@ public class Registrar extends javax.swing.JFrame {
     private javax.swing.JLabel dataNascimentojLabel;
     private javax.swing.JTextField diaNascimento;
     private javax.swing.JPanel editarDadosPanel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JTextField mesNascimento;
     private javax.swing.JTextField nomeCompleto;
     private javax.swing.JLabel nomejLabel;

@@ -159,7 +159,7 @@ public class Login extends javax.swing.JFrame {
             if (flag) {
                 Home h = new Home(logado);
                 h.setVisible(true);
-                this.setVisible(false);
+                this.dispose();
             }
             else {
                 JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos", "Alerta", JOptionPane.ERROR_MESSAGE);
@@ -172,7 +172,7 @@ public class Login extends javax.swing.JFrame {
     private void loginTitlejLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginTitlejLabel1MouseClicked
         Registrar r = new Registrar();
         r.setVisible(true);
-        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_loginTitlejLabel1MouseClicked
 
     /**

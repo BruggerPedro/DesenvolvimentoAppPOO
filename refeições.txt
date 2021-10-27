@@ -1,5 +1,0 @@
-1;cafe;fruta;abacaxi;80g;50.0
-2;almoço;fruta;banana-maçã;65g;72.0;cereal;aveia em flocos;15g;50.0;massa;canelone;150g;552.0;legume/grão/verduras;aipim frito;100g;353.0;carne;bacon frito;30g;198.0
-3;janta;carne;almôndega de carne;30g;61.0
-4;seia;fruta;abacate;100g;177.0;legume/grão/verduras;abóbora;100g;40.0
-5;janta;legume/grão/verduras;abóbora;100g;40.0;legume/grão/verduras;aipim frito;100g;353.0;legume/grão/verduras;agrião;100g;28.0

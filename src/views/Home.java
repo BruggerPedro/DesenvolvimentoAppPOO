@@ -5,8 +5,13 @@
  */
 package views;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import trabalhofinal.Alimento;
@@ -49,6 +54,7 @@ public class Home extends javax.swing.JFrame {
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
+        relatorioPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
@@ -181,6 +187,38 @@ public class Home extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         segundosGastos = new javax.swing.JTextField();
         minutosGastos = new javax.swing.JTextField();
+        relatorioPanel = new javax.swing.JPanel();
+        jLabel34 = new javax.swing.JLabel();
+        diaIni = new javax.swing.JTextField();
+        mesIni = new javax.swing.JTextField();
+        anoIni = new javax.swing.JTextField();
+        dataNascimentojLabel3 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jButton28 = new javax.swing.JButton();
+        diaFim = new javax.swing.JTextField();
+        mesFim = new javax.swing.JTextField();
+        anoFim = new javax.swing.JTextField();
+        dataNascimentojLabel5 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        pesoAtual = new javax.swing.JLabel();
+        pesoInicio = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        imcFinal = new javax.swing.JLabel();
+        imcInicio = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        calIng = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
+        calGasta = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        aguaIng = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        tempoEx = new javax.swing.JLabel();
         dietaPanel = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         nomejLabel5 = new javax.swing.JLabel();
@@ -244,9 +282,9 @@ public class Home extends javax.swing.JFrame {
         registrarDiajButton = new javax.swing.JButton();
         sairTextjLabel = new javax.swing.JLabel();
         cadastroAlimentosjButton = new javax.swing.JButton();
+        relatorioButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(910, 550));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1119,6 +1157,217 @@ public class Home extends javax.swing.JFrame {
 
         getContentPane().add(exercicioPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 530, 550));
 
+        relatorioPanel.setBackground(new java.awt.Color(231, 231, 231));
+        relatorioPanel.setPreferredSize(new java.awt.Dimension(720, 550));
+
+        jLabel34.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(241, 90, 35));
+        jLabel34.setText("------------------------------- RELATÓRIO ----------------------------");
+
+        dataNascimentojLabel3.setText("Data Início:");
+
+        jLabel40.setText("/");
+
+        jLabel41.setText("/");
+
+        jButton28.setText("Carregar");
+        jButton28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton28ActionPerformed(evt);
+            }
+        });
+
+        dataNascimentojLabel5.setText("Data Fim:");
+
+        jLabel44.setText("/");
+
+        jLabel45.setText("/");
+
+        jLabel46.setText("Peso atual :");
+
+        jLabel47.setText("Peso início :");
+
+        pesoAtual.setText("jLabel48");
+
+        pesoInicio.setText("jLabel48");
+
+        jLabel50.setText("IMC atual :");
+
+        jLabel51.setText("IMC início :");
+
+        imcFinal.setText("jLabel48");
+
+        imcInicio.setText("jLabel48");
+
+        jLabel54.setText("Total de calorias ingeridas :");
+
+        calIng.setText("jLabel48");
+
+        jLabel39.setText("INFORMAÇÕES GERAIS");
+
+        jLabel56.setText("Total de calorias gastas :");
+
+        calGasta.setText("jLabel48");
+
+        jLabel58.setText("Total de água ingerida :");
+
+        aguaIng.setText("jLabel48");
+
+        jLabel60.setText("Tempo gasto com exercícios :");
+
+        tempoEx.setText("jLabel48");
+
+        javax.swing.GroupLayout relatorioPanelLayout = new javax.swing.GroupLayout(relatorioPanel);
+        relatorioPanel.setLayout(relatorioPanelLayout);
+        relatorioPanelLayout.setHorizontalGroup(
+            relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, relatorioPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dataNascimentojLabel5)
+                    .addComponent(dataNascimentojLabel3)
+                    .addGroup(relatorioPanelLayout.createSequentialGroup()
+                        .addComponent(diaIni, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel40)
+                        .addGap(7, 7, 7)
+                        .addComponent(mesIni, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel41)
+                        .addGap(8, 8, 8)
+                        .addComponent(anoIni, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(relatorioPanelLayout.createSequentialGroup()
+                        .addComponent(diaFim, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel44)
+                        .addGap(7, 7, 7)
+                        .addComponent(mesFim, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel45)
+                        .addGap(8, 8, 8)
+                        .addComponent(anoFim, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(174, 174, 174))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, relatorioPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(297, 297, 297))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, relatorioPanelLayout.createSequentialGroup()
+                .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(relatorioPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(relatorioPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel54)
+                                .addGap(32, 32, 32)
+                                .addComponent(calIng)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel58)
+                                .addGap(32, 32, 32)
+                                .addComponent(aguaIng))
+                            .addGroup(relatorioPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel56)
+                                .addGap(32, 32, 32)
+                                .addComponent(calGasta)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel60)
+                                .addGap(32, 32, 32)
+                                .addComponent(tempoEx))))
+                    .addGroup(relatorioPanelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, 684, Short.MAX_VALUE)))
+                .addGap(18, 18, 18))
+            .addGroup(relatorioPanelLayout.createSequentialGroup()
+                .addGap(140, 140, 140)
+                .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, relatorioPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel39)
+                        .addGap(87, 87, 87))
+                    .addGroup(relatorioPanelLayout.createSequentialGroup()
+                        .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel47)
+                            .addComponent(jLabel46))
+                        .addGap(32, 32, 32)
+                        .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pesoAtual)
+                            .addComponent(pesoInicio))
+                        .addGap(30, 30, 30)
+                        .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, relatorioPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel51)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(imcInicio))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(relatorioPanelLayout.createSequentialGroup()
+                                    .addComponent(jLabel50)
+                                    .addGap(100, 100, 100))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, relatorioPanelLayout.createSequentialGroup()
+                                    .addGap(77, 77, 77)
+                                    .addComponent(imcFinal))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        relatorioPanelLayout.setVerticalGroup(
+            relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(relatorioPanelLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(dataNascimentojLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(diaIni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(anoIni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mesIni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel40)
+                    .addComponent(jLabel41))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(dataNascimentojLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(diaFim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(anoFim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mesFim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel44)
+                    .addComponent(jLabel45))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel54)
+                    .addComponent(calIng)
+                    .addComponent(jLabel58)
+                    .addComponent(aguaIng))
+                .addGap(18, 18, 18)
+                .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel56)
+                    .addComponent(calGasta)
+                    .addComponent(jLabel60)
+                    .addComponent(tempoEx))
+                .addGap(30, 30, 30)
+                .addComponent(jLabel39)
+                .addGap(18, 18, 18)
+                .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(relatorioPanelLayout.createSequentialGroup()
+                        .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel47)
+                            .addComponent(pesoInicio))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel46)
+                            .addComponent(pesoAtual)))
+                    .addGroup(relatorioPanelLayout.createSequentialGroup()
+                        .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel51)
+                            .addComponent(imcInicio))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel50)
+                            .addComponent(imcFinal))))
+                .addGap(28, 28, 28)
+                .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
+        );
+
+        getContentPane().add(relatorioPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 720, 550));
+
         dietaPanel.setBackground(new java.awt.Color(231, 231, 231));
 
         jLabel15.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
@@ -1640,6 +1889,14 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        relatorioButton.setText("Relatório");
+        relatorioButton.setActionCommand("Relatório");
+        relatorioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                relatorioButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
         menuPanel.setLayout(menuPanelLayout);
         menuPanelLayout.setHorizontalGroup(
@@ -1670,13 +1927,17 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(cadastroAlimentosjButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(menuPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(relatorioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         menuPanelLayout.setVerticalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanelLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(logoIconjLabel)
-                .addGap(30, 30, 30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(editarDadosjButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cadastroDietajButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1690,11 +1951,13 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(cadastroExerciciosjButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(registrarDiajButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(relatorioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(sairIconjLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(sairTextjLabel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         getContentPane().add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 550));
@@ -1712,13 +1975,13 @@ public class Home extends javax.swing.JFrame {
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
+        relatorioPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
         refeicoesVisualizacao.setVisible(false);
         alimentosVisualizacao.setVisible(false);
         dietasVisualizacao.setVisible(false);
-
     }//GEN-LAST:event_editarDadosjButtonActionPerformed
 
     private void cadastroDietajButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroDietajButtonActionPerformed
@@ -1730,6 +1993,7 @@ public class Home extends javax.swing.JFrame {
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
+        relatorioPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
@@ -1737,6 +2001,8 @@ public class Home extends javax.swing.JFrame {
         alimentosVisualizacao.setVisible(false);
         dietasVisualizacao.setVisible(true);
 
+        repositorio.leAlimentos();
+        repositorio.leRefeicoes();
         repositorio.leDietas();
 
         if (repositorio.getDietas().size() <= 0) {
@@ -1780,6 +2046,7 @@ public class Home extends javax.swing.JFrame {
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
+        relatorioPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
@@ -1825,6 +2092,7 @@ public class Home extends javax.swing.JFrame {
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
+        relatorioPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(true);
@@ -1871,6 +2139,7 @@ public class Home extends javax.swing.JFrame {
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
+        relatorioPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(true);
         treinosVisualizacao.setVisible(false);
@@ -1911,6 +2180,7 @@ public class Home extends javax.swing.JFrame {
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(true);
+        relatorioPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
@@ -1975,21 +2245,26 @@ public class Home extends javax.swing.JFrame {
                     alimentos = alimentos + "/" + a.getNome();
                 }
             }
-
             modelDietas.addRow(new Object[]{d.getId(), d.getNome(), d.getObjHidrico(), d.getObjCalorico(), d.caloriasIngeridas(), alimentos});
-
         }
-
     }//GEN-LAST:event_registrarDiajButtonActionPerformed
 
     private void sairIconjLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sairIconjLabelMouseClicked
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Saiu!.");
+        this.logado = null;
+        JOptionPane.showMessageDialog(null, "Saiu!");
+        Login l = new Login();
+        l.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_sairIconjLabelMouseClicked
 
     private void sairTextjLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sairTextjLabelMouseClicked
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Saiu!.");
+        this.logado = null;
+        JOptionPane.showMessageDialog(null, "Saiu!");
+        Login l = new Login();
+        l.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_sairTextjLabelMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -2009,10 +2284,12 @@ public class Home extends javax.swing.JFrame {
             float weight = Float.parseFloat(peso.getText());
             float height = Float.parseFloat(altura.getText());
 
+            float weightInitial = logado.getPesoInicio();
+            float heightInitial = logado.getAlturaInicio();
             repositorio.getUsuarios().remove(logado.getNomeUsuario());
 
             if (!repositorio.getUsuarios().containsKey(user)) {
-                Usuario u = new Usuario(name, sex, user, password, new Data(dayN, monthN, yearN), weight, height);
+                Usuario u = new Usuario(name, sex, user, password, new Data(dayN, monthN, yearN), weight, height, weightInitial, heightInitial);
                 repositorio.getUsuarios().put(user, u);
                 repositorio.attUsuarios();
                 JOptionPane.showMessageDialog(null, "Usuario editado com sucesso!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
@@ -2020,7 +2297,6 @@ public class Home extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "Nome de usuario já existe", "Alerta", JOptionPane.INFORMATION_MESSAGE);
             }
-
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -2263,6 +2539,7 @@ public class Home extends javax.swing.JFrame {
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
+        relatorioPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
@@ -2417,7 +2694,22 @@ public class Home extends javax.swing.JFrame {
 
                 repositorio.getRegistrosDiarios().put(data.retornaData(), rd);
                 repositorio.attRegistrosDiarios();
-                JOptionPane.showMessageDialog(null, "Registro diário atualizado!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+
+                String avisoCal = "";
+                String avisoHid = "";
+                if (d.getObjCalorico() < d.caloriasIngeridas()) {
+                    avisoCal = "AVISO: limite calórico ultrapassado!";
+                } else if (d.getObjCalorico() > d.caloriasIngeridas()) {
+                    avisoCal = "AVISO: faltaram " + (d.getObjCalorico() - d.caloriasIngeridas()) + " calorias a serem ingeridas!";
+                }
+
+                if (d.getObjHidrico() < agua) {
+                    avisoHid = "AVISO: objetivo hídrico alcançado!";
+                } else if (d.getObjHidrico() > agua) {
+                    avisoHid = "AVISO: faltaram " + (d.getObjHidrico() - agua) + " ml de água a serem ingeridas!";
+                }
+
+                JOptionPane.showMessageDialog(null, "Registro diário atualizado!\n\n" + avisoCal + "\n" + avisoHid, "Alerta", JOptionPane.INFORMATION_MESSAGE);
                 dia.setText("");
                 mes.setText("");
                 ano.setText("");
@@ -2432,7 +2724,22 @@ public class Home extends javax.swing.JFrame {
 
                 repositorio.getRegistrosDiarios().put(data.retornaData(), rd);
                 repositorio.attRegistrosDiarios();
-                JOptionPane.showMessageDialog(null, "Registro diário cadastrado!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+
+                String avisoCal = "";
+                String avisoHid = "";
+                if (d.getObjCalorico() < d.caloriasIngeridas()) {
+                    avisoCal = "AVISO: limite calórico ultrapassado!";
+                } else if (d.getObjCalorico() > d.caloriasIngeridas()) {
+                    avisoCal = "AVISO: faltaram " + (d.getObjCalorico() - d.caloriasIngeridas()) + " calorias a serem ingeridas!";
+                }
+
+                if (d.getObjHidrico() < agua) {
+                    avisoHid = "AVISO: objetivo hídrico alcançado!";
+                } else if (d.getObjHidrico() > agua) {
+                    avisoHid = "AVISO: faltaram " + (d.getObjHidrico() - agua) + " ml de água a serem ingeridas!";
+                }
+
+                JOptionPane.showMessageDialog(null, "Registro diário cadastrado\n\n" + avisoCal + "\n" + avisoHid, "Alerta", JOptionPane.INFORMATION_MESSAGE);
                 dia.setText("");
                 mes.setText("");
                 ano.setText("");
@@ -2454,6 +2761,7 @@ public class Home extends javax.swing.JFrame {
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
+        relatorioPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
@@ -2473,6 +2781,7 @@ public class Home extends javax.swing.JFrame {
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
+        relatorioPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(true);
         treinosVisualizacao.setVisible(false);
@@ -2553,7 +2862,7 @@ public class Home extends javax.swing.JFrame {
 
             DefaultTableModel modelTreinos = (DefaultTableModel) treinosTabela1.getModel();
             modelTreinos.setNumRows(0);
-            
+
             treinosTabela1.getColumnModel().getColumn(0).setPreferredWidth(100);
             treinosTabela1.getColumnModel().getColumn(1).setPreferredWidth(300);
             treinosTabela1.getColumnModel().getColumn(2).setPreferredWidth(200);
@@ -2588,6 +2897,7 @@ public class Home extends javax.swing.JFrame {
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
+        relatorioPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
@@ -2625,6 +2935,7 @@ public class Home extends javax.swing.JFrame {
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
+        relatorioPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(true);
@@ -2651,7 +2962,7 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         // TODO add your handling code here:
-         repositorio.leAlimentos();
+        repositorio.leAlimentos();
         repositorio.leRefeicoes();
 
         if (refeicoesTabela1.getSelectedRow() != -1) {
@@ -2702,6 +3013,7 @@ public class Home extends javax.swing.JFrame {
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
+        relatorioPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
@@ -2738,6 +3050,7 @@ public class Home extends javax.swing.JFrame {
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
+        relatorioPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
@@ -2751,7 +3064,7 @@ public class Home extends javax.swing.JFrame {
         if (refeicoesTabela1.getSelectedRow() != -1) {
             refeicaoPanel.setVisible(true);
             refeicoesVisualizacao.setVisible(false);
-            
+
             if (repositorio.getAlimentos().size() <= 0) {
                 JOptionPane.showMessageDialog(null, "Nenhum alimento cadastrado!");
             }
@@ -2820,6 +3133,7 @@ public class Home extends javax.swing.JFrame {
         alimentosPanel.setVisible(true);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
+        relatorioPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
@@ -2838,6 +3152,7 @@ public class Home extends javax.swing.JFrame {
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
+        relatorioPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
@@ -2928,6 +3243,7 @@ public class Home extends javax.swing.JFrame {
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(true);
         registrarDiaPanel.setVisible(false);
+        relatorioPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
@@ -2973,6 +3289,7 @@ public class Home extends javax.swing.JFrame {
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
+        relatorioPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(false);
@@ -2981,13 +3298,11 @@ public class Home extends javax.swing.JFrame {
         dietasVisualizacao.setVisible(true);
 
         repositorio.leRefeicoes();
-        
-
 
         if (dietasTabela1.getSelectedRow() != -1) {
             dietaPanel.setVisible(true);
             dietasVisualizacao.setVisible(false);
-            
+
             if (repositorio.getRefeicoes().size() <= 0) {
                 JOptionPane.showMessageDialog(null, "Nenhuma refeição cadastrada!");
             }
@@ -3025,6 +3340,106 @@ public class Home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton26ActionPerformed
 
+    private void relatorioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_relatorioButtonActionPerformed
+        // TODO add your handling code here:
+        editarDadosPanel.setVisible(false);
+        treinoPanel.setVisible(false);
+        exercicioPanel.setVisible(false);
+        refeicaoPanel.setVisible(false);
+        alimentosPanel.setVisible(false);
+        dietaPanel.setVisible(false);
+        registrarDiaPanel.setVisible(false);
+        relatorioPanel.setVisible(true);
+
+        exerciciosVisualizacao.setVisible(false);
+        treinosVisualizacao.setVisible(false);
+        refeicoesVisualizacao.setVisible(false);
+        alimentosVisualizacao.setVisible(false);
+        dietasVisualizacao.setVisible(false);
+
+
+    }//GEN-LAST:event_relatorioButtonActionPerformed
+
+    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+        // TODO add your handling code here:
+        repositorio.leRegistrosDiarios();
+
+        if (diaIni.getText().isEmpty() || mesIni.getText().isEmpty() || anoIni.getText().isEmpty() || diaFim.getText().isEmpty() || mesFim.getText().isEmpty() || anoFim.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            String dataIni = diaIni.getText() + "/" + mesIni.getText() + "/" + anoIni.getText();
+            String dataFim = diaFim.getText() + "/" + mesFim.getText() + "/" + anoFim.getText();
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            Date inicio = null, fim = null;
+
+            try {
+                inicio = sdf.parse(dataIni);
+                fim = sdf.parse(dataFim);
+            } catch (java.text.ParseException exception) {
+                JOptionPane.showMessageDialog(null, "Data inválida", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+            }
+
+            if (inicio == null || fim == null || !inicio.before(fim) || repositorio.getRegistrosDiarios().get(dataIni) == null || repositorio.getRegistrosDiarios().get(dataFim) == null) {
+                JOptionPane.showMessageDialog(null, "Período Inválido", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                float calIngeridas = 0, calGastas = 0, aguaIngerida = 0;
+                int ht = 0, mt = 0, st = 0;
+                String tempoGastoTotal = null;
+                String[] tempoExercicios = null;
+
+                Calendar start = Calendar.getInstance();
+                Calendar end = Calendar.getInstance();
+                Calendar auxStart = Calendar.getInstance();
+                Calendar auxEnd = Calendar.getInstance();
+                start.setTime(inicio);
+                end.setTime(fim);
+                auxStart.setTime(inicio);
+                auxEnd.setTime(fim);
+                auxEnd.add(auxEnd.DAY_OF_MONTH, 1);
+
+                while (auxStart.before(auxEnd)) {
+                    String aux = auxStart.get(start.DAY_OF_MONTH) + "/" + (auxStart.get(start.MONTH) + 1) + "/" + auxStart.get(start.YEAR);
+                    RegistroDiario rd = repositorio.getRegistrosDiarios().get(aux);
+
+                    if (rd != null) {
+                        calIngeridas += rd.getDieta().caloriasIngeridas();
+                        calGastas += rd.getTreino().caloriasGastas();
+                        aguaIngerida += rd.getAguaIngerida();
+                        tempoExercicios = rd.getTreino().tempoGasto().split(":");
+                        st += Integer.parseInt(tempoExercicios[2]);
+                        if (st > 59) {
+                            mt++;
+                            st -= 59;
+                            if (mt > 59) {
+                                ht++;
+                                mt -= 59;
+                            }
+                        }
+                        mt += Integer.parseInt(tempoExercicios[1]);
+                        if (mt > 59) {
+                            ht++;
+                            mt -= 59;
+                        }
+                        ht += Integer.parseInt(tempoExercicios[0]);
+                        tempoGastoTotal = ht + ":" + mt + ":" + st;
+
+                        auxStart.add(auxStart.DATE, 1);
+                    }
+                }
+
+                pesoInicio.setText(String.valueOf(logado.getPesoInicio()));
+                pesoAtual.setText(String.valueOf(logado.getPeso()));
+                calIng.setText(String.valueOf(calIngeridas));
+                calGasta.setText(String.valueOf(calGastas));
+                aguaIng.setText(String.valueOf(aguaIngerida));
+                tempoEx.setText(tempoGastoTotal);
+                imcInicio.setText(String.valueOf(logado.calculaIMCInicial()));
+                imcFinal.setText(String.valueOf(logado.calculaIMC()));
+                
+            }
+        }
+    }//GEN-LAST:event_jButton28ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3061,6 +3476,7 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel aguaIng;
     private javax.swing.JTextField aguaIngerida;
     private javax.swing.JPanel alimentosPanel;
     private javax.swing.JTable alimentosTabela;
@@ -3069,19 +3485,27 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField altura;
     private javax.swing.JLabel alturajLabel;
     private javax.swing.JTextField ano;
+    private javax.swing.JTextField anoFim;
+    private javax.swing.JTextField anoIni;
     private javax.swing.JTextField anoNascimento;
     private javax.swing.JButton cadastroAlimentosjButton;
     private javax.swing.JButton cadastroDietajButton;
     private javax.swing.JButton cadastroExerciciosjButton;
     private javax.swing.JButton cadastroRefeicaojButton;
     private javax.swing.JButton cadastroTreinojButton;
+    private javax.swing.JLabel calGasta;
+    private javax.swing.JLabel calIng;
     private javax.swing.JTextField calMetro;
     private javax.swing.JTextField calQuantidade;
     private javax.swing.JTextField calSeries;
     private javax.swing.JLabel dataNascimentojLabel;
     private javax.swing.JLabel dataNascimentojLabel1;
     private javax.swing.JLabel dataNascimentojLabel2;
+    private javax.swing.JLabel dataNascimentojLabel3;
+    private javax.swing.JLabel dataNascimentojLabel5;
     private javax.swing.JTextField dia;
+    private javax.swing.JTextField diaFim;
+    private javax.swing.JTextField diaIni;
     private javax.swing.JTextField diaNascimento;
     private javax.swing.JPanel dietaPanel;
     private javax.swing.JTable dietasTabela;
@@ -3098,6 +3522,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField idDieta;
     private javax.swing.JTextField idRefeicao;
     private javax.swing.JTextField idTreino;
+    private javax.swing.JLabel imcFinal;
+    private javax.swing.JLabel imcInicio;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -3117,6 +3543,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton26;
+    private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -3152,13 +3579,27 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -3175,6 +3616,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel logoIconjLabel;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JTextField mes;
+    private javax.swing.JTextField mesFim;
+    private javax.swing.JTextField mesIni;
     private javax.swing.JTextField mesNascimento;
     private javax.swing.JPanel metragemPanel;
     private javax.swing.JTextField minutosGastos;
@@ -3198,6 +3641,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField objHid;
     private javax.swing.JLabel passwordjLabel;
     private javax.swing.JTextField peso;
+    private javax.swing.JLabel pesoAtual;
+    private javax.swing.JLabel pesoInicio;
     private javax.swing.JLabel pesojLabel;
     private javax.swing.JTextField quantidadeAlimento;
     private javax.swing.JPanel refeicaoPanel;
@@ -3206,6 +3651,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel refeicoesVisualizacao;
     private javax.swing.JPanel registrarDiaPanel;
     private javax.swing.JButton registrarDiajButton;
+    private javax.swing.JButton relatorioButton;
+    private javax.swing.JPanel relatorioPanel;
     private javax.swing.JPanel repeticaoPanel;
     private javax.swing.JLabel sairIconjLabel;
     private javax.swing.JLabel sairTextjLabel;
@@ -3215,6 +3662,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel sexojLabel;
     private javax.swing.JLabel sexojLabel1;
     private javax.swing.JLabel sexojLabel2;
+    private javax.swing.JLabel tempoEx;
     private javax.swing.JTextField tipoAlimento;
     private javax.swing.JTextField tipoRefeição;
     private javax.swing.JTextField tituloEx;
