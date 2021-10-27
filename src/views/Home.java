@@ -61,6 +61,7 @@ public class Home extends javax.swing.JFrame {
         refeicoesVisualizacao.setVisible(false);
         alimentosVisualizacao.setVisible(false);
         dietasVisualizacao.setVisible(false);
+        registrosVisualizacao.setVisible(false);
 
         this.logado = logado;
 
@@ -111,6 +112,14 @@ public class Home extends javax.swing.JFrame {
         jButton20 = new javax.swing.JButton();
         jScrollPane9 = new javax.swing.JScrollPane();
         refeicoesTabela1 = new javax.swing.JTable();
+        registrosVisualizacao = new javax.swing.JPanel();
+        jLabel42 = new javax.swing.JLabel();
+        nomejLabel11 = new javax.swing.JLabel();
+        jButton27 = new javax.swing.JButton();
+        jButton29 = new javax.swing.JButton();
+        jButton30 = new javax.swing.JButton();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        registroTabela = new javax.swing.JTable();
         treinosVisualizacao = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         nomejLabel7 = new javax.swing.JLabel();
@@ -491,6 +500,98 @@ public class Home extends javax.swing.JFrame {
         );
 
         getContentPane().add(refeicoesVisualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 720, 550));
+
+        registrosVisualizacao.setBackground(new java.awt.Color(231, 231, 231));
+
+        jLabel42.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(241, 90, 35));
+        jLabel42.setText("------------------------ REGISTROS DIÁRIOS ------------------------");
+
+        nomejLabel11.setText("Registros :");
+
+        jButton27.setText("Excluir");
+        jButton27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton27ActionPerformed(evt);
+            }
+        });
+
+        jButton29.setText("Adicionar Novo");
+        jButton29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton29ActionPerformed(evt);
+            }
+        });
+
+        jButton30.setText("Editar");
+        jButton30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton30ActionPerformed(evt);
+            }
+        });
+
+        registroTabela.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Data", "Treino", "Dieta", "Água Ingerida"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane10.setViewportView(registroTabela);
+
+        javax.swing.GroupLayout registrosVisualizacaoLayout = new javax.swing.GroupLayout(registrosVisualizacao);
+        registrosVisualizacao.setLayout(registrosVisualizacaoLayout);
+        registrosVisualizacaoLayout.setHorizontalGroup(
+            registrosVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registrosVisualizacaoLayout.createSequentialGroup()
+                .addGroup(registrosVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(registrosVisualizacaoLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton29)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton27))
+                    .addGroup(registrosVisualizacaoLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(registrosVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(registrosVisualizacaoLayout.createSequentialGroup()
+                                .addComponent(nomejLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jScrollPane10)
+                            .addComponent(jLabel42, javax.swing.GroupLayout.DEFAULT_SIZE, 684, Short.MAX_VALUE))))
+                .addGap(18, 18, 18))
+        );
+        registrosVisualizacaoLayout.setVerticalGroup(
+            registrosVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(registrosVisualizacaoLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel42)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(nomejLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(registrosVisualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton27)
+                    .addComponent(jButton29)
+                    .addComponent(jButton30))
+                .addContainerGap(67, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(registrosVisualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 720, 550));
 
         treinosVisualizacao.setBackground(new java.awt.Color(231, 231, 231));
 
@@ -1183,38 +1284,56 @@ public class Home extends javax.swing.JFrame {
 
         jLabel45.setText("/");
 
+        jLabel46.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jLabel46.setText("Peso atual :");
 
+        jLabel47.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jLabel47.setText("Peso início :");
 
+        pesoAtual.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         pesoAtual.setText("jLabel48");
 
+        pesoInicio.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         pesoInicio.setText("jLabel48");
 
+        jLabel50.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jLabel50.setText("IMC atual :");
 
+        jLabel51.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jLabel51.setText("IMC início :");
 
+        imcFinal.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         imcFinal.setText("jLabel48");
 
+        imcInicio.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         imcInicio.setText("jLabel48");
 
+        jLabel54.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jLabel54.setText("Total de calorias ingeridas :");
 
+        calIng.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         calIng.setText("jLabel48");
 
+        jLabel39.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(241, 90, 35));
         jLabel39.setText("INFORMAÇÕES GERAIS");
 
+        jLabel56.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jLabel56.setText("Total de calorias gastas :");
 
+        calGasta.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         calGasta.setText("jLabel48");
 
+        jLabel58.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jLabel58.setText("Total de água ingerida :");
 
+        aguaIng.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         aguaIng.setText("jLabel48");
 
+        jLabel60.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jLabel60.setText("Tempo gasto com exercícios :");
 
+        tempoEx.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         tempoEx.setText("jLabel48");
 
         javax.swing.GroupLayout relatorioPanelLayout = new javax.swing.GroupLayout(relatorioPanel);
@@ -1222,68 +1341,43 @@ public class Home extends javax.swing.JFrame {
         relatorioPanelLayout.setHorizontalGroup(
             relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, relatorioPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dataNascimentojLabel5)
-                    .addComponent(dataNascimentojLabel3)
-                    .addGroup(relatorioPanelLayout.createSequentialGroup()
-                        .addComponent(diaIni, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel40)
-                        .addGap(7, 7, 7)
-                        .addComponent(mesIni, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel41)
-                        .addGap(8, 8, 8)
-                        .addComponent(anoIni, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(relatorioPanelLayout.createSequentialGroup()
-                        .addComponent(diaFim, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel44)
-                        .addGap(7, 7, 7)
-                        .addComponent(mesFim, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel45)
-                        .addGap(8, 8, 8)
-                        .addComponent(anoFim, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(174, 174, 174))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, relatorioPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(297, 297, 297))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, relatorioPanelLayout.createSequentialGroup()
                 .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(relatorioPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(relatorioPanelLayout.createSequentialGroup()
                                 .addComponent(jLabel54)
-                                .addGap(32, 32, 32)
+                                .addGap(18, 18, 18)
                                 .addComponent(calIng)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel58)
-                                .addGap(32, 32, 32)
+                                .addGap(18, 18, 18)
                                 .addComponent(aguaIng))
                             .addGroup(relatorioPanelLayout.createSequentialGroup()
                                 .addComponent(jLabel56)
-                                .addGap(32, 32, 32)
-                                .addComponent(calGasta)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel60)
-                                .addGap(32, 32, 32)
-                                .addComponent(tempoEx))))
+                                .addGap(18, 18, 18)
+                                .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(relatorioPanelLayout.createSequentialGroup()
+                                        .addComponent(jLabel39)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(relatorioPanelLayout.createSequentialGroup()
+                                        .addComponent(calGasta)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel60)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tempoEx))))))
                     .addGroup(relatorioPanelLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, 684, Short.MAX_VALUE)))
-                .addGap(18, 18, 18))
-            .addGroup(relatorioPanelLayout.createSequentialGroup()
-                .addGap(140, 140, 140)
+                        .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, 690, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, relatorioPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(299, 299, 299))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, relatorioPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, relatorioPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel39)
-                        .addGap(87, 87, 87))
-                    .addGroup(relatorioPanelLayout.createSequentialGroup()
                         .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel47)
                             .addComponent(jLabel46))
@@ -1303,15 +1397,40 @@ public class Home extends javax.swing.JFrame {
                                     .addGap(100, 100, 100))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, relatorioPanelLayout.createSequentialGroup()
                                     .addGap(77, 77, 77)
-                                    .addComponent(imcFinal))))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(imcFinal))))
+                        .addGap(142, 142, 142))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, relatorioPanelLayout.createSequentialGroup()
+                        .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(dataNascimentojLabel5)
+                            .addComponent(dataNascimentojLabel3)
+                            .addGroup(relatorioPanelLayout.createSequentialGroup()
+                                .addComponent(diaIni, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel40)
+                                .addGap(7, 7, 7)
+                                .addComponent(mesIni, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel41)
+                                .addGap(8, 8, 8)
+                                .addComponent(anoIni, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(relatorioPanelLayout.createSequentialGroup()
+                                .addComponent(diaFim, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel44)
+                                .addGap(7, 7, 7)
+                                .addComponent(mesFim, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel45)
+                                .addGap(8, 8, 8)
+                                .addComponent(anoFim, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(168, 168, 168))))
         );
         relatorioPanelLayout.setVerticalGroup(
             relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(relatorioPanelLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel34)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(dataNascimentojLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1329,26 +1448,30 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(mesFim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel44)
                     .addComponent(jLabel45))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel54)
-                    .addComponent(calIng)
-                    .addComponent(jLabel58)
-                    .addComponent(aguaIng))
+                    .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(calIng)
+                        .addComponent(jLabel54))
+                    .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel58)
+                        .addComponent(aguaIng)))
                 .addGap(18, 18, 18)
                 .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel56)
-                    .addComponent(calGasta)
-                    .addComponent(jLabel60)
-                    .addComponent(tempoEx))
-                .addGap(30, 30, 30)
+                    .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel56)
+                        .addComponent(calGasta))
+                    .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(tempoEx)
+                        .addComponent(jLabel60)))
+                .addGap(29, 29, 29)
                 .addComponent(jLabel39)
-                .addGap(18, 18, 18)
+                .addGap(31, 31, 31)
                 .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(relatorioPanelLayout.createSequentialGroup()
-                        .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel47)
-                            .addComponent(pesoInicio))
+                        .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pesoInicio, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel47))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel46)
@@ -1361,9 +1484,9 @@ public class Home extends javax.swing.JFrame {
                         .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel50)
                             .addComponent(imcFinal))))
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addContainerGap())
         );
 
         getContentPane().add(relatorioPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 720, 550));
@@ -1890,7 +2013,6 @@ public class Home extends javax.swing.JFrame {
         });
 
         relatorioButton.setText("Relatório");
-        relatorioButton.setActionCommand("Relatório");
         relatorioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 relatorioButtonActionPerformed(evt);
@@ -1982,6 +2104,7 @@ public class Home extends javax.swing.JFrame {
         refeicoesVisualizacao.setVisible(false);
         alimentosVisualizacao.setVisible(false);
         dietasVisualizacao.setVisible(false);
+        registrosVisualizacao.setVisible(false);
     }//GEN-LAST:event_editarDadosjButtonActionPerformed
 
     private void cadastroDietajButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroDietajButtonActionPerformed
@@ -2000,6 +2123,7 @@ public class Home extends javax.swing.JFrame {
         refeicoesVisualizacao.setVisible(false);
         alimentosVisualizacao.setVisible(false);
         dietasVisualizacao.setVisible(true);
+        registrosVisualizacao.setVisible(false);
 
         repositorio.leAlimentos();
         repositorio.leRefeicoes();
@@ -2053,6 +2177,7 @@ public class Home extends javax.swing.JFrame {
         refeicoesVisualizacao.setVisible(true);
         alimentosVisualizacao.setVisible(false);
         dietasVisualizacao.setVisible(false);
+        registrosVisualizacao.setVisible(false);
 
         repositorio.leRefeicoes();
 
@@ -2093,6 +2218,7 @@ public class Home extends javax.swing.JFrame {
         dietaPanel.setVisible(false);
         registrarDiaPanel.setVisible(false);
         relatorioPanel.setVisible(false);
+        registrosVisualizacao.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
         treinosVisualizacao.setVisible(true);
@@ -2146,6 +2272,7 @@ public class Home extends javax.swing.JFrame {
         refeicoesVisualizacao.setVisible(false);
         alimentosVisualizacao.setVisible(false);
         dietasVisualizacao.setVisible(false);
+        registrosVisualizacao.setVisible(false);
 
         metragemPanel.setVisible(false);
 
@@ -2179,7 +2306,7 @@ public class Home extends javax.swing.JFrame {
         refeicaoPanel.setVisible(false);
         alimentosPanel.setVisible(false);
         dietaPanel.setVisible(false);
-        registrarDiaPanel.setVisible(true);
+        registrarDiaPanel.setVisible(false);
         relatorioPanel.setVisible(false);
 
         exerciciosVisualizacao.setVisible(false);
@@ -2187,65 +2314,24 @@ public class Home extends javax.swing.JFrame {
         refeicoesVisualizacao.setVisible(false);
         alimentosVisualizacao.setVisible(false);
         dietasVisualizacao.setVisible(false);
+        registrosVisualizacao.setVisible(true);
 
-        repositorio.leTreinos();
-        repositorio.leDietas();
+        repositorio.leRegistrosDiarios();
 
-        if (repositorio.getTreinos().size() <= 0) {
-            JOptionPane.showMessageDialog(null, "Nenhum treino cadastrado!");
+        if (repositorio.getRegistrosDiarios().size() <= 0) {
+            JOptionPane.showMessageDialog(null, "Nenhum registro diário cadastrado!");
         }
 
-        if (repositorio.getDietas().size() <= 0) {
-            JOptionPane.showMessageDialog(null, "Nenhuma dieta cadastrada!");
-        }
+        DefaultTableModel model = (DefaultTableModel) registroTabela.getModel();
+        model.setNumRows(0);
 
-        DefaultTableModel modelTreinos = (DefaultTableModel) treinosTabela.getModel();
-        modelTreinos.setNumRows(0);
+        ArrayList<String> keysRegistros = new ArrayList<>(repositorio.getRegistrosDiarios().keySet());
 
-        DefaultTableModel modelDietas = (DefaultTableModel) dietasTabela.getModel();
-        modelDietas.setNumRows(0);
+        Collections.sort(keysRegistros);
 
-        treinosTabela.getColumnModel().getColumn(0).setPreferredWidth(100);
-        treinosTabela.getColumnModel().getColumn(1).setPreferredWidth(300);
-        treinosTabela.getColumnModel().getColumn(2).setPreferredWidth(200);
-        treinosTabela.getColumnModel().getColumn(3).setPreferredWidth(200);
-        treinosTabela.getColumnModel().getColumn(4).setPreferredWidth(600);
-
-        dietasTabela.getColumnModel().getColumn(0).setPreferredWidth(50);
-        dietasTabela.getColumnModel().getColumn(1).setPreferredWidth(200);
-        dietasTabela.getColumnModel().getColumn(2).setPreferredWidth(80);
-        dietasTabela.getColumnModel().getColumn(3).setPreferredWidth(80);
-        dietasTabela.getColumnModel().getColumn(4).setPreferredWidth(100);
-        dietasTabela.getColumnModel().getColumn(5).setPreferredWidth(600);
-
-        ArrayList<String> keysTreinos = new ArrayList<>(repositorio.getTreinos().keySet());
-        ArrayList<String> keysDietas = new ArrayList<>(repositorio.getDietas().keySet());
-
-        Collections.sort(keysTreinos);
-        Collections.sort(keysDietas);
-
-        for (String key : keysTreinos) {
-            Treino t = repositorio.getTreinos().get(key);
-
-            String exercicios = "";
-            for (Exercicio e : t.getExercicios().values()) {
-                exercicios = exercicios + "/" + e.getNome();
-            }
-
-            modelTreinos.addRow(new Object[]{t.getId(), t.getNome(), t.caloriasGastas(), t.tempoGasto(), exercicios});
-
-        }
-
-        for (String key : keysDietas) {
-            Dieta d = repositorio.getDietas().get(key);
-
-            String alimentos = "";
-            for (Refeicao r : d.getRefeicoes().values()) {
-                for (Alimento a : r.getAlimentos().values()) {
-                    alimentos = alimentos + "/" + a.getNome();
-                }
-            }
-            modelDietas.addRow(new Object[]{d.getId(), d.getNome(), d.getObjHidrico(), d.getObjCalorico(), d.caloriasIngeridas(), alimentos});
+        for (String key : keysRegistros) {
+            RegistroDiario rd = repositorio.getRegistrosDiarios().get(key);
+            model.addRow(new Object[]{rd.getData().retornaData(), rd.getTreino().getNome(), rd.getDieta().getNome(), rd.getAguaIngerida()});
         }
     }//GEN-LAST:event_registrarDiajButtonActionPerformed
 
@@ -2546,6 +2632,7 @@ public class Home extends javax.swing.JFrame {
         refeicoesVisualizacao.setVisible(false);
         alimentosVisualizacao.setVisible(true);
         dietasVisualizacao.setVisible(false);
+        registrosVisualizacao.setVisible(false);
 
         repositorio.leAlimentos();
 
@@ -2768,6 +2855,7 @@ public class Home extends javax.swing.JFrame {
         refeicoesVisualizacao.setVisible(false);
         alimentosVisualizacao.setVisible(false);
         dietasVisualizacao.setVisible(false);
+        registrosVisualizacao.setVisible(false);
 
         metragemPanel.setVisible(false);
     }//GEN-LAST:event_jButton13ActionPerformed
@@ -2788,6 +2876,7 @@ public class Home extends javax.swing.JFrame {
         refeicoesVisualizacao.setVisible(false);
         alimentosVisualizacao.setVisible(false);
         dietasVisualizacao.setVisible(false);
+        registrosVisualizacao.setVisible(false);
 
         metragemPanel.setVisible(false);
 
@@ -2904,6 +2993,7 @@ public class Home extends javax.swing.JFrame {
         refeicoesVisualizacao.setVisible(false);
         alimentosVisualizacao.setVisible(false);
         dietasVisualizacao.setVisible(false);
+        registrosVisualizacao.setVisible(false);
 
         repositorio.leExercicios();
 
@@ -2921,7 +3011,6 @@ public class Home extends javax.swing.JFrame {
             if (e instanceof ExercicioMetragem) {
                 tipo = "Metragem";
             }
-
             model.addRow(new Object[]{e.getNome(), tipo, e.getTempoGasto(), String.valueOf(e.caloriasGastasExercicio())});
         }
     }//GEN-LAST:event_jButton16ActionPerformed
@@ -2942,6 +3031,7 @@ public class Home extends javax.swing.JFrame {
         refeicoesVisualizacao.setVisible(false);
         alimentosVisualizacao.setVisible(false);
         dietasVisualizacao.setVisible(false);
+        registrosVisualizacao.setVisible(false);
 
         repositorio.leExercicios();
         repositorio.leTreinos();
@@ -2955,6 +3045,25 @@ public class Home extends javax.swing.JFrame {
 
             idTreino.setText(aux.getId());
             tituloTreino.setText(aux.getNome());
+            
+            repositorio.leExercicios();
+
+            if (repositorio.getExercicios().size() <= 0) {
+                JOptionPane.showMessageDialog(null, "Nenhum exercício cadastrado!");
+            }
+
+            DefaultTableModel model = (DefaultTableModel) exerciciosTabela.getModel();
+            model.setNumRows(0);
+
+            for (String k : repositorio.getExercicios().keySet()) {
+                Exercicio e = repositorio.getExercicios().get(k);
+                String tipo = "Repetição";
+
+                if (e instanceof ExercicioMetragem) {
+                    tipo = "Metragem";
+                }
+                model.addRow(new Object[]{e.getNome(), tipo, e.getTempoGasto(), String.valueOf(e.caloriasGastasExercicio())});
+            }
         } else {
             JOptionPane.showMessageDialog(null, "Selecione um treino", "Alerta", JOptionPane.INFORMATION_MESSAGE);
         }
@@ -3020,6 +3129,7 @@ public class Home extends javax.swing.JFrame {
         refeicoesVisualizacao.setVisible(false);
         alimentosVisualizacao.setVisible(false);
         dietasVisualizacao.setVisible(false);
+        registrosVisualizacao.setVisible(false);
 
         repositorio.leAlimentos();
 
@@ -3057,6 +3167,7 @@ public class Home extends javax.swing.JFrame {
         refeicoesVisualizacao.setVisible(true);
         alimentosVisualizacao.setVisible(false);
         dietasVisualizacao.setVisible(false);
+        registrosVisualizacao.setVisible(false);
 
         repositorio.leAlimentos();
         repositorio.leRefeicoes();
@@ -3140,7 +3251,7 @@ public class Home extends javax.swing.JFrame {
         refeicoesVisualizacao.setVisible(false);
         alimentosVisualizacao.setVisible(false);
         dietasVisualizacao.setVisible(false);
-
+        registrosVisualizacao.setVisible(false);
     }//GEN-LAST:event_jButton22ActionPerformed
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
@@ -3159,6 +3270,7 @@ public class Home extends javax.swing.JFrame {
         refeicoesVisualizacao.setVisible(false);
         alimentosVisualizacao.setVisible(true);
         dietasVisualizacao.setVisible(false);
+        registrosVisualizacao.setVisible(false);
 
         repositorio.leAlimentos();
 
@@ -3250,6 +3362,7 @@ public class Home extends javax.swing.JFrame {
         refeicoesVisualizacao.setVisible(false);
         alimentosVisualizacao.setVisible(false);
         dietasVisualizacao.setVisible(false);
+        registrosVisualizacao.setVisible(false);
 
         repositorio.leRefeicoes();
 
@@ -3296,6 +3409,7 @@ public class Home extends javax.swing.JFrame {
         refeicoesVisualizacao.setVisible(false);
         alimentosVisualizacao.setVisible(false);
         dietasVisualizacao.setVisible(true);
+        registrosVisualizacao.setVisible(false);
 
         repositorio.leRefeicoes();
 
@@ -3356,8 +3470,7 @@ public class Home extends javax.swing.JFrame {
         refeicoesVisualizacao.setVisible(false);
         alimentosVisualizacao.setVisible(false);
         dietasVisualizacao.setVisible(false);
-
-
+        registrosVisualizacao.setVisible(false);
     }//GEN-LAST:event_relatorioButtonActionPerformed
 
     private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
@@ -3435,10 +3548,221 @@ public class Home extends javax.swing.JFrame {
                 tempoEx.setText(tempoGastoTotal);
                 imcInicio.setText(String.valueOf(logado.calculaIMCInicial()));
                 imcFinal.setText(String.valueOf(logado.calculaIMC()));
-                
             }
         }
     }//GEN-LAST:event_jButton28ActionPerformed
+
+    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
+        // TODO add your handling code here:
+        repositorio.leTreinos();
+        repositorio.leDietas();
+        repositorio.leRegistrosDiarios();
+
+        if (registroTabela.getSelectedRow() != -1) {
+            String key = (String) registroTabela.getValueAt(registroTabela.getSelectedRow(), 0);
+
+            repositorio.getRegistrosDiarios().remove(key);
+            repositorio.attRegistrosDiarios();
+            repositorio.leTreinos();
+            repositorio.leDietas();
+            repositorio.leRegistrosDiarios();
+
+            if (repositorio.getRegistrosDiarios().size() <= 0) {
+                JOptionPane.showMessageDialog(null, "Nenhum registro diário cadastrado!");
+            }
+
+            DefaultTableModel model = (DefaultTableModel) registroTabela.getModel();
+            model.setNumRows(0);
+
+            ArrayList<String> keysRegistros = new ArrayList<>(repositorio.getRegistrosDiarios().keySet());
+
+            Collections.sort(keysRegistros);
+
+            for (String k : keysRegistros) {
+                RegistroDiario rd = repositorio.getRegistrosDiarios().get(k);
+                model.addRow(new Object[]{rd.getData().retornaData(), rd.getTreino().getNome(), rd.getDieta().getNome(), rd.getAguaIngerida()});
+        }
+            JOptionPane.showMessageDialog(null, "Registro diário excluído!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione um registro diário", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton27ActionPerformed
+
+    private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
+        // TODO add your handling code here:
+        editarDadosPanel.setVisible(false);
+        treinoPanel.setVisible(false);
+        exercicioPanel.setVisible(false);
+        refeicaoPanel.setVisible(false);
+        alimentosPanel.setVisible(false);
+        dietaPanel.setVisible(false);
+        registrarDiaPanel.setVisible(true);
+        relatorioPanel.setVisible(false);
+
+        exerciciosVisualizacao.setVisible(false);
+        treinosVisualizacao.setVisible(false);
+        refeicoesVisualizacao.setVisible(false);
+        alimentosVisualizacao.setVisible(false);
+        dietasVisualizacao.setVisible(false);
+        registrosVisualizacao.setVisible(false);
+
+        repositorio.leTreinos();
+        repositorio.leDietas();
+
+        if (repositorio.getTreinos().size() <= 0) {
+            JOptionPane.showMessageDialog(null, "Nenhum treino cadastrado!");
+        }
+
+        if (repositorio.getDietas().size() <= 0) {
+            JOptionPane.showMessageDialog(null, "Nenhuma dieta cadastrada!");
+        }
+
+        DefaultTableModel modelTreinos = (DefaultTableModel) treinosTabela.getModel();
+        modelTreinos.setNumRows(0);
+
+        DefaultTableModel modelDietas = (DefaultTableModel) dietasTabela.getModel();
+        modelDietas.setNumRows(0);
+
+        treinosTabela.getColumnModel().getColumn(0).setPreferredWidth(100);
+        treinosTabela.getColumnModel().getColumn(1).setPreferredWidth(300);
+        treinosTabela.getColumnModel().getColumn(2).setPreferredWidth(200);
+        treinosTabela.getColumnModel().getColumn(3).setPreferredWidth(200);
+        treinosTabela.getColumnModel().getColumn(4).setPreferredWidth(600);
+
+        dietasTabela.getColumnModel().getColumn(0).setPreferredWidth(50);
+        dietasTabela.getColumnModel().getColumn(1).setPreferredWidth(200);
+        dietasTabela.getColumnModel().getColumn(2).setPreferredWidth(80);
+        dietasTabela.getColumnModel().getColumn(3).setPreferredWidth(80);
+        dietasTabela.getColumnModel().getColumn(4).setPreferredWidth(100);
+        dietasTabela.getColumnModel().getColumn(5).setPreferredWidth(600);
+
+        ArrayList<String> keysTreinos = new ArrayList<>(repositorio.getTreinos().keySet());
+        ArrayList<String> keysDietas = new ArrayList<>(repositorio.getDietas().keySet());
+
+        Collections.sort(keysTreinos);
+        Collections.sort(keysDietas);
+
+        for (String key : keysTreinos) {
+            Treino t = repositorio.getTreinos().get(key);
+
+            String exercicios = "";
+            for (Exercicio e : t.getExercicios().values()) {
+                exercicios = exercicios + "/" + e.getNome();
+            }
+            modelTreinos.addRow(new Object[]{t.getId(), t.getNome(), t.caloriasGastas(), t.tempoGasto(), exercicios});
+        }
+
+        for (String key : keysDietas) {
+            Dieta d = repositorio.getDietas().get(key);
+
+            String alimentos = "";
+            for (Refeicao r : d.getRefeicoes().values()) {
+                for (Alimento a : r.getAlimentos().values()) {
+                    alimentos = alimentos + "/" + a.getNome();
+                }
+            }
+            modelDietas.addRow(new Object[]{d.getId(), d.getNome(), d.getObjHidrico(), d.getObjCalorico(), d.caloriasIngeridas(), alimentos});
+        }
+    }//GEN-LAST:event_jButton29ActionPerformed
+
+    private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
+        // TODO add your handling code here:
+        editarDadosPanel.setVisible(false);
+        treinoPanel.setVisible(false);
+        exercicioPanel.setVisible(false);
+        refeicaoPanel.setVisible(false);
+        alimentosPanel.setVisible(false);
+        dietaPanel.setVisible(false);
+        registrarDiaPanel.setVisible(false);
+        relatorioPanel.setVisible(false);
+
+        exerciciosVisualizacao.setVisible(false);
+        treinosVisualizacao.setVisible(false);
+        refeicoesVisualizacao.setVisible(false);
+        alimentosVisualizacao.setVisible(false);
+        dietasVisualizacao.setVisible(false);
+        registrosVisualizacao.setVisible(true);
+
+        repositorio.leTreinos();
+        repositorio.leDietas();
+        repositorio.leRegistrosDiarios();
+
+        if (registroTabela.getSelectedRow() != -1) {
+            registrarDiaPanel.setVisible(true);
+            registrosVisualizacao.setVisible(false);
+
+            String key = (String) registroTabela.getValueAt(registroTabela.getSelectedRow(), 0);
+            RegistroDiario aux = repositorio.getRegistrosDiarios().get(key);
+
+            String diaData = String.valueOf(aux.getData().getDia());
+            String mesData = String.valueOf(aux.getData().getMes());
+            String anoData = String.valueOf(aux.getData().getAno());
+            dia.setText(diaData);
+            mes.setText(mesData);
+            ano.setText(anoData);
+            aguaIngerida.setText(String.valueOf(aux.getAguaIngerida()));
+            
+            repositorio.leTreinos();
+            repositorio.leDietas();
+
+            if (repositorio.getTreinos().size() <= 0) {
+                JOptionPane.showMessageDialog(null, "Nenhum treino cadastrado!");
+            }
+
+            if (repositorio.getDietas().size() <= 0) {
+                JOptionPane.showMessageDialog(null, "Nenhuma dieta cadastrada!");
+            }
+
+            DefaultTableModel modelTreinos = (DefaultTableModel) treinosTabela.getModel();
+            modelTreinos.setNumRows(0);
+
+            DefaultTableModel modelDietas = (DefaultTableModel) dietasTabela.getModel();
+            modelDietas.setNumRows(0);
+
+            treinosTabela.getColumnModel().getColumn(0).setPreferredWidth(100);
+            treinosTabela.getColumnModel().getColumn(1).setPreferredWidth(300);
+            treinosTabela.getColumnModel().getColumn(2).setPreferredWidth(200);
+            treinosTabela.getColumnModel().getColumn(3).setPreferredWidth(200);
+            treinosTabela.getColumnModel().getColumn(4).setPreferredWidth(600);
+
+            dietasTabela.getColumnModel().getColumn(0).setPreferredWidth(50);
+            dietasTabela.getColumnModel().getColumn(1).setPreferredWidth(200);
+            dietasTabela.getColumnModel().getColumn(2).setPreferredWidth(80);
+            dietasTabela.getColumnModel().getColumn(3).setPreferredWidth(80);
+            dietasTabela.getColumnModel().getColumn(4).setPreferredWidth(100);
+            dietasTabela.getColumnModel().getColumn(5).setPreferredWidth(600);
+
+            ArrayList<String> keysTreinos = new ArrayList<>(repositorio.getTreinos().keySet());
+            ArrayList<String> keysDietas = new ArrayList<>(repositorio.getDietas().keySet());
+
+            Collections.sort(keysTreinos);
+            Collections.sort(keysDietas);
+
+            for (String k1 : keysTreinos) {
+                Treino t = repositorio.getTreinos().get(k1);
+
+                String exercicios = "";
+                for (Exercicio e : t.getExercicios().values()) {
+                    exercicios = exercicios + "/" + e.getNome();
+                }
+                modelTreinos.addRow(new Object[]{t.getId(), t.getNome(), t.caloriasGastas(), t.tempoGasto(), exercicios});
+            }
+
+            for (String k2 : keysDietas) {
+                Dieta d = repositorio.getDietas().get(k2);
+
+                String alimentos = "";
+                for (Refeicao r : d.getRefeicoes().values()) {
+                    for (Alimento a : r.getAlimentos().values()) {
+                        alimentos = alimentos + "/" + a.getNome();
+                    }
+                }
+                modelDietas.addRow(new Object[]{d.getId(), d.getNome(), d.getObjHidrico(), d.getObjCalorico(), d.caloriasIngeridas(), alimentos});
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione um registro diário", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton30ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3543,8 +3867,11 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton26;
+    private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
+    private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton30;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -3588,6 +3915,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
@@ -3604,6 +3932,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -3627,6 +3956,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel nomejLabel;
     private javax.swing.JLabel nomejLabel1;
     private javax.swing.JLabel nomejLabel10;
+    private javax.swing.JLabel nomejLabel11;
     private javax.swing.JLabel nomejLabel2;
     private javax.swing.JLabel nomejLabel3;
     private javax.swing.JLabel nomejLabel4;
@@ -3651,6 +3981,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel refeicoesVisualizacao;
     private javax.swing.JPanel registrarDiaPanel;
     private javax.swing.JButton registrarDiajButton;
+    private javax.swing.JTable registroTabela;
+    private javax.swing.JPanel registrosVisualizacao;
     private javax.swing.JButton relatorioButton;
     private javax.swing.JPanel relatorioPanel;
     private javax.swing.JPanel repeticaoPanel;

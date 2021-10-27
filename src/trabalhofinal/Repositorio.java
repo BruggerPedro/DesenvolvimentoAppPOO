@@ -227,6 +227,7 @@ public class Repositorio {
     }
 
     public void attTreinos() {
+        this.leExercicios();
         BufferedWriter escritor = null; //objeto escritor
         try {
             escritor = new BufferedWriter(new FileWriter(new File("treinos.txt")));
@@ -324,6 +325,7 @@ public class Repositorio {
     }
 
     public void attRefeicoes() {
+        this.leAlimentos();
         BufferedWriter escritor = null; //objeto escritor
         try {
             escritor = new BufferedWriter(new FileWriter(new File("refeicoes.txt")));
@@ -379,6 +381,7 @@ public class Repositorio {
     }
 
     public void attDietas() {
+        this.leRefeicoes();
         BufferedWriter escritor = null; //objeto escritor
         try {
             escritor = new BufferedWriter(new FileWriter(new File("dietas.txt")));
@@ -434,7 +437,8 @@ public class Repositorio {
     }
 
     public void attRegistrosDiarios() {
-        this.leRegistrosDiarios();
+        this.leTreinos();
+        this.leDietas();
         BufferedWriter escritor = null; //objeto escritor
         try {
             escritor = new BufferedWriter(new FileWriter(new File("registrosDiarios.txt")));
