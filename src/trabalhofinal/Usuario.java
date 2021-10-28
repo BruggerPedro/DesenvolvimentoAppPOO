@@ -10,10 +10,11 @@ package trabalhofinal;
  * @author tainass
  */
 public class Usuario {
+
     protected String nomeCompleto, sexo, nomeUsuario, senha;
     protected float pesoInicio, alturaInicio, peso, altura;
     protected Data dataNascimento;
-    
+
     public Usuario(String nomeCompleto, String sexo, String nomeUsuario, String senha, Data dataNascimento, float peso, float altura, float pesoInicio, float alturaInicio) {
         this.nomeCompleto = nomeCompleto;
         this.sexo = sexo;
@@ -25,7 +26,7 @@ public class Usuario {
         this.pesoInicio = pesoInicio;
         this.alturaInicio = alturaInicio;
     }
-    
+
     public String getNomeCompleto() {
         return nomeCompleto;
     }
@@ -97,12 +98,12 @@ public class Usuario {
     public void setAlturaInicio(float alturaInicio) {
         this.alturaInicio = alturaInicio;
     }
-    
+
     public float calculaIMCInicial() {
-        return pesoInicio/(alturaInicio*alturaInicio);
+        return pesoInicio / (alturaInicio * alturaInicio);
     }
-    
+
     public float calculaIMC() {
-        return peso/(altura*altura);
+        return peso / (altura * altura);
     }
 }

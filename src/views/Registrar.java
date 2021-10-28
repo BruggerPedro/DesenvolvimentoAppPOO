@@ -217,22 +217,21 @@ public class Registrar extends javax.swing.JFrame {
         String user = usuario.getText();
         String sex = sexo.getText();
         String password = String.valueOf(senha.getPassword());
-        
-        if (name.isEmpty() || user.isEmpty() || sex.isEmpty() || password.isEmpty() || diaNascimento.getText().isEmpty() || mesNascimento.getText().isEmpty() || anoNascimento.getText().isEmpty()){
+
+        if (name.isEmpty() || user.isEmpty() || sex.isEmpty() || password.isEmpty() || diaNascimento.getText().isEmpty() || mesNascimento.getText().isEmpty() || anoNascimento.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos", "Alerta", JOptionPane.INFORMATION_MESSAGE);
-        }
-        else {
+        } else {
             Repositorio rep = new Repositorio();
             rep.leUsuarios();
-            
+
             int dayN = Integer.parseInt(diaNascimento.getText());
             int monthN = Integer.parseInt(mesNascimento.getText());
             int yearN = Integer.parseInt(anoNascimento.getText());
             float weight = Float.parseFloat(peso.getText());
             float height = Float.parseFloat(altura.getText());
-            
-            if (!rep.getUsuarios().containsKey(user)){
-                Usuario u = new Usuario (name, sex, user, password, new Data(dayN, monthN, yearN), weight, height, weight, height);
+
+            if (!rep.getUsuarios().containsKey(user)) {
+                Usuario u = new Usuario(name, sex, user, password, new Data(dayN, monthN, yearN), weight, height, weight, height);
                 rep.addUsuario(u);
                 JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
                 Home h = new Home(u);
@@ -244,8 +243,7 @@ public class Registrar extends javax.swing.JFrame {
                 rep.attDietas();
                 rep.attTreinos();
                 rep.attRegistrosDiarios();
-            }
-            else {
+            } else {
                 JOptionPane.showMessageDialog(null, "Nome de usuario já existe", "Alerta", JOptionPane.INFORMATION_MESSAGE);
             }
         }

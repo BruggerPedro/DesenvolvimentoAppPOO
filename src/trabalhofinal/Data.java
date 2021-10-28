@@ -10,6 +10,7 @@ package trabalhofinal;
  * @author tainass
  */
 public class Data {
+
     protected int dia, mes, ano;
 
     public Data(int dia, int mes, int ano) {
@@ -41,11 +42,11 @@ public class Data {
     public void setAno(int ano) {
         this.ano = ano;
     }
-    
+
     public void mostrarData() {
         System.out.println(getDia() + '/' + getMes() + '/' + getAno());
     }
-    
+
     public String retornaData() {
         return getDia() + "/" + getMes() + "/" + getAno();
     }

@@ -10,6 +10,7 @@ package trabalhofinal;
  * @author tainass
  */
 public class ExercicioMetragem extends Exercicio {
+
     public float distancia;
     public float calPorMetro;
 
@@ -19,7 +20,7 @@ public class ExercicioMetragem extends Exercicio {
         this.distancia = distancia;
         this.calPorMetro = calPorMetro;
     }
-    
+
     public float getDistancia() {
         return distancia;
     }
@@ -35,10 +36,10 @@ public class ExercicioMetragem extends Exercicio {
 
     @Override
     public void mostraExercicio() {
-        System.out.println("Tempo gasto: "+getTempoGasto());
-        System.out.println("Distância percorrida: "+getDistancia());
-        System.out.println("Calorias gastas por metro: "+getCalPorMetro());
-        System.out.println("Calorias gastas no exercicio: "+caloriasGastasExercicio());
+        System.out.println("Tempo gasto: " + getTempoGasto());
+        System.out.println("Distância percorrida: " + getDistancia());
+        System.out.println("Calorias gastas por metro: " + getCalPorMetro());
+        System.out.println("Calorias gastas no exercicio: " + caloriasGastasExercicio());
     }
 
     public void setDistancia(float distancia) {
@@ -48,6 +49,5 @@ public class ExercicioMetragem extends Exercicio {
     public void setCalPorMetro(float calPorMetro) {
         this.calPorMetro = calPorMetro;
     }
-    
-    
+
 }

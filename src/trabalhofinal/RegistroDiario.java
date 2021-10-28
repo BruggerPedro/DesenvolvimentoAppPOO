@@ -10,6 +10,7 @@ package trabalhofinal;
  * @author Tiago
  */
 public class RegistroDiario {
+
     private Data data;
     private Treino treino;
     private Dieta dieta;

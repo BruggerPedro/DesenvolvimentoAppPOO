@@ -10,6 +10,7 @@ package trabalhofinal;
  * @author tainass
  */
 public class ExercicioRepeticao extends Exercicio {
+
     public int numSeries;
     public int numRepet;
     public float calPorSerie;
@@ -29,11 +30,11 @@ public class ExercicioRepeticao extends Exercicio {
 
     @Override
     public void mostraExercicio() {
-        System.out.println("Tempo gasto: "+getTempoGasto());
-        System.out.println("Número de Séries: "+getNumSeries());
-        System.out.println("Número de Repetições: "+getTempoGasto());
-        System.out.println("Calorias gastas por série: "+getCalPorSerie());
-        System.out.println("Calorias gastas no exercicio: "+caloriasGastasExercicio());
+        System.out.println("Tempo gasto: " + getTempoGasto());
+        System.out.println("Número de Séries: " + getNumSeries());
+        System.out.println("Número de Repetições: " + getTempoGasto());
+        System.out.println("Calorias gastas por série: " + getCalPorSerie());
+        System.out.println("Calorias gastas no exercicio: " + caloriasGastasExercicio());
     }
 
     public int getNumSeries() {
@@ -59,6 +60,5 @@ public class ExercicioRepeticao extends Exercicio {
     public void setCalPorSerie(float calPorSerie) {
         this.calPorSerie = calPorSerie;
     }
-    
-    
+
 }

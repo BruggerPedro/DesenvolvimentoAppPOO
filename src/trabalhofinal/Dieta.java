@@ -12,6 +12,7 @@ import java.util.HashMap;
  * @author Tiago
  */
 public class Dieta {
+
     private String id, nome;
     private int objCalorico, objHidrico;
     private HashMap<String, Refeicao> refeicoes = new HashMap<>();
@@ -22,13 +23,13 @@ public class Dieta {
         this.objCalorico = objCalorico;
         this.objHidrico = objHidrico;
     }
-    
+
     public float caloriasIngeridas() {
         float total = 0;
-        for (Refeicao e : this.getRefeicoes().values()){
+        for (Refeicao e : this.getRefeicoes().values()) {
             total += e.caloriasGastasRefeicao();
         }
-        
+
         return total;
     }
 

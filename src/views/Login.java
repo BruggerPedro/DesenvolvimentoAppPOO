@@ -14,7 +14,9 @@ import trabalhofinal.Usuario;
  * @author huryel
  */
 public class Login extends javax.swing.JFrame {
+
     Usuario logado;
+
     /**
      * Creates new form Login
      */
@@ -135,33 +137,31 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (usuario.getText().isEmpty() || String.valueOf(senha.getPassword()).isEmpty() ){
+        if (usuario.getText().isEmpty() || String.valueOf(senha.getPassword()).isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos", "Alerta", JOptionPane.INFORMATION_MESSAGE);
-        }
-        else {
+        } else {
             Repositorio rep = new Repositorio();
             rep.leUsuarios();
-            
+
             String user = usuario.getText();
             String password = String.valueOf(senha.getPassword());
             boolean flag = false;
-            
+
             for (String key : rep.getUsuarios().keySet()) {
                 Usuario u = rep.getUsuarios().get(key);
-                
-                if (u.getNomeUsuario().equals(user) && u.getSenha().equals(password)){
+
+                if (u.getNomeUsuario().equals(user) && u.getSenha().equals(password)) {
                     this.logado = u;
                     flag = true;
                     break;
                 }
             }
-            
+
             if (flag) {
                 Home h = new Home(logado);
                 h.setVisible(true);
                 this.dispose();
-            }
-            else {
+            } else {
                 JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos", "Alerta", JOptionPane.ERROR_MESSAGE);
                 usuario.setText("");
                 senha.setText("");

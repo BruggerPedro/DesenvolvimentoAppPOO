@@ -29,7 +29,12 @@ import trabalhofinal.Usuario;
 
 /**
  *
- * @author huryel
+ * Bruno Ferreira Tomé - 12011BCC050 
+ * Huryel Souto Costa - 12011BCC022 
+ * Pedro Murilo Brügger Pereira - 12011BCC054 
+ * Tainá Silva Santos - 12011BCC002 
+ * Tiago da Silva e Souza Pinto - 12011BCC001
+ * 
  */
 public class Home extends javax.swing.JFrame {
 

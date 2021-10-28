@@ -24,13 +24,13 @@ public class Refeicao {
         this.id = id;
         this.tipo = tipo;
     }
-    
+
     public float caloriasGastasRefeicao() {
         float total = 0;
-        for (Alimento e : this.getAlimentos().values()){
+        for (Alimento e : this.getAlimentos().values()) {
             total += e.getCaloriasTotais();
         }
-        
+
         return total;
     }
 
@@ -57,7 +57,5 @@ public class Refeicao {
     public void setAlimentos(HashMap<String, Alimento> alimentos) {
         this.alimentos = alimentos;
     }
-    
-    
 
 }
