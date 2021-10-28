@@ -1,0 +1,2 @@
+1;Treino perna;Legpress;Corrida
+2;Treino braço;Crucifixo;Supino
